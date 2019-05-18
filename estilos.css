@@ -1,0 +1,91 @@
+/* Fondo de la cabecera */
+header {
+	background: #16a085;
+	color:#fff;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+
+/* Texto de la cabecera */
+.cabecera{
+	color: #fff;
+	text-align:  center;
+	}
+	
+/* Color de Fondo del Articulo 
+.maim {
+	background: #C2D3E3;
+	border: 2px solid red;
+	border-radius: 5px;
+} */
+
+/* Color del Colucna 1 y 4
+.color1 {
+	background: #34495e;
+	color:red;
+	border: 2px solid #A88E0F;
+	border-radius: 5px;
+}*/
+
+
+/* Color del Colucna */
+.color2 {
+	background: #138E86;
+	color:write;
+	border: 2px solid blue;
+	border-radius: 5px;
+}
+
+
+/* Color del Colucna 
+.color4 {
+	background: #EBD5BD;
+  	text-align:  center;  
+	border: 2px solid orange;
+	border-radius: 5px;
+	}  */
+
+/* Color del ASIDE 
+.color5 {
+	background: #A88EC7; 
+ 	text-align:  center; 
+	border: 2px solid #FFFF9D;
+	border-radius: 5px;
+} */
+
+/*
+aside {
+	background: #c0392b;
+}  */
+
+
+footer {
+	background: #16a085;
+	color: #fff;
+	text-align:  center;
+}
+
+/* Color del Fondo */
+.body{
+	background-color: #F2DFC4;
+}
+
+/* Para los Enlaces o URL  */
+.enlaces:link {
+				color: #E4E0FC;
+}
+.enlaces:visited {
+                color: #D2DD28;
+}
+.enlaces:hover {
+                color: orange;
+}
+
+/* Color del H3 Titulo de las Cajas*/
+.colorH3 {
+	text-align:  center;
+	color:write;
+	background: #C5FFD9;
+	border: 2px solid blue;
+	border-radius: 5px;
+}

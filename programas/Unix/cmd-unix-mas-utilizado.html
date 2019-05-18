@@ -1,0 +1,110 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Sintaxis del comando</title>
+</head>
+
+<body>
+    <TABLE bgcolor="#aaaaff" border="1" align="center">
+      <TR>
+        <TH width="30%">
+    <a href="../index.html">
+    <IMG SRC="IMAGENES/ICINDICE.GIF"
+    WIDTH="19" HEIGHT="17" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"
+    ALT="Inicio leccion"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sintaxis del comando</TH>
+        <TH>Utilidad</TH>
+      </TR>
+	  
+      <TR>
+        <TD height="25">&nbsp;find `pwd` -name "*.*"</TD>
+        <TD height="25">&nbsp;lista solo los nombre de directorior Con la opción <</TD>
+      </TR>
+	  
+	  <TR>
+        <TD height="25">&nbsp;ls -ltr -d */</TD>
+        <TD>  lista solo los nombre de directorior Con la opción <</TD>
+      </TR>
+
+	  
+	  <TR>
+        <TD>Agrega un campo al final del txt</TD>
+
+        <TD>#!/usr/bin/awk -f <BR>
+        BEGIN { ARGC = 2 ; ARGV[1] = "Fichero_A.txt" } <BR>
+        { $2 = $2 - 10 } <BR>
+        { $(NF+1) = "Nuevo campo" } <BR>
+		{ print $0 } </TD>
+	  </TR>
+	  
+	  <TR>
+        <TD>Agrega Separador Punto y coma al txt</TD>
+		<TD> #!/usr/bin/awk -f <BR>
+	BEGIN { <BR>
+       ARGC = 2 ; ARGV[1] = "Fichero_A.txt" <BR>
+       FS = " " # Delimitador columnas <BR>
+       OFS = ";" <BR>
+       RS = "\n" # Delimitador registros <BR>
+       ORS = ";fecha;\n" <BR>
+} <BR>
+{ print $1, $2, $3, $4, $5 > "salida.sh"} </TD>
+  </TR>
+  
+	<TR>
+        <TD height="25">&nbsp;Comando</TD>
+		    <TD height="25">&nbsp;ls -lR | grep -v log | grep -v total | grep -v .tar.gz | grep -v .txt | grep " " > zzz6 <BR>
+		</TD>
+	</TR>
+	  
+	  <TR>
+        <TD height="25">&nbsp;Comando</TD>
+            <TD> /prg/kbpp01/interfaces/servprod/ITWPKBPB <BR>
+		     height="25">&nbsp;ls -lR | grep -v log | grep -v total | grep -v .tar.gz | grep -v .txt | grep -v / | grep " " > /TCANTV/UTILITI_AMB_51/UTILITIS_AP/EJEMPLO_51/AWK/ayer.txt <BR>
+	   </TD>
+     </TR>
+	  
+	   <TR>
+         <TD height="25">&nbsp;comando IF </TD>
+            <TD> #!/bin/bash <BR>
+            T1="petete" <BR>
+            T2="peteto" <BR>
+            if [ "$T1" = "$T2" ]; then <BR>
+                echo expresión evaluada como verdadera <BR>
+            else <BR>
+                echo expresión evaluada como falsa <BR>
+            fi </TD>
+       </TR>
+	   
+	   <TR>
+        <TD height="25">&nbsp;ordena la salida del ls</TD>
+        <TD height="25">&nbsp;ls -ltr | sort -r -k 1 </TD>
+      </TR>
+			
+
+<TR>
+        <TD height="25">&nbsp;Muestra la ultimas 100 lineas de un reporte</TD>
+		    <TD height="25">&nbsp;tail -100 nombredelArchivo<BR>
+		</TD>
+	</TR>
+	
+	<TR>
+        <TD height="25">&nbsp;Muestra el el archivo en forma de paginas</TD>
+		    <TD height="25">&nbsp;pg nombredelarchivo<BR>
+		</TD>
+	</TR>
+	
+<TR>
+        <TD height="25">&nbsp;Repetir comando en unix</TD>
+		    <TD height="25">&nbsp;!t (se le coloca ! y la ultima letra del comando<BR>
+		</TD>
+</TR>
+	
+<TR>
+        <TD height="25">&nbsp;Disponible1</TD>
+		    <TD height="25">&nbsp;Comando<BR>
+		</TD>
+</TR>
+	
+</table>
+</body>
+</html>

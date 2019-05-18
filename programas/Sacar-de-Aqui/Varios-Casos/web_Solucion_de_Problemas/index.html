@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "Alejandro Pereira" "web_ambientes">
+<html xmlns="Z:\Aplicaciones\Intranet\SGCP\web_ambientes">
+  <head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Menu con Logo </title>
+		<link rel="stylesheet" type="text/css" href="sdmenu/sdmenu.css" />
+		<script type="text/javascript" src="sdmenu/sdmenu.js">
+		</script>
+	
+		<script type="text/javascript">
+			// <![CDATA[
+			var myMenu;
+				window.onload = function() {
+				myMenu = new SDMenu("my_menu");
+				myMenu.init();
+				};
+				// ]]>
+	
+		</script>
+  </head>
+    <!--*****************************************************************  -->
+  <img src="IMAGENES\cabecera_cantv01.gif" align=center hspace=10> 
+   <!--*****************************************************************  -->
+  
+   <!--*****************************************************************  -->
+  <body bgcolor="#BBBB99" >
+  <font face="Arial" color="red" hspace=10 size="3"> <marquee bgcolor="#FFFFFF">Bienvenido a la página de la Gerencia Entrega de Soluciones, Cortesía de la Coord. Configuración de Ambiente y Control de Versiones  </marquee></font> 
+ <p> </p> 
+  <body background="IMAGENES\fondo_cantv02.GIF" >   
+   <!--*****************************************************************  -->
+   
+   <!--*****************************************************************   
+	<form action="#" style="font-family: sans-serif; font-size: .8em " onsubmit="return false">
+ 		<input type="button" value="Expande Todo" onclick="myMenu.expandAll()" /> 
+		<input type="button" value="Retrae  Todo" onclick="myMenu.collapseAll()" />  
+          </form>   
+        *****************************************************************  -->	
+    
+	<div style="float: left" id="my_menu" class="sdmenu">
+		<div>
+        <span>Utilidades</span>
+        <a href="Password.html">Password</a>
+        <a href="Remedy.html">Grupos Remedy</a>
+        <a href="Estandares de Proceso.htm">Estandares de Proceso</a>
+        <a href="Estandares y Nomenclatura.htm">Estandares y Nomenclatura</a>
+        <a href="DISPONIBLE3">Disponible3</a>
+        <a href="DISPONIBLE4">Disponible4</a>
+		</div>
+		
+	  <div>
+        <span>Fallas Frecuentes</span>
+        <a href="FallasKenan.html">FallasKenan</a>
+        <a href="FallasExtraccion.html">FallasExtraccion</a>
+        <a href="Disponible5">Disponible5</a>
+	    </div>
+		
+      <div class="collapsed">
+        <span>Procedimientos</span>
+        <a href="procedimiento.html">Informacion pases a prueba</a>
+        <a href="Disponible6">Disponible6</a>
+        <a href="Disponible7">Disponible7</a>
+        <a href="Disponible8">Disponible8</a>
+		</div>
+		
+      <div>
+        <span>Interfaces</span>
+        <a href="interfaces.html">Interfaces</a>
+        <a href="En Construccion1">En Construccion1</a>
+        <a href="En Construccion2">En Construccion2</a>
+        <a href="En Construccion3">En Construccion3</a>
+		</div>
+		
+	  <div>
+        <span>Cliente Servidor</span>
+        <a href="ClienteServidor.htm">Aplicaciones</a>
+        <a href="En Construccion5">En Construccion5</a>
+        <a href="En Construccion6">En Construccion6</a>
+        <a href="En Construccion7">En Construccion7</a>
+		</div>
+    	 
+  </div>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="es">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>FallasExtraccion</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+
+<body bgcolor="#C0C0C0">
+
+<p align="center"><u><font size="6" color="#0000FF">Fallas Mainframe</font></u></p>
+<a href="\estructura\inicio-Menu-Principal.html">Regresar</a>
+ <hr>
+<p align="left"><font color="#0000FF"><b>Proceso CFTIDUC001.sh</b></font><br>
+<PRE>  + /TCANTV/EXTRACCION/IDOC/batch/CFTIDUC001.sh 20070104 
+Ciclo de Facturacion :C<br>
+Fecha para Data Flow mm/dd/aaaa :01/04/2007 
+Modo de ejecucion 1=prod 
+bad argument 
+Inicio de Proceso: Wed Oct 10 16:50:49 2007 
+Archivo Log: PEXTIDOCFACFPRO02_101007_165049.log
+<br>
+E J E C U T A N D O P L A N PEXTIDOCFACFPRO02......!!!!! 
+<br>
+Ejecucion Fallo .... 
+Fin Proceso: Wed Oct 10 16:50:55 2007 
+[srvft37|12575|16818|SAPPCOM|INFO|10/10/2007 4:50:52 PM|/appl/ddfq01/scriptsqa/\Log/PEXTIDOCFACFPRO02_101007_165049.log] 
+<br>
+Plan Execution: Plan[PEXTIDOCFACFPRO02] Failed: Invalid Property value. UT -- 0\x1, UT -- 0xFD 10/10/2007 4:50:00 PM</PRE></p>
+ <!--########### -->
+<p align="left"><font color="#0000FF"><b>Acciones a Tomar:</b></font><br>
+  Revisar si existe en el directorio /TCANTV en archivo fecha_ciclo LA FECHA CON 
+QUE SUBMITES EL JOB</p>
+ <hr>
+ <!--############################################ -->
+<p align="left"><font color="#0000FF"><b>Proceso CFTFCUC022_CUS1.sh</b></font><br>
+<PRE>  Inicio de Proceso: Mon Oct 15 16:17:22 2007 
+Archivo Log: PEXTDOC1CRPLCEL02_151007_161722.log 
+<br>
+E J E C U T A N D O P L A N PEXTDOC1CRPLCEL02 CUS1......!!!!! 
+<br>
+Ejecucion Fallo .... 
+Fin Proceso: Mon Oct 15 16:17:46 2007 
+[srvft37|2623|32662|SAPPCOM|INFO|10/15/2007 4:17:45 PM|/appl/ddfq01/scriptsqa/Log/PEXTDOC1CRPLCEL02_151007_161722.log] 
+Plan Execution: Plan[PEXTDOC1CRPLCEL02] Failed: Unable to connect to the DFS agent. Is it running? 10/15/2007 4:17:00 PM<PRE><br>
+  <!--########### -->
+<p align="left"><font color="#0000FF"><b>Acciones a Tomar:</b></font><br>
+  esto sucede cuando entran varios a la vez en la base de datos darle rerun y 
+solucionas la falla</p>
+   <hr>
+<!--############################################ -->
+</body>
+</html>

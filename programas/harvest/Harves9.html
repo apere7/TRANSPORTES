@@ -1,0 +1,97 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+
+<head>
+<meta http-equiv="Content-Language" content="es">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+
+<title>Harves8.html</title>
+<style>
+<!--   table.MsoNormalTable  -->
+/*
+===========================================
+Stilos css Utilizados en esta pagina
+Escrito por: Alejandro Pereira
+==============================================
+*/
+.tit {font-size:1.1em;font-weight:bold;color:#0000ff;text-align: center;}
+.tit2 .ofert-details li {padding:2px;}
+.tit3 li strong {display: block; width:100px; float:left}
+.tit4 {width:400px;display:block; float:left}
+</style>
+</head>
+<body bgcolor="#C0C0C0">
+ <!-- Canbio de Actividad00    -->
+<dl class="tit"> <dd> Aplicar paquete de CRM harves en prueba desde el Estado de Produccion </dl>
+<a href="\estructura\inicio-Menu-Principal.html">Regresar</a>
+ <!-- Este es para CRM    -->
+<hr>
+<dd>• <strong>Ambiente PPST01 de CRM</strong>
+<dd>• Identificar proyecto Ejemplo: <strong>PPS-CO</strong>
+<dd>• Identificar nombre paquete Ejemplo:<strong>  CTV_PRY_3026905_CA_V2</strong>
+<dd>• Identificar El Patch colocandose en el paquete <strong>version</strong> Y a mano derecha ves la ruta
+<dd>• Ejemplo: <strong>pps-co\fscantv\harvest\co\proyectos </strong>
+<dd>• Crear una carpeta en el disco C: con el mismo nombre que Tiene el paquete dentro de la carpeta (proyectos-peaplo-soff)
+<dd>• <strong>Comenzemos:</strong>
+<dd>• En el estado de <strong>prueba</strong> click derecho --> processes -->check out para actualizar dominio
+<dd>• <strong>Modo:</strong>  browse
+<dd>• <strong>Option:</strong>  preserve view patch structure
+<dd>• <strong>From:</strong> Colocas El Patch identificado anteriormente de produccion
+<dd>• En version dar click a <strong>I/O</strong> y abre la ventana de select version
+<dd>• marcas <strong>Recursive</strong> --> <strong>dar find </strong>--> agrandar la pantalla
+<dd>• Ordenar por paquete con solo dar click en esa colucna
+<dd>• <strong>Buscas el Paquete</strong> CTV_PRY_3026905_CA_V2 <strong>y marcas todos sus elementos</strong> y das -->OK
+<dd>• <strong>TO:</strong> C:\\proyectos-peaplo-soff\CTV_PRY_3026905_CA_V2   -->OK aplicar --> aceptar
+<dd>• Con esto ya se encuentra en el disco C: y se procede a aplicarlo con el desainer de pople soff
+<dd>• Entrar en aplicación desainer 
+<dd>• database name: ppst01
+<dd>• user Id: APEREIRA
+<dd>• password:
+<dd>• Una vez logoneado ir a: MENU, TOOLS, ,COPY PROYECT , FROM FILE
+<dd>• Localizas la carpeta o paquete
+<dd>• Copy to database
+<dd>• Ok
+ <!-- Este es para cualquier otra interface    -->
+
+<hr>
+<dl class="tit"> <dd> TRANSPORTE DE DATA MOVER DE CRM  </dl>
+<hr>
+<dd>• <strong>Ambiente PPST01 de CRM </strong>
+<dd>• En Proyecto:PPS-CO
+<dd>• Nombre del paquete:PS_CTV_DMV_PSMSGCATLANG_VN_V1
+<dd>• Contenido del paquete:ImportPMSGCATLANG.dms y un archivo .doc
+<dd>• Accion: Se lleva el paquete al DISCO C:/ con el mismo nombre del paquete
+<dd>• En DATAMOVER entrar asi:
+<dd>• Database: PPST01
+<dd>• User:apere7
+<dd>• Pass:xxxxxxx
+<dd>• Open,Buscar en la carpeta onde esta el (.dms),darle al semaforo
+<dd>• Enviar el resultado
+
+
+
+<hr>
+<dl class="tit"> <dd> TRANSPORTE DE CRM NORMAL  </dl>
+<hr>
+<dd>• En Harvest entrar en el proyecto: <strong>PPS-CO</strong>
+<dd>• <strong>Buscas el Paquete</strong> CTV_PRY_3026905_CA_V2 <strong>y le das check out </strong> 
+<dd>• Debe existir una carpeta con el mismo nombre del paquete en <strong>C:\Proyectos-Peaplo-soff</strong>
+<dd>• <strong>TO:</strong> C:\\proyectos-peaplo-soff\CTV_PRY_3026905_CA_V2   -->OK aplicar --> aceptar
+<dd>• Con esto ya se encuentra en el disco C: y se procede a aplicarlo con el desainer de pople soff
+<dd>• ##################################################################################################
+<dd>• Entrar en aplicación desainer Icono que esta en el escritorio
+<dd>• database name: ppst01
+<dd>• user Id: APEREIRA
+<dd>• password:
+<dd>• Una vez logoneado ir a: MENU, TOOLS, ,COPY PROYECT , FROM FILE
+<dd>• Localizas la carpeta o paquete en <strong>C:\Proyectos-Peaplo-soff</strong>
+<dd>• Copy to database
+<dd>• Ok
+ <!-- Este es para cualquier otra interface    -->
+
+

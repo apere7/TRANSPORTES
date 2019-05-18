@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="es">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>FallasExtraccion</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+
+<body bgcolor="#C0C0C0">
+
+<p align="center"><u><font size="6" color="#0000FF">Fallas ControlM</font></u></p>
+<a href="\estructura\inicio-Menu-Principal.html">Regresar</a>
+ <hr>
+<p align="left"><font color="#0000FF"><b>Proceso CRM</b></font><br>
+<PRE>  Date     Time     Code   Job Name Job Id ----- Message -----<
+  06/07/11 11:26:34   CS5065                 ORDERED JOB:14719; DAILY FORCED, ODATE 20110706 
+  06/07/11 11:26:35   SL5120                 JOB STATE CHANGED TO Wait Condition
+  06/07/11 11:26:44   SL5105                 SUBMITTED TO crmappqa
+  06/07/11 11:26:48   TR5080                 <FONT COLOR=#CC0033><strong>FAILED TO SUBMIT JOB CCRCLUD001. message from Agent follows
+  06/07/11 11:26:48   TR5167                 ERROR : Cannot submit job 'INT21600PPSB'. Failed to get Component</strong></FONT>
+  06/07/11 11:26:48   TR5134                 ENDED NOTOK
+  06/07/11 11:26:48   TR5120                 JOB STATE CHANGED TO Analyzed
+  06/07/11 11:26:49   SL5120                 JOB STATE CHANGED TO Post processed</PRE>
+ <!--########### -->
+<p align="left"><font color="#0000FF"><b>Acciones a Tomar:</b></font><br>
+<pre> A) El personal José Angel Boyer V.Consultor SAP Basis & Security reporto  
+    Pude observar que dentro de la lista de permisos del rol CRM_ABAS_INTCRM_CM_DEM_03000PP de dicho usuario INTCRM_CM013,
+    no posee el Componente de Interfaz “CONTROLM”, el cual es el componente que permite la integración con dicha 
+    plataforma Control-M. Es necesario realizar la modificación de dicha lista de permiso incluyendo dicho componente
+    de interfaz, gestionando el caso por parte del Proyecto de ABA Satelital. Este detalle también está reflejado 
+    en Productivo CRM.</pre>
+<pre> B) Si da este mensaje el grupo administrador de produccion Debe activar en el servidor el agente</PRE>
+<HR SIZE=8>
+ <!--############################################ -->
+<p align="left"><font color="#0000FF"><b>Proceso CRM</b></font><br>
+<pre>Date  Time      Code      Job Name Job Id----- Message ----- 
+  26/04/11 08:00:28   CD5065  				 ORDERED JOB:13235; DAILY SYSTEM, ODATE 20110426 
+  26/04/11 08:00:31   SL5120 				 JOB STATE CHANGED TO Wait Condition
+  26/04/11 09:26:00   SL5105 				 SUBMITTED TO crmappqa
+  26/04/11 09:26:06   TR5080 				 <FONT COLOR=#CC0033><strong>FAILED TO SUBMIT JOB CCRPOUD001. Message from Agent follows 
+  26/04/11 09:26:06   TR5167 				 ERROR : Cannot submit job 'INT16001PPSB'. Failed to get Component</strong></FONT>
+  26/04/11 09:26:06   TR5134 				 ENDED NOTOK
+  26/04/11 09:26:06   TR5120				 JOB STATE CHANGED TO Analyzed
+  26/04/11 09:26:06   SL5120 				 JOB STATE CHANGED TO Post processed</pre>
+  <!--########### -->
+<p align="left"><font color="#0000FF"><b>Acciones a Tomar:</b></font><br>
+  esto sucede cuando entran varios a la vez en la base de datos darle rerun y 
+solucionas la falla</p>
+   <hr>
+<!--############################################ -->
+</body>
+</html>
+
+<P><FONT SIZE=+2 COLOR=808080>

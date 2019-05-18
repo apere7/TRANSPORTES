@@ -1,0 +1,776 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>VENEZUELA</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+#main {}
+#main {
+line-height: 1.4;
+}
+.post {
+clear: both;
+margin-bottom: 4em;
+}
+-->
+</style>
+</head>
+
+<body bgcolor="#C0C0C0">
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center"><u><font size="6" color="#0000FF">COMANDOS - UNIX</font></u></p>
+
+<table cellSpacing="0" cellPadding="0" width="780" border="0" id="table2">
+	<tr>
+		<td style="font-family: Tahoma, Verdana; font-size: 8pt; color: #000000; padding: 3px" vAlign="top" align="middle" width="780">
+		<table cellSpacing="0" cellPadding="0" width="100%" border="0" id="table3">
+			<tr>
+				<td style="font-family: Tahoma, Verdana; font-size: 8pt; color: #000000; border: 1px dotted black; padding: 3px" bgColor="#f7f7ef" colSpan="3">
+				<div style="BORDER-RIGHT: #000000 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #000000 1px solid; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; BORDER-LEFT: #000000 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #000000 1px solid; BACKGROUND-COLOR: #ffffff">
+					<ul>
+						<li value="1"><b>Fecha/hora:</b> de la creación o de la 
+						última modificación. Si pasa más de un año, quita la 
+						hora y pone el año.</li>
+					</ul>
+				</div>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<p align="left"><b>SORT</b></p>
+<p align="left">Ordena la colucna 3 de largo 3n numericamente </p>
+<p align="left">sort -k 3,3n ddd &gt; vvv&nbsp;&nbsp; </p>
+<p align="left">Ordena la colucna 4 (año y hora) de largo 5n&nbsp; numericamente 
+y la colucna 2 de largo3 </p>
+<p align="left">sort -k 4,5n -k 2,3 ddd &gt; vvv</p>
+<p align="left"><font color="#0000FF"><b>Sobre $ cd -</b></font><br>
+  Nos devuelve al último directorio en el que estuviéramos. <br>
+  Es muy pr&aacute;ctico cuando queremos editar ficheros en dos lugares.<br>
+  $ cd /etc/X11/<br>
+  $ cd /backup/<br>
+  $ cd -<br>
+  Nos lleva a /etc/X11<br>
+  $ cd -<br>
+Nos devuelve a /backup</p>
+
+<p><font color="#0000FF"><b>Sobre cp:</b></font><br>
+  Para copiar un directorio se usa cp -r<br>
+  $ cp -r /etc /backup/<br>
+  Tendremos /backup/etc, y dentro de ese directorio tendremos lo mismo que hay en /etc<br>
+  Muy &uacute;til.</p>
+<p><font color="#0000FF"><b>Sobre mv:</b></font><br>
+  Tambien permite mover directorios o renombrarlos<br>
+  $ mv /home/yo/misdocumentos /home/yo/mis_documentos</p>
+<p><font color="#0000FF"><b>Sobre kill:</b><br>
+  </font>apenas lo uso, en su lugar utilizo killall, que permite matar por nombre de proceso, y los procesos llamarse siempre igual (no as&iacute; sus pid), permite no tener que hacer un ps para saber qu&eacute; tienes que poner.<br>
+  <font color="#0000FF">
+  <b>$ killall firefox-bin</b></font><br>
+  Eso s&iacute;, no es &uacute;til si tienes varios procesos abiertos con el mismo nombre, puesto que los cerrar&aacute; todos.<br>
+  Tambi&eacute;n acepta entre killall y el nombre del proceso un -X, donde X es la se&ntilde;al que quieras (9 para matarlo, 15 para que intente cerrar &eacute;l solo)<br>
+  $ killall -15 firefox-bin (vaya, no va)<br>
+  $ killall -9 firefox-bin</p>
+<p>&nbsp;</p>
+<p class="MsoNormal"><font color="#0000FF"><b>Modificador&nbsp;&nbsp; de test.&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Significado</b></font></p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">-d nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si el archivo existe y es un directorio</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">-e nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si el archivo existe</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">-f nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si el archivo existe y es un archivo regular</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">-L nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si el archivo existe y es una liga simbólica</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">-r nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si el archivo existe y es legible</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">-s nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si el archivo existe y no está vacio</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">-w nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si el archivo existe y es escribible por el usuario</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">-x nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si el archivo existe y es ejecutable</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">arch1 -nt arch2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si arch1 es más reciente que arch2</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">arch1 -ot arch2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si arch1 es más viejo que arch2 </p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">-z cadena&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si la longitud de la cadena es cero</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">-n cadena&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si la longitud de la cadena es mayoor que cero</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">cadena1 = cadena2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si las cadenas son iguales</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">cadena1 != cadena2&nbsp;&nbsp;&nbsp;&nbsp; </span>
+</code>Verdadero si las cadenas son distintas</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">! expr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si la expresión es falsa</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">expr1 -a expr2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si ambas expresiones son verdaderas</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">expr1 -o expr2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si alguna de las expresiones es verdadera </p>
+<p class="MsoNormal"><font color="#0000FF">&nbsp;<b>Expresiones aritméticas,
+<code style="font-family: Courier New"><span style="font-size:10.0pt">arg1</span></code> 
+y <code style="font-family: Courier New"><span style="font-size:10.0pt">arg2</span></code> 
+son números:</b></font></p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">arg1 -eq arg2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si son iguales</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">arg1 -ne arg2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si son diferentes</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">arg1 -lt arg2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si el primero es menor</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">arg1 -le arg2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si el primero es menor o igual</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">arg1 -gt arg2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si el primero es mayor</p>
+<p class="MsoNormal"><code style="font-family: Courier New">
+<span style="font-size:10.0pt">arg1 -ge arg2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></code>Verdadero si el primero es mayor o igua</p>
+<p class="MsoNormal">En el caso de las expresiones aritméticas, el modificador<b>
+<tt style="font-family: Courier New"><span style="font-size:10.0pt">-l</span></tt></b> 
+precediendo a una cadena se refiere a su longitud.</p>
+<p><b><font color="#0000FF">Copia de un servidor a otro servidor</font></b><br>
+en el servidor 10.1.101.76 directorio /home/consamb/GCCVERSION/ratin/programa<br>
+dar ftp 161.196.30.135 user=yvelas03 pass=yvelas031234<br>
+dar pwd para saber en que servidor estas <br>
+put archivo archivo1 <br>
+<br>
+<br>
+<font color="#0000FF"><b>Copia de un directorio a otro directorio del mismo 
+usuario</b></font><br>
+cp archivo01 ruta donde lo dejaras<br>
+cp *.* copia todo<br>
+<br>
+<font color="#0000FF">Cuando estas en un directorio y quieres copiar de otro 
+directorio </font><br>
+cp /TCANTV/INTERFACES/PAGOS/batch CFTDVUM0011.sh CFTDVUM0011.sh<br>
+<br>
+<font color="#0000FF">Para ver si pertenece al grupo el usuario ctmft</font><br>
+cd /etc <br>
+ls group<br>
+more group <br>
+verificas si esta el usuario ctmft </p>
+<p>&nbsp;</p>
+<p><font color="#0000FF"><b>Curso de UNIX by JxXx</b></font></p>
+<p>http://universolinux.es/debian/CursoDeUnix/index.html</p>
+<p>&nbsp;</p>
+<h2>2. ARCHIVOS Y DIRECTORIOS</h2>
+<h3>2.1 FORMATOS DE NOMBRES DE ARCHIVO</h3>
+<p>En Unix existe diferenciación entre mayúsculas y minúsculas, es decir, es un 
+sistema Case Sensitive. La longitud de los nombres de archivo depende del 
+sistema Unix. Así en AT&amp;T la longitud es de 16 caracteres y en BSD es de 256 
+caracteres.</p>
+<p>Los caracteres especiales no se pueden utilizar dentro de los nombres de 
+archivos, pero si se pueden utilizar los comodines:</p>
+<ul>
+	<li>'*' sustituye a uno o varios caracteres 
+	</li>
+	<li>'?' sustituye a un solo carácter. </li>
+</ul>
+<p>Existen archivos ocultos que se identifican mediante el carácter '.' (punto) 
+delante del nombre del archivo. Por ejemplo, .profile o .login son dos de estos 
+archivos ocultos.</p>
+<h3>2.2 TIPOS DE ARCHIVO</h3>
+<p>Unix no trata el carácter '.' como indicador de extensión, puesto que en Unix 
+no existen extensiones como tales para los archivos Se distinguen cinco tipos de 
+archivos:</p>
+<ol>
+	<li><b>ARCHIVOS REGULARES:</b> son un flujo continúo de bytes que se manejan 
+	como unidad mínima de almacenamiento en memoria secundaria. Son datos o 
+	programas. 
+	</li>
+	<li>
+	<p style="MARGIN-BOTTOM: 0pt"><b>DIRECTORIOS:</b> archivo especial que 
+	contiene una lista de nombres de archivos (organizados). A la información 
+	descriptiva de donde se encuentra físicamente el contenido del archivo se 
+	llama Hard Link. Este Hard Link permite establecer un segundo nombre para 
+	acceder a un mismo contenido físico de un archivo. No se pueden crear 
+	enlaces de este tipo para directorios o archivos que se encuentren en otras 
+	máquinas.</li>
+	<li><b>ENLACE SIMBÓLICO (Symbolic Link o Soft Link):</b> Es un archivo que 
+	contiene la ruta de acceso absoluta de otro archivo. Cuando quiero ver el 
+	contenido de este archivo se localiza el archivo mediante la ruta absoluta 
+	como si fuera un acceso directo de Windows. 
+	</li>
+	<li>
+	<p style="MARGIN-BOTTOM: 0pt"><b>ARCHIVOS ESPECIALES DE DISPOSITIVOS:</b> 
+	Unix fue el primer Sistema Operativo y el único que permite manejar 
+	cualquier dispositivo como si fuera un archivo. Todos los dispositivos son 
+	archivos. Hay dos tipos de archivos secuenciales:<ul>
+		<li>En <b>Modo Bloque</b>: aquellos que contienen bloques de bytes. Por 
+		ejemplo los discos duros o los disquetes. 
+		</li>
+		<li>En <b>Modo Carácter</b>: aquellos que permiten el acceso a los 
+		dispositivos como secuencias o flujos continuos de bytes. Por ejemplo el 
+		terminal o la impresora. </li>
+	</ul>
+	</li>
+	<li>
+	<p style="MARGIN-BOTTOM: 0pt"><b>FIFO, PIPE O TUBERIA:</b> archivo que se 
+	utiliza para comunicación entre procesos. Acumulan en orden los mensajes que 
+	se envían unos procesos a otros.</li>
+</ol>
+<h3>2.3 ÁRBOL DE DIRECTORIOS EN UNIX</h3>
+<p style="TEXT-ALIGN: center">
+<img alt="Arbol de directorios UNIX" src="http://www.cec.uchile.cl/manuales/contenidos/imagenes/arbol.jpg" mce_src="http://www.cec.uchile.cl/manuales/contenidos/imagenes/arbol.jpg"></p>
+<p><b>/bin</b> &#8594; Contiene los ejecutables del sistema (órdenes).</p>
+<p><b>/etc</b> &#8594; Contiene los archivos de configuración de las aplicaciones</p>
+<p><b>/dev </b>&#8594; Contiene los dispositivos (lo veremos en temas sucesivos)</p>
+<p><b>/sbin</b> &#8594; Contiene archivos de inicialización del sistema.</p>
+<p><b>/usr</b> &#8594; Es donde se instalan las aplicaciones de usuario</p>
+<ul>
+	<li><b>/lib</b> &#8594; librerías 
+	</li>
+	<li><b>/bin</b> &#8594; ejecutables </li>
+</ul>
+<p><b>/var</b> &#8594; Contiene archivos que varían entre los diferentes sistema Unix</p>
+<p><b>/tmp</b> &#8594; Contiene archivos temporales. Todos los usuarios tienen permiso 
+de escritura .</p>
+<p><b>/home</b> &#8594; Es el directorio base de todos los usuarios. Cuando un usuario 
+se logea en el sistema se le coloca en este directorio.</p>
+<h3>2.4 COMANDOS RELACIONADOS CON ARCHIVOS</h3>
+<p>$ <b>cat nombre_archivo</b> visualiza el contenido del archivo. Junto con el 
+símbolo &gt;, sirve para crear archivos. Por ejemplo: $ cat &gt; nuevo. Si el archivo 
+nuevo existe, lo sobrescribo.<br>
+$ <b>pwd</b> sirve para conocer el directorio actual donde me encuentro.<br>
+$ <b>cd nuevo_dir</b> para cambiar de directorio. Si pongo $ cd .. subo un nivel 
+hacia arriba, y si no pongo argumento, cambia al directorio base.<br>
+$ <b>~</b> para hacer referencia a mi directorio base. Si quiero acceder a un 
+directorio que esté por debajo de mi directorio base pongo: $ ~/misdatos.<br>
+$ <b>ls [opciones][archivo(s)] </b>permite ver los archivos que hay en un 
+directorio. Las [opciones] pueden ser:</p>
+<ul>
+	<li><b>-a</b> para ver archivos ocultos. 
+	</li>
+	<li><b>–F </b>se identifican los tipos de archivos menos los de dispositivos 
+	</li>
+	<li><b>-R</b> muestra el contenido de los directorios recursivamente. 
+	</li>
+	<li><b>-l </b>indica los archivos que se quieren visualizar en formato largo 
+	(una línea completa por cada archivo). El formato es el siguiente: </li>
+</ul>
+<p><b>&lt;modo&gt; &lt;enlaces&gt; &lt;propietario&gt; &lt;grupo&gt; &lt;tamaño&gt; &lt;fecha&gt; &lt;nombre&gt;</b></p>
+<p><b>&lt;modo&gt;</b> Es un conjunto de 10 caracteres, el primero de ellos indican el 
+tipo de archivo del que se trata y los siguientes 9 los permisos del archivo. 
+Los permisos los explicaré mas adelante, el tipo de archivo puede ser:</p>
+<ul>
+	<li><b>- </b>archivo regular 
+	</li>
+	<li><b>d</b> directorio 
+	</li>
+	<li><b>l</b> enlace simbólico 
+	</li>
+	<li><b>b</b> dispositivos de modo bloque 
+	</li>
+	<li><b>e</b> dispositivos de modo carácter </li>
+</ul>
+<p><b>&lt;enlaces&gt; </b>indica el número de enlaces de tipo Hard Link que tiene el 
+archivo. Indica por tanto desde cuantos sitios se puede acceder al ese archivo. 
+Si el archivo es de tipo directorio, este campo es el número de 
+subdirectorios+2.</p>
+<p><b>&lt;propietario&gt;</b> contiene el login name y el dueño del archivo.</p>
+<p><b>&lt;grupo&gt;</b> indica el grupo al que pertenece el propietario.</p>
+<p><b>&lt;tamaño&gt;</b> indica el tamaño del archivo en bytes.</p>
+<p><b>&lt;fecha&gt;</b> indica la fecha y hora de creación o de última actualización 
+del archivo.</p>
+<p><b>&lt;nombre&gt;</b> indica el nombre del archivo por el que le identificamos en 
+el sistema.</p>
+<h3>2.5 PERMISOS DE ARCHIVOS</h3>
+<p>En Unix se establece control de acceso individualmente para cada archivo. Hay 
+tres tipos de usuarios que pueden acceder a un archivo: <b>propietario, grupo y 
+resto de usuarios</b>. Cada uno de ellos puede tener los tres tipos de permisos 
+que hay sobre archivos: <b>lectura (r)</b>, <b>escritura (w)</b> y <b>ejecución 
+(x)</b>.</p>
+<p align="left"><b>| pro | gru | res |</b><br>
+<b>| rwx | rwx | rwx |</b></p>
+<p style="MARGIN-BOTTOM: 0pt; MARGIN-LEFT: 0.64cm">&nbsp;</p>
+<p>Cuando aparece un <b>–</b> en vez de una de estas letra es que se carece de 
+ese permiso.</p>
+<p>Cada ámbito tiene tres bits y son independientes por lo que tengo 2^3 = 8 
+tuplas diferentes. También se pueden expresar los permisos en la base octal. 
+Habitualmente se dan permisos 755 en base octal (el propietario tiene todos (7), 
+y el grupo y el resto sólo pueden leer y ejecutar). Para cambiar los permisos de 
+un archivo se utiliza la orden chmod:</p>
+<p>$ <b>chmod 750 miFichero</b></p>
+<p>Da todos los permisos al usuario (111b=7) lectura y ejecución al grupo 
+(101b=5) y ningún permiso al resto (000b=0)</p>
+<p>También podríamos usar la notación simbólica de permisos (usuario ( u ), 
+grupo ( g ), otros ( o ), añadir_permiso (+ ), quitar_permiso ( - ), lectura ( r 
+), escritura ( w ), y ejecución ( x ) )</p>
+<p>$ <b>chmod g+w miFichero</b></p>
+<p>Permite al grupo del usuario propietario escribir en miFichero</p>
+<p>Para cambiar el propietario de un archivo se utiliza la orden siguiente:</p>
+<p>$ <b>chown nuevo_usurio archivo(s)</b></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Borrar archivos que contienen metacaracteres en su nombre.</h3>
+<p>En ocasiones se generan archivos, por error o no, que continen caracteres 
+extraños o metacaracteres como <b>?</b>, <b>*</b>,<b>^C</b> ,<b>^H</b>, etc. y 
+que no pueden ser borrados habitualmente con el comando <b>rm</b>. Para eliminar 
+estos archivos se puede emplear el siguiente método:</p>
+<ol>
+	<li>Listar el directorio en el que se encuentre con el comando ls -li, con 
+	el fin de anotar el i-nodo que le corresponde. 
+	<pre class="caja">ls -li [directorio]</pre>
+	</li>
+	<li>Buscar en ese directorio el archivo con el número de i-nodo que le 
+	corresponde y borrarlo: 
+	<pre class="caja">find [directorio] -inum [i-nodo] -ok -exec rm {} \;</pre>
+	</li>
+</ol>
+<p>La opción -ok se incluye para que pida confirmación.</p>
+<p>&nbsp;</p>
+<i><b><font FACE="Times New Roman" SIZE="5">
+<p ALIGN="LEFT">Guía de Ejercicios Prácticos - Sistema Operativo Unix</p>
+</font><font FACE="Times New Roman">
+<p ALIGN="LEFT">Consignas:</p>
+<p ALIGN="LEFT">a. Efectuar la siguiente guía de ejercicios colocando en cada 
+uno de ellos el COMANDO utilizado</p>
+<p ALIGN="LEFT">y el RESULTADO obtenido.</p>
+</font></b></i><font FACE="Times New Roman">
+<p ALIGN="LEFT">1. Conectarse al sistema .</p>
+<p ALIGN="LEFT">2. Asignar una clave a su cuenta</p>
+<p ALIGN="LEFT">3. Verificar qué usuarios están conectados al sistema</p>
+<p ALIGN="LEFT">4. Averiguar cuál es el nombre de su terminal</p>
+<p ALIGN="LEFT">5. Verificar qué procesos tiene activos sobre el sistema</p>
+<p ALIGN="LEFT">6. Verificar cuál es la fecha y hora actual</p>
+<p ALIGN="LEFT">7. Imprimir sobre la terminal el calendario del mes actual y 
+luego el de todo el año próximo.</p>
+<p ALIGN="LEFT">8. Limpiar la pantalla</p>
+<p ALIGN="LEFT">9. Desconectarse del sistema</p>
+<p ALIGN="LEFT">10. Conectarse al sistema y verificar cuál es el home directoy 
+correspondiente</p>
+<p ALIGN="LEFT">11. Listar el directorio de trabajo</p>
+<p ALIGN="LEFT">12. Idem 11, pero por pantalla</p>
+<p ALIGN="LEFT">13. Listar completo el directorio de trabajo</p>
+<p ALIGN="LEFT">14. Listar todas las entradas que comiencen con “O” o con “o”</p>
+<p ALIGN="LEFT">15. Listar todos los archivos del tipo directorios</p>
+<p ALIGN="LEFT">16. Ver el contenido de un archivo de texto</p>
+<p ALIGN="LEFT">17. Generar dos archivos “arch1” y “arch2” sin utilizar un 
+editor de texto</p>
+<p ALIGN="LEFT">18. Crear el directorio “di0” y luego “di1” como hijo de “di0”</p>
+<p ALIGN="LEFT">19. Ubicarse en el directorio “di0”</p>
+<p ALIGN="LEFT">20. Verificar que se encuentra en el directorio “di1”</p>
+<p ALIGN="LEFT">21. Borrar el directorio “di0”</p>
+<p ALIGN="LEFT">22. Concatenar el contenido de “arch1” con “arch2” en un archivo 
+“arch3”</p>
+<p ALIGN="LEFT">23. Indicar la cantidad de líneas, palabras y caracteres que 
+contienen cada uno de los archivos del ej. 22</p>
+<p ALIGN="LEFT">24. Contar la cantidad de archivos que existen en su directorio 
+sin hacerlo manualmente</p>
+<p ALIGN="LEFT">25. Verificar los permisos de sus archivos</p>
+<p ALIGN="LEFT">26. Quitarle al directorio “di0” el permiso de ejecución para 
+todos los usuarios incluyendo al dueño</p>
+<p ALIGN="LEFT">27. Ubicarse en el directorio “di0”</p>
+<p ALIGN="LEFT">28. Restaurar todos los permisos de “di0”</p>
+<p ALIGN="LEFT">29. Quitar el permiso de escritura al archivo “arch1”</p>
+<p ALIGN="LEFT">30. Editar el archivo “arch1” con el VI, modificarlo y grabarlo</p>
+<p ALIGN="LEFT">31. Restaurar los permisos de “arch1”</p>
+<p ALIGN="LEFT">32. Comparar el resultado de ejecutar date;who&gt;&gt;log con [date,who]&gt;&gt;log</p>
+<p ALIGN="LEFT">33. Construir un proceso en background que ejecute date, who y 
+ps, redirigiendo la salida a un archivo “arch4”</p>
+<p ALIGN="LEFT">34. Preparar un proceso en background que espere 2 minutos, 
+liste completo los directorios /etc, /dev y /usr redireccionando la salida a un 
+archivo “arch4”</p>
+<p ALIGN="LEFT">35. Preparar un proceso que busque todos los archivos con 
+extensión “c” </p>
+</font><font FACE="Book Antiqua" SIZE="2"><i>
+<p ALIGN="LEFT">&nbsp;</p>
+<p ALIGN="LEFT">Guía de Trabajos Prácticos Pág. </i></font>
+<font FACE="Times New Roman" SIZE="2">2</p>
+</font><font FACE="Times New Roman">
+<p ALIGN="LEFT">36. Preparar un proceso que busque todos los archivos con 
+extensión “os2”, redireccionando el standard output y el standard error</p>
+<p ALIGN="LEFT">37. Generar un proceso en background que lleve más tiempo que el 
+que le toma desconectarse, pero con la posibilidad de no ser abortado al 
+desconectarse. Desconectarse</p>
+<p ALIGN="LEFT">38. Conectarse y verificar el resultado del proceso lanzado en 
+37</p>
+<p ALIGN="LEFT">39. Copiar el archivo /etc/password con el nombre “sesamo”</p>
+<p ALIGN="LEFT">40. Seleccionar las cinco últimas líneas del archivo “sesamo”. 
+Grabarlas en el archivo “cola”</p>
+<p ALIGN="LEFT">41. Seleccionar las primeras cinco líneas del archivo “sesamo”. 
+Grabarlas en el archivo “cabeza”</p>
+<p ALIGN="LEFT">42. Ordenar el achivo “cola” por el nombre del usuario</p>
+<p ALIGN="LEFT">43. Ordenar el archivo “cabeza” por el segundo campo</p>
+<p ALIGN="LEFT">44. Seleccionar los dos primeros campos del archivo “cabeza” y 
+con ellos generar un archivo “head”</p>
+<p ALIGN="LEFT">45. Seleccionar los dos últimos campos del archivo “cola” y con 
+ellos generar un archivo “tail”</p>
+<p ALIGN="LEFT">46. Unir las columnas de “cab” con las de “ola” generando el 
+archivo “headtail”</p>
+<p ALIGN="LEFT">47. Listar los archivos ocultos del directorio de trabajo</p>
+<p ALIGN="LEFT">48. Imprimir en papel el valor de las variables de ambiente del 
+shell</p>
+<p ALIGN="LEFT">49. Copiar el archivo “arch4” con el nombre “file4”</p>
+<p ALIGN="LEFT">50. Mover el archivo “file4” a otro directorio</p>
+<p ALIGN="LEFT">51. Crear enlaces de “file4” en dos directorios distintos</p>
+<p ALIGN="LEFT">52. Comparar “arch4” con “file4”</p>
+<p ALIGN="LEFT">53. Editar “file4”, modificarlo y grabarlo</p>
+<p ALIGN="LEFT">54. Comparar “file4” con “arch4”</p>
+<p ALIGN="LEFT">55. Buscar a partir del directorio raíz todos los archivos cuyos 
+nombres comiencen con “e”</p>
+<p ALIGN="LEFT">56. Crear una variable de ambiente del shell llamada FECHA cuyo 
+valor sea el comando date y ejecutar&nbsp; el mismo utilizando la variable</p>
+<p ALIGN="LEFT">57. Modificar el archivo .profile para lograr “personalizar o 
+customizar” su cuenta. Explicar cómo se procede. Adjuntar una copia impresa del 
+archivo</p>
+<p ALIGN="LEFT">58. Restaurar el archivo .profile como lo recibió del 
+administrador. Explicar cómo se procede.</p>
+<p ALIGN="LEFT">59. Enviar mensajes a cada uno de los usuarios del sistema en 
+forma individual</p>
+<p ALIGN="LEFT">60. Controlar los mensajes recibidos</p>
+<p ALIGN="LEFT">61. Comunicarse con otro usuario en forma interactiva, acordando 
+un protocolo de comunicaciones</p>
+<p ALIGN="LEFT">62. Impedir que otros usuarios le envíen mensajes</p>
+<p ALIGN="LEFT">63. Enviar un mensaje a todos los usuarios incluido ud. Mismo</p>
+<p ALIGN="LEFT">64. Enviar un archivo a través del mail</p>
+<p ALIGN="LEFT">65. Escribir un banner</p>
+<p>66. Crear un usuario apagar</p>
+<p>&nbsp;</p>
+<hr>
+<div id="page">
+	<div id="frame">
+		<div id="content">
+			<div class="post hentry category-bash category-linux tag-bash tag-find tag-linux tag-mmin tag-mtime tag-size tag-unix" id="post-64">
+				<div class="entry">
+					&nbsp;&nbsp; <font size="6">Buscar</font><ul>
+						<li>
+						<div class="center" align="center">
+							<div id="wrapper">
+								<div id="wrapper_r">
+									<div id="whitebox">
+										<div id="whitebox_m">
+											<div id="area">
+												<div id="maincolumn_full">
+													<div class="nopad">
+														<table class="contentpaneopen" id="table1">
+															<tr>
+																<td vAlign="top">
+																<ul>
+																	<li><strong>
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	find 
+																	directorio
+																	<font color="#008000">
+																	-opcion1 
+																	-opcion2</font> 
+																	....</span></strong></li>
+																</ul>
+																<blockquote>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	Opciones:</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-name</font></strong> 
+																	nombre del 
+																	archivo (o 
+																	directorio) 
+																	a buscar</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-user</font></strong> 
+																	todos los 
+																	archivos del 
+																	usuario que 
+																	especifiquemos</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-type x
+																	</font>
+																	</strong>
+																	donde x 
+																	puede ser: b 
+																	= archivo de 
+																	bloque, c = 
+																	archivo tipo 
+																	carácter, d 
+																	= 
+																	directorio, 
+																	f = fichero 
+																	normal, l = 
+																	enlace 
+																	simbólico.
+																	</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-print</font></strong> 
+																	muestra en 
+																	pantalla la 
+																	ruta de todo 
+																	el archivo</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-perm [-]nnn</font></strong> 
+																	buscaría 
+																	todos los 
+																	archivos 
+																	cuyos 
+																	permisos de 
+																	acceso sean 
+																	los 
+																	indicados 
+																	(enoctal).
+																	</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-size n</font></strong> 
+																	buscaría 
+																	todos los 
+																	archivos con 
+																	n bloques 
+																	(512 bytes). 
+																	Con size nc 
+																	los de n 
+																	bytes ó 
+																	caracteres.
+																	</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-follow</font></strong> 
+																	buscaría 
+																	siguiendo 
+																	los posibles 
+																	enlaces</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-exec xx 
+																	&quot;{}&quot; &quot;;&quot;
+																	</font>
+																	</strong>
+																	sirve para 
+																	ejecutar un 
+																	determinado 
+																	comando &quot;xx&quot; 
+																	en los 
+																	archivos 
+																	encontrados.<strong><font color="#008000">
+																	</font>
+																	</strong>
+																	</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-xdev</font></strong> 
+																	no extender 
+																	la búsqueda 
+																	a otros 
+																	sistemas de 
+																	archivos</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-not</font></strong> 
+																	invierte lo 
+																	que va 
+																	detrás</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-empty</font></strong> 
+																	busca 
+																	archivos o 
+																	directorios 
+																	vacios</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-links n</font></strong> 
+																	busca 
+																	archivos o 
+																	directorios 
+																	con n 
+																	enlaces.</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-inum n</font></strong> 
+																	encuentra el 
+																	archivo con 
+																	el número de 
+																	enlace n</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'">
+																	<strong>
+																	<font color="#008000">
+																	-nouser</font></strong> 
+																	usuarios que 
+																	no 
+																	pertenecen 
+																	ya al 
+																	sistema</span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	&nbsp;<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'"><font color="#ff00ff">Ejemplo:</font></span></p>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">
+																	&nbsp;<span style="FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: 'Times New Roman','serif'"><strong><font color="#008000">find 
+																	/ -nouser -exec 
+																	rm -r &quot;{}&quot; 
+																	&quot;;&quot; </font>
+																	</strong>&#8594;<strong><font color="#008000">
+																	</font>
+																	</strong>
+																	buscaríamos 
+																	a partir del 
+																	directorio 
+																	raíz todos 
+																	los archivos 
+																	y 
+																	directorios 
+																	de usuarios 
+																	que ya no 
+																	pertenecen 
+																	al sistema y 
+																	los 
+																	borraríamos.</span></p>
+					<ul>
+						<font FACE="Times New Roman">
+						<li>
+						<span style="font-size: 12pt; color: black; font-family: 'Times New Roman',serif">Para buscar los ficheros más grandes del sistema:<br>
+						</span>
+						<span style="font-size: 12pt; font-family: 'Times New Roman',serif">
+						<b><font color="#008000">f</font></b></span><b><font color="#008000"><span style="font-size: 12pt; font-family: 'Times New Roman',serif">ind / -size +100000k -exec ls -lh '{}' \;
+						</span></font></b> 
+						</li>
+</font><font FACE="Times New Roman">
+						<li>
+						<span style="font-size: 12pt; color: black; font-family: 'Times New Roman',serif">Para buscar los ficheros modificados recientemente 
+						(Último día):<br></span>
+						<span style="font-size: 12pt; font-family: 'Times New Roman',serif">
+						<b><font color="#008000">find / -mtime 0 -exec ls -lh '{}' \;
+						</font></b></span></li></font>
+						<font FACE="Times New Roman">
+						<li>
+						<span style="font-size: 12pt; color: black; font-family: 'Times New Roman',serif">Para buscar los ficheros modificados recientemente 
+						(Último minuto):<br></span><font color="#008000">
+						<span style="font-size: 12pt; font-family: 'Times New Roman',serif; font-weight: 700">find / -mmin 0 -exec ls -lh '{}' \;</span></font></li>
+						<li>
+						<span style="font-size: 12pt; color: black; font-family: 'Times New Roman',serif">Para buscar los ficheros 
+						que tienen permiso 777 en el directorio UTILITI_AMB_51</span></li>
+						</font>
+</font>
+						<font FACE="Times New Roman,serif" color="#008000">
+						<li><b>find UTILITI_AMB_51 -perm 777</b></li>
+						<li><font FACE="Times New Roman">
+						<span style="font-size: 12pt; color: black; font-family: 'Times New Roman',serif">Para buscar los ficheros 
+						que tienen permiso 777 en el directorio UTILITI_AMB_51</span></font></li>
+						<li><b>find /prg/kbpp01/interfaces/servprod -perm 777</b></li>
+						<li><font FACE="Times New Roman">
+						<span style="font-size: 12pt; color: black; font-family: 'Times New Roman',serif">Para buscar los 
+						archivos txt que se encuentran en el archivo servprod_20081031.txt</span></font></li>
+						<li><b>grep .txt servprod_20081031.txt | awk '/txt/ { 
+						print $5, $6, $7, $8 $9}' &gt; ggg</b></li>
+						<li><font FACE="Times New Roman">
+						<span style="font-size: 12pt; color: black; font-family: 'Times New Roman',serif">Para buscar los 
+						archivos txt que se encuentran en el archivo servprod_20081031.txt 
+						y los separa con un +</span></font></li>
+						<li><b>grep .txt servprod_20081031.txt | awk '/txt/ { 
+						print &quot;+&quot;, $5,&nbsp; &quot;+&quot;, $6,&nbsp; &quot;+&quot;, $7, &quot;+&quot;, $8, 
+						&quot;+&quot;, $9, &quot;+&quot; }'</b></li>
+						<li><font FACE="Times New Roman">
+						<span style="font-size: 12pt; color: black; font-family: 'Times New Roman',serif">Para buscar los 
+						archivos txt que se encuentran en el archivo servprod_20081031.txt 
+						y los separa con tabulador</span></font></li>
+						<li><b>grep .txt servprod_20081031.txt | awk '/txt/ { 
+						print &quot;</b><span class="fullpost"><span style="font-size: 100%"><code>\t</code></span></span><b>&quot;, 
+						$5,&nbsp; &quot;</b><span class="fullpost"><span style="font-size: 100%"><code>\t</code></span></span><b>&quot;, 
+						$6,&nbsp; &quot;</b><span class="fullpost"><span style="font-size: 100%"><code>\t</code></span></span><b>&quot;, 
+						$7, &quot;</b><span class="fullpost"><span style="font-size: 100%"><code>\t</code></span></span><b>&quot;, 
+						$8, &quot;</b><span class="fullpost"><span style="font-size: 100%"><code>\t</code></span></span><b>&quot;, 
+						$9, &quot;</b><span class="fullpost"><span style="font-size: 100%"><code>\t</code></span></span><b>&quot; 
+						}' </b></li>
+					</ul>
+																	<p>&nbsp;</p>
+																	</font>
+																	<font FACE="Times New Roman,serif" color="#008000">
+																	<p>&nbsp;</p>
+																	</font><font FACE="Times New Roman">
+																	<font FACE="Times New Roman">
+																	<p>&nbsp;</p>
+																	</font>
+																	<p class="MsoNormal" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal">&nbsp;</p>
+																</blockquote>
+																</td>
+															</tr>
+															<tr>
+																<td vAlign="top">&nbsp;</td>
+															</tr>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<p>&nbsp;</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</font>
+<p>&nbsp;</p>
+<p align="left"><font color="#0000FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></p>
+
+</body>
+
+</html>

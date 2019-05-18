@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="status" value="revisión1" />
+	<infoitem key="notes" value="Se debera mostrar el Logotipo de la Empresa" />
+	<infoitem key="showOnOpen" value="true" />
+</info>

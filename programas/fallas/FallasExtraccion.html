@@ -1,0 +1,214 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="es">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>FallasExtraccion</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+
+<body bgcolor="#C0C0C0">
+<p align="center"><u><font size="6" color="#0000FF">FALLAS EXTRACCIÓN</font></u></p>
+<a href="\estructura\inicio-Menu-Principal.html">Regresar</a>
+ <hr>
+<p align="left"><font color="#0000FF"><b>Proceso CFTIDUC001.sh</b></font><br>
+<PRE>  + /TCANTV/EXTRACCION/IDOC/batch/CFTIDUC001.sh 20070104 
+Ciclo de Facturacion :C<br>
+Fecha para Data Flow mm/dd/aaaa :01/04/2007 
+Modo de ejecucion 1=prod 
+bad argument 
+<br>
+Inicio de Proceso: Wed Oct 10 16:50:49 2007 
+Archivo Log: PEXTIDOCFACFPRO02_101007_165049.log 
+<br>
+E J E C U T A N D O P L A N PEXTIDOCFACFPRO02......!!!!! 
+<br>
+Ejecucion Fallo .... 
+Fin Proceso: Wed Oct 10 16:50:55 2007 
+[srvft37|12575|16818|SAPPCOM|INFO|10/10/2007 4:50:52 PM|/appl/ddfq01/scriptsqa/Log/PEXTIDOCFACFPRO02_101007_165049.log] 
+<br>
+Plan Execution: Plan[PEXTIDOCFACFPRO02] Failed: Invalid Property value. UT -- 0x1, UT -- 0xFD 10/10/2007 4:50:00 PM </PRE>
+<p align="left"><font color="#0000FF"><b>Acciones a Tomar:</b></font><br>
+  Revisar si existe en el directorio /TCANTV en archivo fecha_ciclo LA FECHA CON 
+QUE SUBMITES EL JOB</p>
+ <hr>
+<p align="left"><font color="#0000FF"><b>Proceso CFTFCUC022_CUS1.sh</b></font><br>
+  Inicio de Proceso: Mon Oct 15 16:17:22 2007<br>
+Archivo Log: PEXTDOC1CRPLCEL02_151007_161722.log<br>
+<br>
+E J E C U T A N D O P L A N PEXTDOC1CRPLCEL02 CUS1......!!!!!<br>
+<br>
+Ejecucion Fallo ....<br>
+Fin Proceso: Mon Oct 15 16:17:46 2007<br>
+[srvft37|2623|32662|SAPPCOM|INFO|10/15/2007 4:17:45 PM|/appl/ddfq01/scriptsqa/L\<br>
+og/PEXTDOC1CRPLCEL02_151007_161722.log]<br>
+Plan Execution: Plan[PEXTDOC1CRPLCEL02] Failed: Unable to connect to the DFS ag\<br>
+ent. Is it running? 10/15/2007 4:17:00 PM<br>
+  &nbsp;</p>
+<p align="left"><font color="#0000FF"><b>Acciones a Tomar:</b></font><br>
+  esto sucede cuando entran varios a la vez en la base de datos darle rerun y 
+solucionas la falla</p>
+   <hr>
+<p align="left"><font color="#0000FF"><b>Proceso CFTFMUC003.sh</b></font><br>
+  /data/extraccion/ITCVDDFB/Input/Ready/PRI.RMCA.DDF.*.*.20070201.C01.PROD.txt 
+no\t found<br>
+/data/extraccion/ITCVDDFB/Input/Ready/PRI.RMCA.DDF.*.*.20070201.C01.PROD.txt 
+no\t found<br>
+El archivo de Convenio a usar para fecha 01 y Ciclo C20070201, no existe<br>
+  &nbsp;</p>
+<p align="left"><font color="#0000FF"><b>Acciones a Tomar:</b></font><br>
+  Crear el archivo de convenio </p>
+   <hr>
+<p align="left"><font color="#0000FF"><b>Proceso CFTSGUD001.sh</b></font><br>
+  + /TCANTV/INTERFACES/INSUMOS/batch/CFTSGUD001.sh 50000<br>
+[H [2J<br>
+Inicio Segmentador:<br>
+Hora inicio: Mon Oct 29 08:14:40 GMT 2007<br>
+Espacio disponible:<br>
+Filesystem kbytes used avail %used Mounted on<br>
+/dev/vgKq02prg/lvprgkbpq02<br>
+10240000 4779944 5417456 47% /prg/kbpq02<br>
+<br>
+08:14:41 10/29/07 INFO INICIO proceso de segmentacion en ejecuci n<br>
+this.dirEnv/prg/kbpq02/interfaces/insumos/BRSGKBPB<br>
+this.dirEnv1/appl/kbpq02/data/CDM<br>
+Exception in thread &quot;main&quot; java.lang.NoClassDefFoundError: oracle/jdbc/driver/O\<br>
+racleDriver<br>
+<br>
+at com.cantv.dc.kenan.util.ConexionBaseDatos.conectar(ConexionBaseDatos.java:5\0)<br>
+at com.cantv.dc.kenan.util.RegistroEntradas.conectar(RegistroEntradas.java:67)<br>
+at com.cantv.dc.kenan.brecha.dev_fa010.Segmentador.&lt;init&gt;(Segmentador.java:92)<br>
+at com.cantv.dc.kenan.brecha.dev_fa010.Segmentador.main(Segmentador.java:597)<br>
+proceso cancelado: 1<br>
+08:14:43 10/29/07 INFO FIN proceso de segmentacion de archivos<br>
+  &nbsp;</p>
+<p align="left"><font color="#0000FF"><b>Acciones a Tomar:</b></font><br>
+  Se le notificara al ANALISTA DESARROLLADOR (CARLOS NIEVES)ya que es un 
+problema de configuracion <br>
+Esto ocurrio con el proceso ZFTSGUD001 de tasacion</p>
+  <hr>
+  <p align="left"><font color="#0000FF"><b>Proceso CFTFMUC003.sh</b></font><br>
+  + /TCANTV/EXTRACCION/FM/batch/CFTFMUC003.sh 20070501 PRODUCCION PROD<br>
+	-rw-rw-r-- 1 uddfqa prueba 0 Oct 16 13:40 /data/extraccion/ITCV\<br>
+	DDFB/Input/Ready/PRI.RMCA.DDF.20070501.134000.20070501.C01.PROD.txt<br>
+	-rwxrwxrwx 1 ctmft ctmagent 0 Oct 23 13:25 /data/extraccion/ITCV\<br>
+	DDFB/Input/Ready/PRI.RMCA.DDF.20070501.132519.20070501.C01.PROD.txt<br>
+	El archivo de Convenio para fecha 01 y Ciclo C20070501 a Procesar es: /data/ext\<br>
+	raccion/ITCVDDFB/Input/Ready/PRI.RMCA.DDF.20070501.132519.20070501.C01.PROD.txt\<br>
+	-rw-r--r-- 1 ddfpic pic 344 Oct 16 10:39 /data/extraccion/ITRM\<br>
+	DDFB/Input/Ready/RMCA_C01_20070501_SALDODOC1_1700029_PROD.TXT<br>
+	-rw-r--r-- 1 ddfpic pic 172 Oct 23 11:09 /data/extraccion/ITRM\<br>
+	DDFB/Input/Ready/RMCA_C01_20070501_SALDODOC1_1700038_PROD.TXT<br>
+	El archivo de RMCA para fecha 01 y ciclo C20070501 a Procesar es: /data/extracc\<br>
+	ion/ITRMDDFB/Input/Ready/RMCA_C01_20070501_SALDODOC1_1700029_PROD.TXT<br>
+	/data/extraccion/ITRMDDFB/Input/Ready/RMCA_C01_20070501_SALDODOC1_1700038_PROD.\TXT<br>
+	<br>
+	Inicio de Proceso: Tue Oct 23 13:32:18 2007<br>
+	Archivo Log: PEXTDOC1MSVRFAC02_231007_133218.log<br>
+	<br>
+	<br>
+	E J E C U T A N D O P L A N PEXTDOC1MSVRFAC02 ......!!!!!<br>
+	<br>
+	<br>
+	Ejecucion Fallo ....<br>
+	Fin Proceso: Tue Oct 23 13:33:05 2007<br>
+	[srvft37|18411|107740|SAPPCOM|INFO|10/23/2007 1:33:02 PM|/appl/ddfq01/scriptsqa\<br>
+	/Log/PEXTDOC1MSVRFAC02_231007_133218.log]<br>
+	Plan Execution: Plan[PEXTDOC1MSVRFAC02] Failed: Error while processing the 
+	data\<br>
+	for the step 'Cargos Anteriores RMCA' Error opening Flat File Source file 
+	'/da\<br>
+	ta/extraccion/ITRMDDFB/Input/Ready/RMCA_C01_20070501_SALDODOC1_1700029_PROD.TXT\<br>
+	/data/extraccion/ITRMDDFB/Input/Ready/RMCA_C01_20070501_SALDODOC1_1700038_PROD\<br>
+	.TXT'. No error occurred. Operating-system error number = 0 The operation 
+	com\<br>
+	pleted successfully. Error while processing the data for the step 'Cargos 
+	Ante\<br>
+	riores RMCA' Error while processing the data for the step 'Cargos Anteriores 
+	RM\<br>
+	CA' Error while processing the data for the step 'Cargos Anteriores RMCA' 
+	Error\<br>
+	while processing the data for the step 'Cargos Anteriores RMCA' Error while 
+	pr\<br>
+	ocessing the data for the step 'Cargos Anteriores RMCA' Error while 
+	processing \<br>
+	the data for the step 'Cargos Anteriores RMCA' Error while processing the 
+	data \<br>
+	for the step 'Cargos Anteriores RMCA' Error while processing the data for 
+	the s\<br>
+	tep 'Cargos Anteriores RMCA' Error while processing the data for the step 'Carg\<br>
+	os Anteriores RMCA' Error opening Flat File Source file '/data/extraccion/ITRMD\<br>
+	DFB/Input/Ready/RMCA_C01_20070501_SALDODOC1_1700029_PROD.TXT /data/extraccion/I\<br>
+	TRMDDFB/Input/Ready/RMCA_C01_20070501_SALDODOC1_1700038_PROD.TXT'. No error 
+	oc\<br>
+	curred. Operating-system error number = 0 The operation completed 
+	successfully\<br>
+	. 10/23/2007 1:33:00 PM<br>
+  <font color="#0000FF"><b>Acciones a Tomar:</b></font><br>
+  Es que se encuentra el archivo de saldos o convenio dos veces eliminar el 
+	anterior y dejar el actual&nbsp; /data/extraccion/ITRMDDFB/Input/Ready</p>
+  <hr>
+  <p align="left"><font color="#0000FF"><b>Proceso CFTBIUE003.sh</b></font><br>
+  + /TCANTV/KENAN/FACTURACION/batch/CFTBIUE003.sh 20070210 20 CUS3<br>
+	/appl/kbpq02/data/log/KQ02CUS3/Eventual/bip* not found<br>
+	20 KQ02CUS3<br>
+	Ejecutando BIP en modo Eventual<br>
+	Log Directory - /appl/kbpq02/data/log//Eventual<br>
+	&lt;------- Not enough arguments to run BIP Eventual -------&gt;<br>
+	&lt;---- Pass &lt;Run Cycle&gt; &lt;Number of BIPs&gt; &lt;Customer DB&gt; ----&gt;<br>
+  <font color="#0000FF"><b>Acciones a Tomar:</b></font><br>
+  Esto ocurre cuando mandaron a ejecutar una cuenta con un ciclo y pertenece a 
+	otro ciclo <br>
+	solucion chequear la cuenta en la B/D KQ02CAT ARBOR tabla:CMF en el campo 
+	BILL PERIOD a que ciclo pertenece esta cuenta </p>
+  <hr>
+  <p align="left"><font color="#0000FF"><b>Proceso CFTTRUC001.sh</b></font><br>
+  + /TCANTV/EXTRACCION/TRANSFER/batch/CFTTRUC001.sh Z3 PROD COR<br>
+	Nombre: ITFCDDFB_C03_211107_165327_Z3.txt<br>
+	ITFCDDFB_C08_221107_232433_Z3.txt<br>
+	El archivo a Transmitir es /data/extraccion/ITFCDDFB/Output/Ready/ITFCDDFB_C03_\211107_165327_Z3.txt<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	/data/extraccion/ITFCDDFB/Output/Ready/ITFCDDFB_C08_\221107_232433_Z3.txt<br>
+	Usage: mv [-f] [-i] [-e warn|force|ignore] f1 f2<br>
+	mv [-f] [-i] [-e warn|force|ignore] f1 ... fn d1<br>
+	mv [-f] [-i] [-e warn|force|ignore] d1 d2<br>
+	<br>
+	Transmision del archivo ITFCDDFB_C03_211107_165327_Z3.txt<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	ITFCDDFB_C08_221107_232433_Z3.txt, Fallo ... rejecutar el proceso ...!!!<br>
+  <br>
+  <font color="#0000FF"><b>Acciones a Tomar:</b></font><br>
+  Es motivado a que en el directorio&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	/data/extraccion/ITFCDDFB/Output/Ready <br>
+	Se encuentran archivos de dos ciclos renombrar los archivos de un ciclo que 
+	no se han pasado<br>
+	y reejecutar los jobs CFTTRUC006 ,07,08,09,Y,10</p>
+  <hr>
+  <p align="left"><font color="#0000FF"><b>Proceso CFTBUB008.sh</b></font><br>
+  No se deberá reiniciar ya que&nbsp; devuelve al último directorio en el que estuviéramos. <br>
+  <br>
+  <font color="#0000FF"><b>Acciones a Tomar:</b></font><br>
+  No se deberá reiniciar ya que&nbsp; devuelve al último directorio en el que estuviéramos. <br>
+  &nbsp;</p>
+  <hr>
+  <p align="left"><font color="#0000FF"><b>Proceso CFTBUB009.sh</b></font><br>
+  No se deberá reiniciar ya que&nbsp; devuelve al último directorio en el que estuviéramos. <br>
+  <br>
+  <font color="#0000FF"><b>Acciones a Tomar:</b></font><br>
+  No se deberá reiniciar ya que&nbsp; devuelve al último directorio en el que estuviéramos. <br>
+  &nbsp;</p>
+  <hr>
+<p align="left">&nbsp;</p>
+
+</body>
+
+</html>

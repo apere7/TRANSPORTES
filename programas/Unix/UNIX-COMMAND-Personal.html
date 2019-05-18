@@ -1,0 +1,777 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>VENEZUELA</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+
+<body bgcolor="#C0C0C0">
+<H2 align="center">El lenguaje HTML</H2><H4>Apartado 1: Las etiquetas</H4>
+<BLOCKQUOTE>
+##############################################################################
+<p align="left"> <H4>Apartado 1: Las etiquetas</H4>
+##############################################################################
+</BLOCKQUOTE>
+<p align="left">Para copiar un directorio se usa cp -r<br>
+  $ cp -r /etc /backup/<br>
+  Tendremos /backup/etc, y dentro de ese directorio tendremos lo mismo que hay en /etc<br>
+  uy &uacute;til.</p><p><br>
+#<br>
+#print &quot; Nombre Campo Valor Num. Regs % &quot;;<br>
+#print &quot;------------------ ------------------------------ ---------- ---------&quot;;<br>
+<br>
+#!/bin/ksh<br>
+#<br>
+##############################################################################<br>
+# Esqueleto de shell script <br>
+# Analista:<br>
+# Fecha: <br>
+# Descripcion: <br>
+#<br>
+##############################################################################<br>
+<a name="comando_ls_">comando ls </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a></p><p>Trabajar con varios archivos y buscar patrones en texto 
+Expansión de Archivos <br>
+Metacaracteres (Operadores): <br>
+* : varios caracteres <br>
+? : un caracter <br>
+[rangos] : caracteres o rangos <br>
+Ejemplo:<br>
+ls [abc].txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Equivalente (dependiendo) por ejemplo a: ls a.txt c.txt</p><p>lista sólo los archivos que otros pueden leer y escribir en el directorio 
+principal. <br>
+ls -l / | grep '.......rw'<br>
+ls -l | grep '.rwxrwx...'<br>
+ls -l | grep 'drwxr-xr-x' |awk '$1!~/^drwx/{print $9}'<br>
+cd ;ls; echo &quot;hola $USER&quot;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Varios Comandos<br>
+{ cd ;ls; echo &quot;hola $USER&quot;;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Varios comandos como si fuera uno<br>
+ls &gt;&amp; logs.txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # stdout y stderr a misma archivo<br>
+ls -l | cut -f 1 -d ' ' | head -n 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Ejemplo tubería </p>
+<p style="font-family: Lucida Sans Unicode; font-size: 10.0pt; color: #1A1A1A; margin: 0in">
+ls -1 | wc -l&nbsp; </p>
+<p style="font-family: Lucida Sans Unicode; font-size: 10.0pt; color: #1A1A1A; margin: 0in">
+#como mostrarlo en una los archivos en una sola cifra</p><p style="font-family: verdana; font-size: 10.0pt; margin: 0in" lang="EN-US">&nbsp;</p>
+<p style="font-family: verdana; font-size: 10.0pt; margin: 0in" lang="EN-US">l<span style="color:black">s 
+-al | awk '{ for(i=1; i&lt;=9; i++) { printf &quot;%s|&quot;, $i } printf &quot;\n&quot; } '&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p style="font-family: Verdana; font-size: 10.0pt; margin: 0in" lang="ES-VE">
+#Los lista con el separador (pay) palabra por palabra ( -rw-r--r--|1|root|root|6720|Jan|2|09:01|utmpx| 
+)</p><p style="font-family: Verdana; font-size: 10.0pt; margin: 0in" lang="ES-VE">&nbsp;</p>
+<p style="font-family: verdana; font-size: 10.0pt; color: black; margin: 0in" lang="EN-US">
+ls -la | sed -n 's/ */|/gp'</p><p style="font-family: verdana; font-size: 10.0pt; color: black; margin: 0in" lang="EN-US">
+Los lista con separador (pay) letra por letra ( |d|r|w|x|r|-|x|r|-|x||2||r|o|o|t||s|y|s||9|6||J|u|l||2|8||2|0|0|6||x|i|m|i|a|n| 
+)</p><p style="font-family: Verdana; font-size: 10.0pt; margin: 0in" lang="ES-VE">&nbsp;</p>
+<p style="font-family: Verdana; font-size: 10.0pt; margin: 0in" lang="ES-VE">
+<code>ls -alt</code> –&gt; Listado detallado del directorio mostrando todos los 
+archivos por orden cronológico (el más nuevo primero)</p><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>##############################################################################<br>
+<a name="comando_awk">comando awk</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#A">
+Regreso</a><br>
+ls -l|awk '$1!~/^drwx/{print $9}'<br>
+ls -l|awk '$1!~/^drwxr-xr-x/{print $9&quot;\t&quot; $5&quot;\t&quot; $6, $7}'<br>
+ls -l|awk '$1!~/^drwxr-xr-x/{print $1&quot;\t&quot; $9&quot;\t&quot; $6&quot;\t&quot; $7&quot;\t&quot;}'<br>
+ls -l|awk '$1!~/^d*/{print $1&quot;\t&quot; $9&quot;\t&quot; $6&quot;\t&quot; $7&quot;\t&quot;}</p><p>#muestra solo algunas columnas del ls<br>
+# ls -l | awk 'BEGIN {OFS=&quot;\t&quot;}{print $9, $5, $6, $7}' <br>
+#<br>
+# ls -l | awk '{print $9&quot;\t&quot; $5&quot;\t&quot; $6, $7}' <br>
+#</p><p>##############################################################################<br>
+-a: lista los ocultos.<br>
+-R: lista recursivamente<br>
+-r: lista en orden inverso<br>
+-f: visualiza un * en los ejecutables, una / junto a directorios y @ junto E. 
+simbólicos.<br>
+-s: muestra el tamaño en bloques.<br>
+-l: formato largo.<br>
+-i: muestra el i-nodo<br>
+-d: para ver el listado de los directorios sin lo que llevan dentro<br>
+<br>
+ls -lR /prg/kbpp01/interfaces/gestioncob | grep -v total | more<br>
+ls -lR /prg/kbpp01/interfaces/gestioncob | grep -v total | grep / | more<br>
+ls -lR /prg/kbpp01/interfaces/gestioncob | grep -v total | grep -v / | more<br>
+ls -lR /prg/kbpp01/interfaces/gestioncob | grep -v total | grep -v / &gt; alejo.txt<br>
+cat alejo.txt | grep &quot; &quot; &gt; alejo.txt<br>
+ls -Ra ./*/mensaje (lista a partir de mi directorio actual y mira en el 
+siguiente directorio sea cual sea su nombre.</p><p>##############################################################################<br>
+<a name="comando_find__Opciones:">comando
+find&nbsp; Opciones:</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+-name nombre del archivo (o directorio) a buscar<br>
+-user todos los archivos del usuario que especifiquemos<br>
+-type x donde x puede ser: b = archivo de bloque, c = archivo tipo carácter, d = 
+directorio, f = fichero normal, l = enlace simbólico. <br>
+-print muestra en pantalla la ruta de todo el archivo<br>
+-perm [-]nnn buscaría todos los archivos cuyos permisos de acceso sean los 
+indicados (en octal)<br>
+-size n buscaría todos los archivos con n bloques (512 bytes). Con size nc los 
+de n bytes ó caracteres. <br>
+-follow buscaría siguiendo los posibles enlaces<br>
+-exec xx &quot;{}&quot; &quot;;&quot; sirve para ejecutar un determinado comando &quot;xx&quot; en los 
+archivos encontrados. <br>
+-xdev no extender la búsqueda a otros sistemas de archivos<br>
+-not invierte lo que va detrás<br>
+-empty busca archivos o directorios vacios<br>
+-links n busca archivos o directorios con n enlaces.<br>
+-inum n encuentra el archivo con el número de enlace n<br>
+-nouser usuarios que no pertenecen ya al sistema<br>
+<br>
+find /prg/kbpp01/interfaces/*/*/bin -name &quot;connection.properties&quot; -exec ls -ltr 
+{} \;<br>
+find /prg/kbpp01/interfaces/*/* -name &quot;connection.properties&quot; -exec ls -ltr {} 
+\; | awk '{print $9 }' &gt; salida.txt<br>
+<br>
+Selecciona archivos cuyo tamaño es mayor que el número especificado.<br>
+find /bin -size +20c -print 2&gt; /dev/null <br>
+Selecciona archivos cuyo tamaño es menor que el número especificado.<br>
+find /bin -size -20c -print 2&gt; /dev/null<br>
+elecciona archivos cuyo tamaño es exactamente el número especificado.<br>
+Se puede agregar una de las letras [bckw] para indicar que el número <br>
+representa bloques, bytes, kilobytes, o palabras de 2 bytes, respectivamente.<br>
+find /bin -size 20c -print 2&gt; /dev/null<br>
+Se buscarán los archivos cuyo grupo sea grupo.<br>
+find / -group unix100 -print 2&gt; /dev/null<br>
+Se buscarán los archivos cuyo usuario sea nombre.<br>
+find / -name unix100 -print 2&gt; /dev/null <br>
+##############################################################################<br>
+<a name="comando_chgrp">comando chgrp</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a></p><p>chgrp gintq02 run.sh tiene que ser con el usuario dueño <br>
+<br>
+<br>
+##############################################################################<br>
+<a name="comando_diff">comando diff</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a></p><p>Muestra en el centro de de los dos archivos la diferencia con el signo (pay |)<br>
+diff compa01.txt compa02.txt<br>
+sdiff -s dgpq02_$YESTERDAY.txt dgpq02_$DIA.txt <br>
+diff -wi dgpq02_$YESTERDAY.txt dgpq02_$DIA.txt <br>
+<br>
+##############################################################################<br>
+<a name="espacios_discos">espacios discos</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+df -i visualiza el punto de montaje, el número de bloques libres y si le pongo 
+la opción -i los inodos libres en cada sistema de archivos.<br>
+du[opciones] directorio|fichero informa de los bloques totales que usa el 
+directorio sumando lo que ocupan los objetos de toda la rama que cuelga de él.<br>
+Para ver que sistemas de archivos hay y con qué características se montan cuando 
+el sistema arranca hay que mirar el fichero fstab:<br>
+cd /etc/ | more fstab<br>
+<br>
+<br>
+<br>
+##############################################################################<br>
+<a name="Copiar_cp">Copiar cp</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+-p: al hacer la copia mantiene la fecha, hora, propietario y permisos<br>
+-f: sobrescribe el destino en caso de existir aunque no se tenga permiso de 
+escritura sobre el pero es necesario tener permiso sobre el directorio en el que 
+está.<br>
+cp -R carpeta1 carpeta2 ? Copiará la carpeta1 y todo su contenido en carpeta2.<br>
+<br>
+<br>
+##############################################################################<br>
+Eliminar rm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+-i: pregunta antes de borrar cada archivo.<br>
+-f: elimina el archivo aunque no tengamos permiso para suprimirlo, pero se debe 
+de tener permiso sobre el directorio en el que está.<br>
+-r: borra todo el contenido del directorio así como el propio directorio.<br>
+rm -r directorio1 <br>
+<br>
+##############################################################################<br>
+procesos ps&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+-f muestra información del proceso que se está ejecutando.<br>
+-e todos los procesos activos en el sistema.<br>
+-ef todos los procesos que se están ejecutando en el sistema con información 
+sobre el proceso.<br>
+-l formato largo<br>
+ps [opciones] muestra información de los procesos activos.<br>
+ps sin parámetros muestra solo los procesos que son propiedad del usuario actual<br>
+<br>
+##############################################################################<br>
+prioridad nice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+nice -5 ./shell_13&amp; disminuye la prioridad en cinco unidades al scrip llamado 
+shell_13 que se está ejecutando en segundo plano. <br>
+<br>
+##############################################################################<br>
+Vamos ha describir cada uno de los campos de que dispone el fichero &quot;shadow&quot;, 
+para editarlo tienes que tener privilegios de root. Empezaremos de izquierda a 
+derecha y teniendo en cuenta que cada campo está separado por dos puntos tal y 
+como indica la figura de arriba. <br>
+1.- Nombre del usuario<br>
+2.- Contraseña cifrada del usuario. Si está vacío el campo el usuario no tiene 
+contraseña. Si tiene &quot;*LK*&quot;, la cuenta está bloqueada. &quot;*RETIRED*&quot;, si la cuenta 
+esta retirada. Si tiene &quot;*&quot; la contraseña se pondrá mas tarde.<br>
+3.- Número de días que han pasado desde el 1 de enero de 1970 hasta que se 
+cambio por última vez la contraseña.<br>
+4.- El número de días que deben de pasar hasta que el usuario pueda volver a 
+cambiar la contraseña. Un 0 indica que se puede cambiar ya.<br>
+5.- Número de días validos con la contraseña actual. 99999 es lo max. que se 
+puede poner.<br>
+6.- Numero de días de antelación con el que se avisa a un usuario de que debe de 
+cambiar su contraseña.<br>
+7.- después de caducada la contraseña cuantos días quieres que le funcione la 
+cuenta. Si hay -1 ningún día.<br>
+<br>
+Descripción de los campos de /etc/passwd <br>
+jose:x:1000:100:jose antonio:/home/jose:/bin/bash <br>
+Vamos a describir a continuación cada uno de los campos del fichero passwd de un 
+usuario cualquiera:<br>
+1.- Login del usuario. Debe de tener entre 1 y 8 caracteres.<br>
+2.- Clave del usuario. Si aparece una x es que está encriptada en /etc/shadow.<br>
+3.- Número de identificación del usuario (UID)<br>
+4.- Número de identificación del grupo (GID) al que pertenece el usuario.<br>
+5.- Comentario sobre el usuario (en este ejemplo aparece el nombre)<br>
+6.- Directorio del HOME del usuario.<br>
+7.- Shell de conexión del usuario.<br>
+Nota: para quitar la contraseña a un usuario por medio de estos ficheros, en/etc/passwd 
+borro la x y añado un espacio y en /etc/shadow borro el segundo campo (El de la 
+clave). <br>
+<br>
+##############################################################################<br>
+comprimir y descomprimir: en ,tar,gz ó ,tar,bz:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+para descomprimir un archivo en ,tar,gz haremos lo siguiente:<br>
+tar -zxvf paquete .tar.gz<br>
+para descomprimir un archivo en ,tar,bz haremos lo siguiente:<br>
+tar -jxvf paquete .tar.bz<br>
+Con ambos se nos creará una carpeta nueva con los datos descomprimidos<br>
+<br>
+##############################################################################<br>
+shells:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+Para ver de los tipos de Shell de que dispone nuestro sistema utilizamos el 
+siguiente comando: <br>
+cat /etc/shells. En el caso de Unix nos sale lo siguiente.<br>
+<br>
+##############################################################################<br>
+comando sudo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a></p><p>Nota: los últimos cuatro comandos valen para cualquier distribución de Linux.<br>
+Comandos para la instalación de paquetes en modo Consola con APT <br>
+apt-cache search &quot;anjuta&quot;? busca el nombre o descripción del paquete que tenemos 
+entre comillas.<br>
+apt-cache show attr anjuta1.2.4 ? nos muestra información de los atributos del 
+paquete.<br>
+sudo apt-get install nombre_paquete ? instala el paquete especificado en 
+nombre_paquete.<br>
+sudo apt-get remove nombre_paquete ? borra el paquete especificado en 
+nombre_paquete<br>
+sudo apt-get - -purge remove nombre_paqute ? borra el paquete especificado en 
+nombre_paquete incluyendo los archivos de configuración.<br>
+sudo apt-get update ? actualiza la lista e información de los paquetes.<br>
+sudo apt-get upgrade ? actualizar el sistema.<br>
+sudo apt-cache pkgnames ? ver la lista de paquetes instalados.<br>
+sudo apt-get install -s paquete ? simula la instalación de un paquete.<br>
+sudo apt-cache show paquete ? consulta la información de un paquete.<br>
+sudo apt-cache showpkg paquete ? consulta las dependencias de un paquete.<br>
+sudo apt-cache depends paquete ? muestra las dependencias de un paquete.<br>
+sudo apt-get autoclean? elimina del cache versiones obsoletas <br>
+##############################################################################<br>
+Agregar un nuevo Usuario&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+useradd [opciones] nombre de usuario<br>
+Opciones:<br>
+-c comentario ? Para poner un comentario sobre el usuario<br>
+-d directorio ? Especificamos la trayectoria absoluta del directorio de conexión 
+HOME. En este directorio se copiarán los ficheros del usuario como el .profile<br>
+-m ? Si el directorio de conexión no existe lo crea, siempre que exista el 
+directorio padre de este.<br>
+-g grupo ? El grupo de usuarios al que se conecta el usuario. Debe existir 
+previamente.<br>
+-G grupo1,grupo2,.. ? Otros grupos a los que se añadirá el usuario.<br>
+-s shell ? Trayectoria absoluta del shell de conexión. Para el shell Korm hay 
+que poner la ruta /bin/ksh y para el shell bourne /bin/sh. <br>
+Ejemplo:<br>
+useradd -m -d /home/pruebas/pepiton -c&quot;pepiton rondelo&quot; -G grupillo pepiton<br>
+Si esta creada la carpeta pruebas, crea la carpeta de usuario pepiton, a<b>ñade el 
+usuario pepiton </b>al <b>grupo grupillo</b> con el comentario pepiton róndelo.<br>
+Nota: para ver a un usuario se utiliza el comando finger <br>
+##############################################################################</p><p>
+<br>
+Modificar la cuenta de un Usuario&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+usermod [opciones] nombre de usuario <br>
+opciones:<br>
+-s /bin/ksh ? Cambiará el shell del usuario a shell korm. Para el Borne shell lo 
+mismo pero en vez de ksh se pone sh. (en etc/shells está la lista de shell).<br>
+-m -d /usr/ciclo/usuarioA usuarioB <br>
+Suponiendo que exista el directorio ciclo creará el directorio usuarioA, 
+trasladará a este todo lo contenido en el antiguo directorio (usuarioB), borrará 
+este y establecerá el nuevo como directorio de conexión (HOME) para el usuario.<br>
+Nota: Las opciones de este comando así como la de otros, son solo algunos 
+ejemplos. Si se quiere un listado completo de las opciones de cada comando se 
+puede utilizar la ayuda que ofrece el comando &quot;man&quot;. <br>
+Ejemplo:<br>
+usermod -m -d /home/pepita pepita<br>
+Estando creado /home crea la carpeta pepita traslada todo el antiguo HOME de 
+pepita a esta carpeta, la convierte en su nuevo HOME y borra el antiguo HOME de 
+pepita. <br>
+<br>
+Borrar a un Usuario&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+userdel [opciones] nombre usuario <br>
+Con este comando borramos la cuenta de un usuario del sistema, pero no borra su 
+directorio ni todos los objetos de su propiedad. Estos aparecen después como 
+propiedad de un usuario, con el identificador UID que tenía el usuario antes de 
+ser borrado. Para borrar del sistema todos los objetos propiedad de un usuario 
+que ya no existe, podemos hacerlo con el comando find.<br>
+Ejemplo: <br>
+userdel pepito<br>
+find / -nouser -exec rm -r &quot;{}&quot; &quot;;&quot;<br>
+El primer comando borrará al usuario pepito del sistema y el segundo encontrará 
+los objetos que no pertenecen a ningún usuario y los borrará. <br>
+##############################################################################<br>
+Crear un Grupo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+groupadd nombre<br>
+El comando groupadd crea un grupo con el nombre que le pongamos. El grupo que 
+hemos creado lo podemos ver en: /etc/group<br>
+<br>
+Modificar las propiedades de un Grupo <br>
+groupmod -A juan gjuan<br>
+juan es el login del usuario.<br>
+gjuan es el nombre del grupo al que queremos que pertenezca. Seguirá<br>
+perteneciendo a los grupos que pertenecía anteriormente.<br>
+groupmod -R juan gjuan saca al usuario juan del grupo gjuan.<br>
+<br>
+Eliminar un Grupo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+groupdel gjose ? elimina el grupo gjose <br>
+##############################################################################<br>
+<br>
+##############################################################################</p><p>Comando echo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+Expansión de Archivos (lista de caracteres entre llaves y separados por comas 
+SIN espacios )<br>
+Ejemplo: <br>
+echo {tres,cuatro,cinco}coches<br>
+Resultado: trescoches cuatrocoches cincocoches <br>
+##############################################################################<br>
+COMPRIMIR Y DESCOMPRIMIR ARCHIVOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+EL EMPAQUETADOR UNIVERSAL: TAR<br>
+El comando tar es utilizado normalmente para empaquetar o desempaquetar 
+ficheros, empaquetar significa guardar en un único fichero una lista de varios 
+ficheros, o el contenido de todo un directorio (o varios directorios). El 
+formato del comando tar es:<br>
+tar [opciones] [fichero1][fichero2]...[ficheroN]<br>
+Donde es la lista de opciones y hasta es la lista de ficheros a añadir o extraer 
+del archivo. <br>
+En las opciones de tar hay algunas que son importantes para su uso :<br>
+c: Crea un nuevo archivo tar.<br>
+v: Modo verbose, quiere decir que mostrará por pantalla las operaciones que va 
+realizando archivo por archivo, si no se pone esta opción ejecutará la acción 
+pero en pantalla no veremos el proceso.<br>
+x: Extrae los archivos (Descomprime los ficheros que se encuentran dentro del 
+archivo tar).<br>
+t: Nos muestra el contenido del archivo tar. Esto es cuando tu deseas saber que 
+es lo que contiene ese archivo sin necesidad de desempaquetarlo.<br>
+p: Mantiene los permisos originales de los archivos.<br>
+f: Cuando se usa con la opción -c, usa el nombre del archivo especificado para 
+la creación del archivo tar; cuando se usa con la opción -x, retira del archivo 
+el archivo específico.<br>
+z: Comprime el archivo tar con gzip.<br>
+j: Comprime el archivo tar con bzip2.<br>
+Aqui algunos ejemplos :<br>
+$ tar cvf archivo.tar /etc<br>
+<br>
+Empaquetará todos los ficheros de /etc en el fichero archivo.tar c le dice a tar 
+que cree un nuevo fichero de archivo. La opción v fuerza a tar en el modo 
+verbose, (osea mostrando en pantalla el progreso de la tarea que realiza, en 
+este caso los nombres de los ficheros según se archivan).<br>
+La opción f le dice a tar que el siguiente argumento archivo.tar es el nombre 
+del archivo a crear. El resto de los argumentos de tar son los nombres de 
+ficheros y directorios a añadir al archivo.<br>
+$ tar xvf archivo.tar<br>
+Extraerá el fichero archivo.tar en el directorio actual.<br>
+Una de las ventajas que nos ofrece tar es que respeta la estructura de 
+directorio existente en el momento de empaquetar, de forma que al desempaquetar 
+se reproducirá como estaba originalmente.<br>
+Ten en cuenta que hasta ahorita solo hemos empaquetado, mas no comprimido.<br>
+Para poder empaquetar y comprimir se usa el siguiente comando :<br>
+$ tar czvf archivo.tar.gz /etc <br>
+Si queremos descomprimir igual que en la linea que desempaquetamos, solo que 
+ahora cambiamos la c por la x de extracción :<br>
+$tar xzvf archivo.tar.gz <br>
+Hay otro modo de compresión que es el formato bz2. Para comprimir y descomprimir 
+es el mismo procedimiento que con gz, la única diferencia es que ya no va la 
+letra z, sino la j.<br>
+Ejemplo :<br>
+Para poder empaquetar y comprimir se usa el siguiente comando :<br>
+$ tar cjvf archivo.tar.bz2 /etc<br>
+Si queremos descomprimir , las opciones son muy similares a la orden anterior, 
+solo que ahora le cambiamos la c por la x de extracción :<br>
+$tar xjvf archivo.tar.gz<br>
+<br>
+Comprimiendo: GZIP<br>
+Hay una herramienta especializada en la compresión y descompresión, es la 
+herramienta gzip<br>
+Normalmente, el fichero a comprimir se reemplaza por otro con la extensión.gz, 
+manteniéndose los mismos permisos, propietarios y tiempos de modificación. <br>
+La cantidad de compresión obtenida depende de varios factores, típicamente, 
+texto o código fuente se reduce en un porcentaje del 60 al 70%. Un fichero ya 
+comprimido, como la mayoría de archivos gráficos (gif, jpg), difícilmente 
+reducirán su tamaño.<br>
+$ gzip -9 archivo.tar<br>
+El resultado será archivo.tar.gz. <br>
+Para comprimir, puedes poner gzip -d y el nombre del archivo gz a descomprimir<br>
+$ gzip -d archivo.tar.gz<br>
+En esta ocasión archivo.tar.gz será descomprimido y reemplazado por archivo.tar. 
+Un equivalente a gzip -d es el comando gunzip : <br>
+$gunzip archivo.tar.gz<br>
+Ojo que puedes comprimir y descomprimir con esta herramienta , asi como con la 
+poderosa herramienta tar, ambas tienen las mismas extensiones y son compatibles 
+entre ambas. por ejemplo puedes comprimirlo con tar y descomprimirlo con gzip y 
+viceversa. La diferencia esta en que tar también hace la función de empaquetado.<br>
+<br>
+Extensiones ZIP<br>
+Comprimir y descomprimir los archivos zip, también es sencillo :<br>
+$zip -r documento.zip carpeta_o_archivo_a_comprimir<br>
+El parámetro r indica al comando zip que debe hacer una compresión de manera 
+recursiva, en el caso de comprimir un directorio , comprime todo lo que hay en 
+él.<br>
+<br>
+unzip documento.zip<br>
+Esta línea descomprime el fichero zip , y deja todos los archivos contenidos en 
+ella en la carpeta donde te encuentres en ese momento. <br>
+Hasta aquí lo relacionado con la compresión y empaquetamiento, ahora podrás 
+hacer tus backups (copias de seguridad fácilmente), comprimir tus directorios y 
+descomprimir toda la información que requieras con esta consola de comandos que 
+se cada vez se te hace mas familiar :) <br>
+##############################################################################<br>
+Comando grep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#A">Regreso</a><br>
+Las opciones principales son:<br>
+-c lo único que se hace es escribir el número de las líneas que satisfacen la 
+condición.<br>
+-i no se distinguen mayúsculas y minúsculas.<br>
+-l se escriben los nombres de los ficheros que contienen líneas buscadas.<br>
+-n cada línea es precedida por su número en el fichero.<br>
+-s no se vuelcan los mensajes que indican que un fichero no se puede abrir.<br>
+-v se muestran sólo las líneas que no satisfacen el criterio de selección<br>
+<br>
+Para buscar cualquier coincidencia con 'freebsd', podrias typear:<br>
+grep freebsd palabra.txt<br>
+<br>
+Grep es sensible a mayusculas y minusculas,<br>
+si quisieras buscar todas las coincidencias con palabra freebsd en palabra.txt
+<br>
+grep -i freebsd palabra.txt<br>
+<br>
+Digamos que tenemos muchos archivos .txt que queremos buscar la palabra freebsd
+<br>
+sin tener que hacer archivo por archivo de forma separada:<br>
+grep -i freebsd *.txt<br>
+<br>
+Ahora, digamos que estamos buscando la palabra perro y queremos ver cada archivo<br>
+en el sistema que contiene la palabra dog,<br>
+Primero tenemos que tener ir al directorio root, y hacer lo siguiente:<br>
+cd \<br>
+grep -R dog * |more<br>
+El |more en el final va a parar el texto que pasa por la pantalla,<br>
+para que lo puedas leer sin problemas,<br>
+<br>
+Nota: si te da este mensaje (Arguments too long.) es que existe tanta data <br>
+que no se puede mostrar <br>
+<br>
+<br>
+#########################################################################</p></p><div id="bg">
+	<div class="con">
+		<div class="sl-a">
+			<div class="sl">
+				<div class="post hentry category-tutoriales-ayudas tag-gnulinux tag-sistema-de-archivos" id="post-224" style="MARGIN-BOTTOM: 20px">
+					<div class="p-con">
+						<div class="snap_preview">
+							<ul>
+								<li><b>El directorio raíz es /</b> &#8594; De aquí 
+								cuelgan todos los directorios del sistema. 
+								Dentro del directorio raíz encontramos varios 
+								subdirectorios importantes: </li>
+							</ul>
+							<dl>
+								<dd>
+								<ul>
+									<li><b>/dev</b> &#8594; Aquí encontramos todos los 
+									dispositivos físicos del sistema (todo 
+									nuestro hardware). </li>
+								</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<ul>
+									<li><b>/etc</b> &#8594; Aquí encontramos los 
+									ficheros de configuración del sistema. 
+									</li>
+								</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<ul>
+									<li><b>/sbin</b> &#8594; Aquí tenemos los 
+									programas que solo puede lanzar el 
+									superusuario. Los programas de este 
+									directorio y los del siguiente pueden ser 
+									invocados directamente poniendo su nombre en 
+									la consola. </li>
+								</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<ul>
+									<li><b>/bin</b> &#8594; Aquí tenemos los programas 
+									que pueden lanzar todos los usuarios del 
+									sistema. </li>
+								</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<ul>
+									<li><b>/lib</b> &#8594; Contiene las bibliotecas 
+									necesarias para que se ejecuten los 
+									programas que tenemos en /bin y /sbin 
+									únicamente. </li>
+								</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<ul>
+									<li><b>/proc</b> &#8594; No deberíamos modificar 
+									el contenido de este directorio. Aquí se 
+									encuentra ficheros que reciben o envian 
+									informacion al kernel. 
+									</li>
+								</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<ul>
+									<li><b>/usr</b> &#8594; Este directorio contiene 
+									los programas de uso general para todos los 
+									usuarios. </li>
+								</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<dl>
+									<dd>
+									<ul>
+										<li><b>/usr/X11R6</b> &#8594; Aquí tenemos los 
+										programas de nuestro X-Window. Para 
+										quien no lo sepa, X-Window no es mas que 
+										el sistema de ventanas. 
+										</li>
+									</ul>
+									</dd>
+								</dl>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<dl>
+									<dd>
+									<ul>
+										<li><b>/usr/bin</b> &#8594; Aquí tenemos 
+										programas de uso general 
+										</li>
+									</ul>
+									</dd>
+								</dl>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<dl>
+									<dd>
+									<ul>
+										<li><b>/usr/doc</b> &#8594; Aquí tenemos 
+										cierta documentacion del sistema. 
+										</li>
+									</ul>
+									</dd>
+								</dl>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<dl>
+									<dd>
+									<ul>
+										<li><b>/usr/etc</b> &#8594; Aquí tenemos 
+										ficheros de configuracion de uso global. 
+										</li>
+									</ul>
+									</dd>
+								</dl>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<dl>
+									<dd>
+									<ul>
+										<li><b>/usr/include</b> &#8594; Aquí tenemos 
+										las cabezeras de C y C++. Son ficheros 
+										con extension .h. Los programadores 
+										comprenderan su significado. 
+										</li>
+									</ul>
+									</dd>
+								</dl>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<dl>
+									<dd>
+									<ul>
+										<li><b>/usr/lib</b> &#8594; Aquí tenemos las 
+										bibliotecas de nuestros programas. 
+										</li>
+									</ul>
+									</dd>
+								</dl>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<dl>
+									<dd>
+									<ul>
+										<li><b>/usr/man</b> &#8594; En este directorio 
+										encontramos los manuales. 
+										</li>
+									</ul>
+									</dd>
+								</dl>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<dl>
+									<dd>
+									<ul>
+										<li><b>/usr/sbin</b> &#8594; Este directorio 
+										contiene los programas de administración 
+										del sistema. </li>
+									</ul>
+									</dd>
+								</dl>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<dl>
+									<dd>
+									<ul>
+										<li><b>/usr/src</b> &#8594; Aquí se almacenan 
+										los códigos fuentes de nuestros 
+										programas. </li>
+									</ul>
+									</dd>
+								</dl>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<ul>
+									<li><b>/var</b> &#8594; Este directorio contiene 
+									información temporal de los programas. Pero 
+									cuidado, no es como el tmp de windows, no 
+									deberemos borrar ni modificar el contenido 
+									de este directorio. </li>
+								</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<ul>
+									<li><b>/boot</b> &#8594; Aquí tenemos los archivos 
+									de configuración del arranque del sistema 
+									(como por ejemplo GRUB). </li>
+								</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<ul>
+									<li><b>/media</b> &#8594; Aquí encontramos todas 
+									las unidades físicas que tenemos montadas. 
+									Discos duros, unidades de dvd, pendrive, … 
+									</li>
+								</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<ul>
+									<li><b>/opt</b> &#8594; Podemos usarla para 
+									instalar aplicaciones que no vienen en los 
+									repositorios, por ejemplo o aquellas que 
+									compilamos a mano. </li>
+								</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<ul>
+									<li><b>/home</b> &#8594; Es un directorio donde 
+									tenemos los directorios personales de todos 
+									los miembros del sistema. </li>
+								</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<dl>
+									<dd>
+									<ul>
+										<li><b>~</b> &#8594; Es nuestro directorio 
+										personal. Algo similar a Mis Documentos. 
+										Aquí es donde guardaremos nuestros 
+										documentos, musica, películas, fotos … 
+										También podemos referirnos a este 
+										directorio como /home/[nuestro nombre] 
+										</li>
+									</ul>
+									</dd>
+								</dl>
+								</dd>
+							</dl>
+							<dl>
+								<dd>
+								<dl>
+									<dd>
+									<ul>
+										<li><b>~/Desktop</b> &#8594; Aquí tenemos 
+										nuestro querido escritorio.</li></ul></dd></dl></dd></dl></div></div></div></div></div></div></div><p align="left">
+##############################################################################
+  &nbsp;</p><p>Envia correo del ls -la </p>
+<p>ls -la | mailx -s &quot;Tmtulo del mensaje&quot; <a href="mailto:apere7@cantv.com.ve">
+apere7@cantv.com.ve</a> <br>
+&nbsp;</p>
+<p>envias archivo por correo (pero esta enviando basura) </p>
+<p>uuencode archivo.txt archivo.txt | mailx -s 'archivo adjunto' apere7@cantv.com.ve</p></body></html>
+
+
+<pre>Hola,     BIENVENIDOS
+esta     ES MI PÁGINA WEB
+     y esto un texto preformateado</pre>
+

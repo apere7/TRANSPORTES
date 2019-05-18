@@ -1,0 +1,118 @@
+<html>
+
+
+<head>
+<meta http-equiv="Content-Language" content="es">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>FallasKenan</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+
+<body bgcolor="#C0C0C0">
+<p align="center"><u><font size="6" color="#0000FF">Transporte WEB</font></u></p>
+<hr>
+
+<PRE>
+Pasos Iníciales si no tiene la carpeta 
+(Repositorios Para Transporte) en el escritorio.
+
+1) Checkout SVN
+	· En el escritorio deberá crear una carpeta de nombre: Repositorios Para Transportes
+	· Dentro de esa carpeta unas sub carpeta de nombre:  SACAS_DES       y      SACAS_QA
+	· Dar click derecho en cualquier parte del escritorio
+	<IMG SRC="../../Imagenes/sacas/Captura01.JPG" ALT="PRUEBA1" BORDER=2> <br>
+	
+	· Para copiar la de desarrollo seria así:
+	<IMG SRC="../../Imagenes/sacas/Captura02.JPG" ALT="PRUEBA1" BORDER=2> <br>
+	
+	
+	
+	· Para realizar el CHECKOUT  que copiar Elemento en  carpeta de QA seria así:
+	<IMG SRC="../../Imagenes/sacas/Captura03.JPG" ALT="PRUEBA1" BORDER=2> <br>
+	
+	
+	
+	1) En el Escritorio del PC.
+		· Dar doble click en carpeta (Repositorio Para Transporte)
+		· En la sub-carpeta ( SACAS_DES )  dar click derecho   SVN UPDATE
+		· En la sub-carpeta ( SACAS_QA )  dar click derecho    SVN UPDATE 
+		· Luego dentro de la sub-carpeta ( SACAS_QA )
+		· Crear una carpeta 2014-N0004455314 
+		· Dentro de la Anterior Crear sub-carpetas  SacasWeb   o   SacasCore
+		· Copiar Manualmente los elementos solicitados
+		· Realizar el ADD y COMMIT
+		· Copiar MANUALMENTE  los elementos a transportar en la ruta /home/UsuariodeRed/TRANSPORTE
+		· Según sea el caso SacasCore ir al Paso 2
+	
+	
+	
+	
+	
+	Pasos Para realizar Transporte
+	          
+	2) SacasWeb Entrar en PUTTY  
+	· Usuario de Red 
+	· su - jbst02 y te pedirá el password(Cantv2012)
+	· Luego colocas m y se activara el menú
+	
+	Estas son las rutas hacia el WSACALINC01:
+	Si es *.war                             /tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/deploy
+	Si es *.properties                /tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/conf
+	Si es *.xml                            /tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/conf
+	Si es exportar_tablas         /tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/conf
+	
+	
+Pasos por Menú SacasWeb : (WSACALINC01) (IP=10.1.192.2)
+
+                                                                      Tipos: (.xml) - (.properties) - (.jar) - (.war) (exportar_tablas)
+
+
+               [a]  apere7  ...................
+               [b]  eriosg01...................
+               [b]  dquiro  ...................
+               [d]  omarin  ...................
+               [e]  ogarc3  ...................
+               [f]  mvega1  ...................
+               [g]  crinco  ...................
+               [h]  cmont3  ...................
+               [i]  lgarci19...................
+
+               
+               [1]  ............................ Detiene el JBOSS SERVIDOR (WSACALINC01)
+               [2]  ............................ Muestra Elementos que se encuentran en la carpeta:/home//TRANSPORTE
+               [3]  ............................ Copia archivos a las rutas que corresponda (WSACALINC01)
+               [4]  ............................ Activa el JBOSS  SERVIDOR (WSACALINC01)
+               [5]  ............................ Reporte de Transporte Realizado en (WSACALINC01) y enviado por Mail
+               [6]  ............................ Muestra Los Pasos Para Realizar Transportes
+
+               La ultima Opción realizada fue :
+
+
+               [9]  ............................ Salir
+               =======================
+               Entre la opción [1-9]:
+
+
+
+Nota: El paso 4 genera el archivo para el paso5 (CopiaWeb)
+
+
+
+
+
+</PRE>
+
+
+</body>
+
+</html>

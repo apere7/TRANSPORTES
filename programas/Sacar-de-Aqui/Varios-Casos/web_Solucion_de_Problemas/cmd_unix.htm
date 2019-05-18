@@ -1,0 +1,217 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Sintaxis del comando</title>
+</head>
+
+<body>
+    <TABLE bgcolor="#aaaaff" border="1" align="center">
+      <TR>
+        <TH width="30%">Sintaxis del comando</TH>
+
+        <TH>Utilidad</TH>
+      </TR>
+
+      <TR>
+        <TD>echo "texto cualquiera"</TD>
+
+        <TD>escribir un texto cualquiera en tu pantalla</TD>
+      </TR>
+
+      <TR>
+        <TD>ls</TD>
+
+        <TD>listar ficheros</TD>
+      </TR>
+
+      <TR>
+        <TD>wc -l fichero<BR>
+        wc -w fichero<BR>
+        wc -c fichero</TD>
+
+        <TD>contar las l&iacute;neas de un fichero o<BR>
+         contar las palabras de un fichero o<BR>
+         contar el n&uacute;mero de car&aacute;cteres</TD>
+      </TR>
+
+      <TR>
+        <TD>cp fichero_origen fichero_destino</TD>
+
+        <TD>copiar el fichero_origen al fichero_destino</TD>
+      </TR>
+
+      <TR>
+        <TD>mv nombre_antiguo nuevo_nombre</TD>
+
+        <TD>renombrar o mover un fichero</TD>
+      </TR>
+
+      <TR>
+        <TD>rm fichero</TD>
+
+        <TD>borrar un fichero</TD>
+      </TR>
+
+      <TR>
+        <TD>grep 'patr&oacute;n' fichero</TD>
+
+        <TD>buscar cadenas en un fichero<BR>
+        Ejemplo: grep 'cadena-a-buscar' fichero.txt</TD>
+      </TR>
+
+      <TR>
+        <TD>cut -b num_de_columna fichero</TD>
+
+        <TD>sacar datos de columnas de texto de ancho definido<BR>
+        Ejemplo: sacar los caracteres de la posici&oacute;n 5 a la 9<BR>
+        cut -b5-9 fichero.txt<BR>
+        No confundais este comando con "cat" que es algo
+        totalmente diferente</TD>
+      </TR>
+
+      <TR>
+        <TD>cat fichero.txt</TD>
+
+        <TD>mostrar un fichero.txt por stdout (tu pantalla)</TD>
+      </TR>
+
+      <TR>
+        <TD>file un_fichero</TD>
+
+        <TD>describir qu&eacute; tipo de fichero es un_fichero</TD>
+      </TR>
+
+      <TR>
+        <TD>read var</TD>
+
+        <TD>esperar a que el usuario introduzca algo y guardarlo
+        en la variable (var)</TD>
+      </TR>
+
+      <TR>
+        <TD>sort fichero.txt</TD>
+
+        <TD>ordenar las l&iacute;neas del fichero fichero.txt</TD>
+      </TR>
+
+      <TR>
+        <TD>uniq</TD>
+
+        <TD>borrar las l&iacute;neas duplicadas, usado en combinaci&oacute;n con sort
+        ya que uniq s&oacute;lo borra las l&iacute;neas duplicadas consecutivas<BR>
+        Ejemplo: sort fichero.txt | uniq<BR>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD>expr</TD>
+
+        <TD>hacer operaciones matem&aacute;ticas en el shell<BR>
+        Ejemplo: sumar 2 y 3<BR>
+        expr 2 "+" 3</TD>
+      </TR>
+
+      <TR>
+        <TD>find</TD>
+
+        <TD>buscar ficheros<BR>
+        Ejemplo: buscar por nombre:<BR>
+        find . -name nombre_del_fichero -print<BR>
+        Este comando tiene muchas posibilidades y opciones diferentes.
+        Desafortunadamente son demasiadas para explicarlas todas
+        en este art&iacute;culo.</TD>
+      </TR>
+
+      <TR>
+        <TD>tee</TD>
+
+        <TD>escribir datos por stdout (tu pantalla) y a un fichero<BR>
+        Normalmente se usa as&iacute;:<BR>
+        un-comando | tee fichero-de-salida<BR>
+        Escribe la salida de un-comando por la pantalla y a
+        el fichero de salida</TD>
+      </TR>
+
+      <TR>
+        <TD>basename fichero</TD>
+
+        <TD>devolver el nombre del fichero dado un nombre y
+        quitarle la ruta al directorio<BR>
+        Ejemplo: basename /bin/tux<BR>
+        devuelve s&oacute;lo tux</TD>
+      </TR>
+
+      <TR>
+        <TD>dirname fichero</TD>
+
+        <TD>devolver el nombre del directorio dado un nombre y
+        quit&aacute;ndole el nombre del fichero<BR>
+        Ejemplo: dirname /bin/tux<BR>
+        devuelve /bin</TD>
+      </TR>
+
+      <TR>
+        <TD>head fichero</TD>
+
+        <TD>mostrar algunas l&iacute;neas del principio de un fichero</TD>
+      </TR>
+
+      <TR>
+        <TD>tail fichero</TD>
+
+        <TD>mostrar algunas l&iacute;neas del final de un fichero</TD>
+      </TR>
+
+      <TR>
+        <TD>sed</TD>
+
+        <TD>sed es b&aacute;sicamente un programa para buscar y reemplazar. Lee el texto
+        de la entrada est&aacute;ndar (p.ej. una tuber&iacute;a) y escribe el resultado por
+        stdout (normalmente la pantalla). El patr&oacute;n de b&uacute;squeda es una expresi&oacute;n
+        regular (ver referencias). Este patr&oacute;n de b&uacute;squeda de se debe
+        confundir con la sintaxis de comodines (wildcard) del shell. Para reemplazar
+        la cadena linuxfocus con LinuxFocus es un fichero de texto usa:<BR>
+        cat texto.fichero | sed 's/linuxfocus/LinuxFocus/' &gt;
+        nuevotexto.fichero<BR>
+        Esto reemplaza la primera aparici&oacute;n de la cadena linuxfocus en
+        cada l&iacute;nea por LinuxFocus. Si hay l&iacute;neas en que linuxfocus
+        aparece varias veces y quieres reemplazarlas todas usa:<BR>
+        cat texto.fichero | sed 's/linuxfocus/LinuxFocus/g' &gt;
+        nuevotexto.fichero<BR>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD>awk</TD>
+
+        <TD>
+          La mayor&iacute;a de las veces awk se utiliza para extraer campos de una
+          l&iacute;nea de un texto.
+          El campo separador por defecto es un espacio. Para especificar uno
+          diferente se usa la opci&oacute;n -F.
+<PRE>
+ <SMALL>cat fichero.txt | awk -F, '{print $1 "," $3 }'
+</SMALL>
+</PRE>
+          Aqu&iacute; hemos usado la coma (,) como separador de campos e imprimimos
+          la columna primero y tercera ($1 $3). Si fichero.txt tiene l&iacute;neas como:
+<PRE>
+<SMALL>Adam Bor, 34, India
+Kerry Miller, 22, USA
+</SMALL>
+</PRE>
+          estonces mostrar&iacute;a lo siguiente:
+<PRE>
+<SMALL>Adam Bor, India
+Kerry Miller, USA
+</SMALL>
+</PRE>
+          Se pueden hacer muchas m&aacute;s cosas con awk pero este es
+          su uso m&aacute;s com&uacute;n.
+        </TD>
+      </TR>
+    </TABLE>
+</body>
+
+</html>

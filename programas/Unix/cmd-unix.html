@@ -1,0 +1,2169 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Sintaxis del comando</title>
+</head>
+
+<body>
+    <TABLE bgcolor="#aaaaff" border="1" align="center">
+      <TR>
+        <TH width="30%">
+    <a href="../index.html">
+    <IMG SRC="IMAGENES/ICINDICE.GIF"
+    WIDTH="19" HEIGHT="17" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"
+    ALT="Inicio leccion"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sintaxis del comando</TH>
+
+        <TH>Utilidad</TH>
+      </TR>
+
+      <TR>
+        <TD height="25">&nbsp;more fecha_ciclo | cat -n</TD>
+
+        <TD height="25">&nbsp;Con la opción <em>n</em> el comando <code>cat</code> 
+		numera las líneas de la salida previa</TD>
+      </TR>
+
+      <TR>
+        <TD height="25">cat -n /etc/passwd | sort | cut -d&quot;:&quot; -f1</TD>
+
+        <TD height="25">lista los usuarios y sus home directori enumeradas las 
+		lineas y los apache, bin, lp, etc</TD>
+      </TR>
+
+      <TR>
+        <TD height="27">cat -n /etc/passwd | sort -n | awk '$3 &gt;= 500 {print $1 
+		$6 }' FS=&quot;:&quot;</TD>
+
+        <TD height="27">lista los usuarios y sus home directori enumeradas las 
+		lineas sin los&nbsp; apache, bin, lp, etc</TD>
+      </TR>
+
+      <TR>
+        <TD height="27">grep '@' incoming_email | awk '{print $3}' | sort | uniq</TD>
+
+        <TD height="27">
+		<div id="envoltura1">
+			<div id="cuerpo1">
+				<div id="cuerpod1">
+					Se te pide un reporte con lista ordenada alfabéticamente de 
+					los correos entrantes. Muchos correos se repiten a través 
+					del reporte original, y solo se necesita uno de cada uno.
+				</div>
+			</div>
+		</div>
+		<p>&nbsp;</TD>
+      </TR>
+
+	  <TR>
+        <TD> Busca las ultimas 900 lineas y las guarda en archivo<BR>
+		     Busca en archivo anterior la palabra entre comillas</TD>
+
+        <TD><p>tail -900 CONVERGIA0-20100215-093659.log > sale</p>
+            grep -i "Procesando la linea Nro#" sale</TD>
+      </TR>
+	  
+      
+      <TR>
+        <TD height="23">echo &quot;texto cualquiera&quot;</TD>
+
+        <TD height="23">escribir un texto cualquiera en tu pantalla</TD>
+      </TR>
+
+      <TR>
+        <TD height="25">&nbsp;<p>df -P /TCANTV</p>
+		<p>df -k /TCANTV</TD>
+
+        <TD height="25">verificas el <font color="#0000FF"><b>File System</b></font> 
+		de /TCANTV&nbsp;<p>&nbsp;<code><a name="08">Volumen de datos, expresado 
+		en bloques </a></code>&nbsp;</p>
+		<p><code><a name="09">Volumen de datos, expresado en bloques de 1 Mb</a></code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TD>
+      </TR>
+	  
+	     <TR>
+        <TD height="25">&nbsp;<p>df -P /TCANTV</p>
+
+		<p>du -sk TCANTV</TD>
+
+        <TD height="25">verificas la <font color="#0000FF"><b>carpeta</b></font> 
+		de /prg/kbpp01/interfaces/servprod/ITW3KBPB&nbsp;<p>&nbsp;<code><a name="08">ffffff </a></code>&nbsp;</p>
+		<p><code><a name="09">Volumen de datos, expresado en bloques de 1 Mb</a></code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TD>
+      </TR>
+
+	   <TR>
+		/prg/kbpp01/interfaces/servprod/ITW2KBPB
+		srvft51 3: du -sk
+		157704 	  
+	  </TR>
+	  
+      <TR>
+        <TD>ls</TD>
+
+        <TD>listar ficheros</TD>
+      </TR>
+
+      <TR>
+        <TD>wc -l fichero<BR>
+        wc -w fichero<BR>
+        wc -c fichero</TD>
+
+        <TD>contar las l&iacute;neas de un fichero o<BR>
+         contar las palabras de un fichero o<BR>
+         contar el n&uacute;mero de car&aacute;cteres</TD>
+      </TR>
+
+      <TR>
+        <TD>cp fichero_origen fichero_destino</TD>
+
+        <TD>copiar el fichero_origen al fichero_destino</TD>
+      </TR>
+
+      <TR>
+        <TD>mv nombre_antiguo nuevo_nombre</TD>
+
+        <TD>renombrar o mover un fichero</TD>
+      </TR>
+
+      <TR>
+        <TD>rm fichero</TD>
+
+        <TD>borrar un fichero</TD>
+      </TR>
+
+      <TR>
+        <TD>grep -c PRUEBA registros.log<p>grep -c -i&nbsp; prueba registros.log<p>
+		grep -l PRUEBA registros.log<p>grep -n PRUEBA registros.log<p>grep -v 
+		PRUEBA registros.log</TD>
+
+        <TD><p>-c para contar las 
+		veces que se encuentra la palabra en el archivo.<br>
+		<p>-i para ignorar si el patrón está en mayúsculas y minúsculas.<br>
+		<p>-l para listar el archivo que contiene el patrón, esto es útil cuando se busca enserie de archivos
+		<p>-n para mostrar el número de línea donde se encontró el texto.<br>
+		<p>-v para mostrar las líneas donde no aparece el texto</TD>
+      </TR>
+
+      <TR>
+        <TD>cut -b num_de_columna fichero</TD>
+
+        <TD>sacar datos de columnas de texto de ancho definido<BR>
+        Ejemplo: sacar los caracteres de la posici&oacute;n 5 a la 9<BR>
+        cut -b5-9 fichero.txt<BR>
+        No confundais este comando con "cat" que es algo
+        totalmente diferente</TD>
+      </TR>
+
+      <TR>
+        <TD>cat fichero.txt</TD>
+
+        <TD>mostrar un fichero.txt por stdout (tu pantalla)</TD>
+      </TR>
+
+      <TR>
+        <TD>file un_fichero</TD>
+
+        <TD>describir qu&eacute; tipo de fichero es un_fichero</TD>
+      </TR>
+
+      <TR>
+        <TD>read var</TD>
+
+        <TD>esperar a que el usuario introduzca algo y guardarlo
+        en la variable (var)</TD>
+      </TR>
+
+      <TR>
+        <TD>sort fichero.txt</TD>
+
+        <TD>ordenar las l&iacute;neas del fichero fichero.txt</TD>
+      </TR>
+
+      <TR>
+        <TD>uniq</TD>
+
+        <TD>borrar las l&iacute;neas duplicadas, usado en combinaci&oacute;n con sort
+        ya que uniq s&oacute;lo borra las l&iacute;neas duplicadas consecutivas<BR>
+        Ejemplo: sort fichero.txt | uniq<BR>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD>expr</TD>
+
+        <TD>hacer operaciones matem&aacute;ticas en el shell<BR>
+        Ejemplo: sumar 2 y 3<BR>
+        expr 2 "+" 3</TD>
+      </TR>
+
+      <TR>
+        <TD>find</TD>
+
+        <TD>buscar ficheros<BR>
+        Ejemplo: buscar por nombre:<BR>
+        find . -name nombre_del_fichero -print<BR>
+        Este comando tiene muchas posibilidades y opciones diferentes.
+        Desafortunadamente son demasiadas para explicarlas todas
+        en este art&iacute;culo.</TD>
+      </TR>
+
+      <TR>
+        <TD>tee</TD>
+
+        <TD>escribir datos por stdout (tu pantalla) y a un fichero<BR>
+        Normalmente se usa as&iacute;:<BR>
+        un-comando | tee fichero-de-salida<BR>
+        Escribe la salida de un-comando por la pantalla y a
+        el fichero de salida</TD>
+      </TR>
+
+      <TR>
+        <TD>
+		<div id="page">
+			<div class="content">
+				<div class="primary">
+					<div class="post hentry category-it-general tag-aix tag-bdf tag-cat tag-comando tag-comandos tag-command tag-cp tag-crontab tag-df tag-export tag-grep tag-guia-rapida tag-guia-de-uso tag-hp-ux tag-linux tag-ls tag-ls-la tag-manual-de-uso tag-mkdir tag-more tag-mv tag-ps tag-pwd tag-rm tag-rmdir tag-set tag-tail tag-top tag-unix tag-vi tag-11509140 item entry" id="post-368">
+						<div class="itemtext">
+							<em><strong>top [-s segundos] [-d repeticiones]
+							</strong></em>
+							<p><em><strong>[-n num_procesos] [-f nombre_archivo]</strong></em></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p>&nbsp;</TD>
+
+        <TD>Con este comando, se pueden ver los procesos que están corriendo 
+		actualmente ordenados por uso de procesador&nbsp; de mayor a menor, también 
+		se ve información de uso de memoria y estadísticas generales del 
+		procesador. Se pueden usar las opciones que se muestran en el formato 
+		para incrementar los segundos de refrescamiento, generar una cantidad de 
+		repeticiones, mostrar nada más un número determinado de procesos y todo 
+		estarlo enviando a un archivo de texto
+		top 
+		top -6
+		</TD>
+      </TR>
+
+      <TR>
+        <TD>basename fichero</TD>
+
+        <TD>devolver el nombre del fichero dado un nombre y
+        quitarle la ruta al directorio<BR>
+        Ejemplo: basename /bin/tux<BR>
+        devuelve s&oacute;lo tux</TD>
+      </TR>
+
+      <TR>
+        <TD><code><a name="11">cat /etc/hosts | more</a></code></TD>
+
+        <TD><code><a name="10">La lista de computadoras conectadas a la red se 
+		encuentra en el archivo siguiente: /etc/hosts</a></code></TD>
+      </TR>
+
+      <TR>
+        <TD>dirname fichero</TD>
+
+        <TD>devolver el nombre del directorio dado un nombre y
+        quit&aacute;ndole el nombre del fichero<BR>
+        Ejemplo: dirname /bin/tux<BR>
+        devuelve /bin</TD>
+      </TR>
+
+      <TR>
+        <TD>head fichero</TD>
+
+        <TD>mostrar algunas l&iacute;neas del principio de un fichero</TD>
+      </TR>
+
+      <TR>
+        <TD>tail fichero</TD>
+
+        <TD>mostrar algunas l&iacute;neas del final de un fichero</TD>
+      </TR>
+
+      <TR>
+        <TD>sed</TD>
+
+        <TD>sed es b&aacute;sicamente un programa para buscar y reemplazar. Lee el texto
+        de la entrada est&aacute;ndar (p.ej. una tuber&iacute;a) y escribe el resultado por
+        stdout (normalmente la pantalla). El patr&oacute;n de b&uacute;squeda es una expresi&oacute;n
+        regular (ver referencias). Este patr&oacute;n de b&uacute;squeda de se debe
+        confundir con la sintaxis de comodines (wildcard) del shell. Para reemplazar
+        la cadena linuxfocus con LinuxFocus es un fichero de texto usa:<BR>
+        cat texto.fichero | sed 's/linuxfocus/LinuxFocus/' &gt;
+        nuevotexto.fichero<BR>
+        Esto reemplaza la primera aparici&oacute;n de la cadena linuxfocus en
+        cada l&iacute;nea por LinuxFocus. Si hay l&iacute;neas en que linuxfocus
+        aparece varias veces y quieres reemplazarlas todas usa:<BR>
+        cat texto.fichero | sed 's/linuxfocus/LinuxFocus/g' &gt;
+        nuevotexto.fichero<BR>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD>&nbsp;</TD>
+
+        <TD>
+          &nbsp;</TD>
+      </TR>
+
+      <TR>
+        <TD>&nbsp;</TD>
+
+        <TD>
+          &nbsp;<table width="100%" id="table2">
+			<tr>
+				<th colSpan="3">Comandos LINUX</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>adduser</td>
+				<td>Ver useradd.</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>alias</td>
+				<td>Crea atajos de comandos, lista los alias actuales.</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>apt-get</td>
+				<td>Herramienta de actualizacón/instalación remota de paquetes 
+				en sistemas basados en debian.</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>arp</td>
+				<td>Permite obtener/manipular la lista de direcciones MAC/Ip que 
+				el sistema ve.</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_shell_002">
+				awk</a></td>
+				<td>Análisis y procesamiento de patrones en archivos y listados.</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_shell_002">
+				basename</a></td>
+				<td>Permite eliminar la ruta del nombre de un archivo.</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>bc</td>
+				<td>Calculadora y lenguaje matemático, muy potente.</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>bzip2</td>
+				<td>Compresor / descompresor de archivos.</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>cal</td>
+				<td>Despliega un calendario.</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>cat</td>
+				<td>Muestra el contenido de archivos y concatena archivos.</td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td>cd</td>
+				<td>Cambiar de directorio.</td>
+			</tr>
+			<tr>
+				<td>12</td>
+				<td>cfdisk</td>
+				<td>Herramienta de particionamiento de discos, usada en sistemas 
+				debian principalmente.</td>
+			</tr>
+			<tr>
+				<td>13</td>
+				<td>chage</td>
+				<td>Permite cambiar la información (expiración, caducidad, etc) 
+				de la contraseña de un usuario.</td>
+			</tr>
+			<tr>
+				<td>14</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info__tips_022">
+				chattr</a></td>
+				<td>Cambia atributos extendidos de archivos y directorios</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_011">
+				chgrp</a></td>
+				<td>Cambia el grupo de un archivo(s) o carpetas(s).</td>
+			</tr>
+			<tr>
+				<td>16</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_003">
+				chkconfig</a></td>
+				<td>Controla/consulta el modo en que los servicios se ejecutan o 
+				no al inicio del sistema.</td>
+			</tr>
+			<tr>
+				<td>17</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/ndex.php?cont=info_admon_011">
+				chmod</a></td>
+				<td>Cambia los permisos de un archivo(s) o carpetas(s).</td>
+			</tr>
+			<tr>
+				<td>18</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_011">
+				chown</a></td>
+				<td>Cambia el propietario de un archivo(s) o carpetas(s).</td>
+			</tr>
+			<tr>
+				<td>19</td>
+				<td>chroot</td>
+				<td>Ejecuta comandos de root en un shell restringido a un 
+				directorio y sus subdirectorios.</td>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td>clear</td>
+				<td>Limpia la terminal.</td>
+			</tr>
+			<tr>
+				<td>21</td>
+				<td>cmp</td>
+				<td>Compara dos archivos byte por byte.</td>
+			</tr>
+			<tr>
+				<td>22</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_006">
+				crontab</a></td>
+				<td>Administra archivos cron para los usuarios y root.</td>
+			</tr>
+			<tr>
+				<td>23</td>
+				<td>curl</td>
+				<td>Permite descargar o transferir url's.</td>
+			</tr>
+			<tr>
+				<td>24</td>
+				<td>cut</td>
+				<td>Remueve secciones (columnas principalmente) de cada línea de 
+				un archivo o archivos.</td>
+			</tr>
+			<tr>
+				<td>25</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_007">
+				date</a></td>
+				<td>Muestra/establece la fecha y hora actual.</td>
+			</tr>
+			<tr>
+				<td>26</td>
+				<td>dd</td>
+				<td>Convierte y copia archivos y sistemas de archivos.</td>
+			</tr>
+			<tr>
+				<td>27</td>
+				<td>df</td>
+				<td>Muestra el uso de espacio de discos duros o particiones.</td>
+			</tr>
+			<tr>
+				<td>28</td>
+				<td>diff</td>
+				<td>Busca y muestra diferencias entre archivos.</td>
+			</tr>
+			<tr>
+				<td>29</td>
+				<td>dig</td>
+				<td>Utilería para consultas a servidores DNS.</td>
+			</tr>
+			<tr>
+				<td>30</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_015">
+				dmesg</a></td>
+				<td>Muestra los mensajes del arranque del sistema (boot).</td>
+			</tr>
+			<tr>
+				<td>31</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_015">
+				dmidecode</a></td>
+				<td>Lista hardware del equipo directamente del BIOS. (también: 
+				lshw)</td>
+			</tr>
+			<tr>
+				<td>32</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info__tips_015">
+				dos2unix</a></td>
+				<td>Convierte archivos de formato MS-DOS a formato Unix/Linux.</td>
+			</tr>
+			<tr>
+				<td>33</td>
+				<td>du</td>
+				<td>Muestra el uso de espacio de archivos y directorios.</td>
+			</tr>
+			<tr>
+				<td>34</td>
+				<td>echo</td>
+				<td>Imprime una línea de texto, variables, o contenido a un 
+				archivo.</td>
+			</tr>
+			<tr>
+				<td>35</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_018">
+				edquota</a></td>
+				<td>Administra el control de cuotas de disco de usuario y 
+				grupos.</td>
+			</tr>
+			<tr>
+				<td>36</td>
+				<td>eject</td>
+				<td>Desmonta y expulsa un medio removible, como cdroms.</td>
+			</tr>
+			<tr>
+				<td>37</td>
+				<td>env</td>
+				<td>Ejecuta un programa en un entorno modificado.</td>
+			</tr>
+			<tr>
+				<td>38</td>
+				<td>ethtool</td>
+				<td>Permite desplegar o cambiar valores de una tarjeta de red.</td>
+			</tr>
+			<tr>
+				<td>39</td>
+				<td>exit</td>
+				<td>Sale del shell o terminal actual.</td>
+			</tr>
+			<tr>
+				<td>40</td>
+				<td>export</td>
+				<td>Exporta el valor de una variable.</td>
+			</tr>
+			<tr>
+				<td>41</td>
+				<td>expr</td>
+				<td>Evaluador de expresiones matemáticas.</td>
+			</tr>
+			<tr>
+				<td>42</td>
+				<td>fc</td>
+				<td>Lista, edita y reejecuta comandos previamente ejecutados.</td>
+			</tr>
+			<tr>
+				<td>43</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_001">
+				fdisk</a></td>
+				<td>Herramienta para particionar discos, común a casi todas las 
+				distros.</td>
+			</tr>
+			<tr>
+				<td>44</td>
+				<td>file</td>
+				<td>Determina el tipo de archivo.</td>
+			</tr>
+			<tr>
+				<td>45</td>
+				<td>find</td>
+				<td>Búsqueda de archivos, multitud de opciones de búsqueda.</td>
+			</tr>
+			<tr>
+				<td>46</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_shell_004">
+				fortune</a></td>
+				<td>Imprime un adagio al azar.</td>
+			</tr>
+			<tr>
+				<td>47</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_015">
+				free</a></td>
+				<td>Muestra el espacio usado y libre de memoria RAM y Swap.</td>
+			</tr>
+			<tr>
+				<td>48</td>
+				<td>fsck</td>
+				<td>Herramienta para verificar/reparar sistemas de archivos.</td>
+			</tr>
+			<tr>
+				<td>49</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_shell_003">
+				gawk</a></td>
+				<td>Análisis y procesamiento de patrones en archivos y listados. 
+				(versión gnu)</td>
+			</tr>
+			<tr>
+				<td>50</td>
+				<td>gedit</td>
+				<td>Editor de textos de gnome.</td>
+			</tr>
+			<tr>
+				<td>51</td>
+				<td>gpasswd</td>
+				<td>Permite la administración del archivo /etc/group</td>
+			</tr>
+			<tr>
+				<td>52</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info__tips_006">
+				gpg</a></td>
+				<td>Herramienta de encriptación y de generación de certificados 
+				de seguridad (opengpg).</td>
+			</tr>
+			<tr>
+				<td>53</td>
+				<td>grep</td>
+				<td>Busca patrones de cadenas dentro de archivos.</td>
+			</tr>
+			<tr>
+				<td>54</td>
+				<td>groupadd</td>
+				<td>Crea un nuevo grupo en el sistema.</td>
+			</tr>
+			<tr>
+				<td>55</td>
+				<td>groupdel</td>
+				<td>Elimina un grupo en el sistema.</td>
+			</tr>
+			<tr>
+				<td>56</td>
+				<td>groupmod</td>
+				<td>Modifica un grupo en el sistema.</td>
+			</tr>
+			<tr>
+				<td>57</td>
+				<td>groups</td>
+				<td>Imprime los grupos a los que pertenece un usuario.</td>
+			</tr>
+			<tr>
+				<td>58</td>
+				<td>gzip</td>
+				<td>Comprime/expande archivos.</td>
+			</tr>
+			<tr>
+				<td>59</td>
+				<td>halt</td>
+				<td>Apaga el equipo.</td>
+			</tr>
+			<tr>
+				<td>60</td>
+				<td>hdparm</td>
+				<td>Establece y muestra características sobre los discos duros.</td>
+			</tr>
+			<tr>
+				<td>61</td>
+				<td>head</td>
+				<td>Despliega las primera líneas de un archivo.</td>
+			</tr>
+			<tr>
+				<td>62</td>
+				<td>help</td>
+				<td>Ayuda sobre los comandos internos de bash.</td>
+			</tr>
+			<tr>
+				<td>63</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info__tips_012">
+				history</a></td>
+				<td>Muestra el historial de comandos del usuario.</td>
+			</tr>
+			<tr>
+				<td>64</td>
+				<td>host</td>
+				<td>Utileria de consulta a sevidores DNS.</td>
+			</tr>
+			<tr>
+				<td>65</td>
+				<td>hostname</td>
+				<td>Despliega el nombre del equipo.</td>
+			</tr>
+			<tr>
+				<td>66</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_007">
+				hwclock</a></td>
+				<td>Muestra/Establece la fecha/hora del bios o hardware. 
+				(Fecha/Hora del sistema con date)</td>
+			</tr>
+			<tr>
+				<td>67</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_008">
+				id</a></td>
+				<td>Muestra el UID (User ID) y GID (Group ID) del usuario</td>
+			</tr>
+			<tr>
+				<td>68</td>
+				<td>ifconfig</td>
+				<td>Muestra/Configura las interfaces de red del sistema.</td>
+			</tr>
+			<tr>
+				<td>69</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_003">
+				init</a></td>
+				<td>Control de inicialización de un nivel de ejecucción.</td>
+			</tr>
+			<tr>
+				<td>70</td>
+				<td>insmod</td>
+				<td>Inserta módulos en el kernel.</td>
+			</tr>
+			<tr>
+				<td>71</td>
+				<td>ipcalc</td>
+				<td>Realiza cálculos simples sobre direcciones IP.</td>
+			</tr>
+			<tr>
+				<td>72</td>
+				<td>ipcount</td>
+				<td>Identificación de rangos de red, cálculo de IP's.</td>
+			</tr>
+			<tr>
+				<td>73</td>
+				<td>iptables</td>
+				<td>Herramienta de configuración del firewall de Linux.</td>
+			</tr>
+			<tr>
+				<td>74</td>
+				<td>iptraf</td>
+				<td>Analizador de tráfico de red en modo de texto.</td>
+			</tr>
+			<tr>
+				<td>75</td>
+				<td>iwconfig</td>
+				<td>Configura una tarjeta de red inalámbrica.</td>
+			</tr>
+			<tr>
+				<td>76</td>
+				<td>iwlist</td>
+				<td>Obtiene información detallada de una tarjeta inalámbrica.</td>
+			</tr>
+			<tr>
+				<td>77</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_012">
+				jobs</a></td>
+				<td>Muestra los trabajos del usuario en suspensión o en 
+				background.</td>
+			</tr>
+			<tr>
+				<td>78</td>
+				<td>kate</td>
+				<td>Editor de textos de KDE.</td>
+			</tr>
+			<tr>
+				<td>79</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_012">
+				kill</a></td>
+				<td>Termina procesos, mas correctamente envía señales a 
+				procesos.</td>
+			</tr>
+			<tr>
+				<td>80</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_012">
+				killall</a></td>
+				<td>Termina procesos del mismo nombre o conjunto.</td>
+			</tr>
+			<tr>
+				<td>81</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_015">
+				last</a></td>
+				<td>Muestra información de los últimos usuarios logueados.</td>
+			</tr>
+			<tr>
+				<td>82</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_015">
+				lastb</a></td>
+				<td>Muestra información de los últimos intentos fallidos de 
+				loguearse.</td>
+			</tr>
+			<tr>
+				<td>83</td>
+				<td>less</td>
+				<td>Muestra el contenido de un archivo, permite búsquedas y 
+				movimento hacía atrás y adelante.</td>
+			</tr>
+			<tr>
+				<td>84</td>
+				<td>ln</td>
+				<td>Crea enlaces (accesos directos) suaves y duros de archivos y 
+				directorios.</td>
+			</tr>
+			<tr>
+				<td>85</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_007">
+				locale</a></td>
+				<td>Información específica sobre las variables de entorno 
+				locales.</td>
+			</tr>
+			<tr>
+				<td>86</td>
+				<td>locate</td>
+				<td>Indexa y busca archivos. Mas seguro utilizar slocate.</td>
+			</tr>
+			<tr>
+				<td>87</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_seyre_007">
+				losetup</a></td>
+				<td>Define y controla dispositivos del tipo 'loop'.</td>
+			</tr>
+			<tr>
+				<td>88</td>
+				<td>lpq</td>
+				<td>Muestra los documentos para imprimir en la cola de 
+				impresión.</td>
+			</tr>
+			<tr>
+				<td>89</td>
+				<td>lpr</td>
+				<td>Añade un documento a la cola de impresión.</td>
+			</tr>
+			<tr>
+				<td>90</td>
+				<td>ls</td>
+				<td>Lista archivos y directorios.</td>
+			</tr>
+			<tr>
+				<td>91</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_015">
+				lshw</a></td>
+				<td>Lista hardware del equipo directamente del BIOS. (también: 
+				dmidecode)</td>
+			</tr>
+			<tr>
+				<td>92</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_015">
+				lsmod</a></td>
+				<td>Muestra el estatus de los módulos en el kernel.</td>
+			</tr>
+			<tr>
+				<td>93</td>
+				<td>lsof</td>
+				<td>Muestra archivos abiertos de un programa en ejecucción, o de 
+				un usuario, proceso, etc.</td>
+			</tr>
+			<tr>
+				<td>94</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_015">
+				lspci</a></td>
+				<td>Lista los dispositivos pci del sistema.</td>
+			</tr>
+			<tr>
+				<td>95</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_015">
+				lsusb</a></td>
+				<td>Lista los dispositivos usb del sistema.</td>
+			</tr>
+			<tr>
+				<td>96</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info__tips_013">
+				man</a></td>
+				<td>Muestra el manual del comando indicado.</td>
+			</tr>
+			<tr>
+				<td>97</td>
+				<td>mc</td>
+				<td>Manejador de archvivos con soporte de mouse en modo de 
+				texto, no todas las distro lo tienen.</td>
+			</tr>
+			<tr>
+				<td>98</td>
+				<td>mcedit</td>
+				<td>Editor de textos de mc.</td>
+			</tr>
+			<tr>
+				<td>99</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info__tips_004">
+				md5sum</a></td>
+				<td>Comprueba (y genera) archivos con firma de certificación 
+				md5.</td>
+			</tr>
+			<tr>
+				<td>100</td>
+				<td>mkdir</td>
+				<td>Crea directorios.</td>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_001">
+				mkfs</a></td>
+				<td>Construye un sistema de archivos de Linux.</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_seyre_005">
+				mkpasswd</a></td>
+				<td>Generador de contraseñas. (Paquete del programa 'expect').</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>modinfo</td>
+				<td>Muestra información acerca de los módulos del kernel.</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>modprobe</td>
+				<td>Herramienta que añade/remueve módulos del kernel.</td>
+			</tr>
+			<tr>
+				<td>105</td>
+				<td>more</td>
+				<td>Paginador similar a less pero menos funcioanal, ya que sale 
+				avanza y no retocede.</td>
+			</tr>
+			<tr>
+				<td>106</td>
+				<td>mount</td>
+				<td>Monta dispositvos de almacenamiento en particiones 
+				indicadas.</td>
+			</tr>
+			<tr>
+				<td>107</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info__tips_002">
+				mtools</a></td>
+				<td>Conjunto de utilidades para acceder a discos DOS desde 
+				Linux.</td>
+			</tr>
+			<tr>
+				<td>108</td>
+				<td>mv</td>
+				<td>Mueve archivos y directorios.</td>
+			</tr>
+			<tr>
+				<td>109</td>
+				<td>netstat</td>
+				<td>Herramienta de red que muestra conexiones, tablas de ruteo, 
+				estadísticas de interfaces, etc.</td>
+			</tr>
+			<tr>
+				<td>110</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_012">
+				nice</a></td>
+				<td>Ejecuta un programa con una prioridad de ejecucción distinta 
+				a la normal.</td>
+			</tr>
+			<tr>
+				<td>111</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_012">
+				nohup</a></td>
+				<td>Ejecuta un programa inmune a los hangups y sin salida a una 
+				terminal.</td>
+			</tr>
+			<tr>
+				<td>112</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_seyre_001">
+				openssl</a></td>
+				<td>Control, administración, generación de certificados de 
+				seguridad.</td>
+			</tr>
+			<tr>
+				<td>113</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_008">
+				passwd</a></td>
+				<td>Cambia la contraseña del usuario indicado.</td>
+			</tr>
+			<tr>
+				<td>114</td>
+				<td>ping</td>
+				<td>Manda un echo_request (solicitud de eco) a un equipo en al 
+				red.</td>
+			</tr>
+			<tr>
+				<td>115</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_seyre_006">
+				pkill</a></td>
+				<td>Manda señales a procesos basado en sus atributos.</td>
+			</tr>
+			<tr>
+				<td>116</td>
+				<td>pr</td>
+				<td>Fromatea o convierte archivos de texto para imprimirlos.</td>
+			</tr>
+			<tr>
+				<td>117</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_012">
+				ps</a></td>
+				<td>Muestra los procesos del sistema o del usuario o ambos.</td>
+			</tr>
+			<tr>
+				<td>118</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_012">
+				pstree</a></td>
+				<td>Muestra los procesos en forma de árbol.</td>
+			</tr>
+			<tr>
+				<td>119</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_008">
+				pwconv</a></td>
+				<td>Agrega o establece la protección shadow el archivo 
+				/etc/passwd.</td>
+			</tr>
+			<tr>
+				<td>120</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_018">
+				quota</a></td>
+				<td>Permite ver el uso de cuotas por usuario.</td>
+			</tr>
+			<tr>
+				<td>121</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_018">
+				quotacheck</a></td>
+				<td>Crea, verifica, administra sistemas de cuotas de disco</td>
+			</tr>
+			<tr>
+				<td>122</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_018">
+				quotaoff</a></td>
+				<td>Desactiva el control de cuotas de discos.</td>
+			</tr>
+			<tr>
+				<td>123</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_018">
+				quotaon</a></td>
+				<td>Activa el control de cuotas de discos para usuarios y 
+				grupos.</td>
+			</tr>
+			<tr>
+				<td>124</td>
+				<td>rdesktop</td>
+				<td>Abre terminales gráficas ha?ia equipos Windows.</td>
+			</tr>
+			<tr>
+				<td>125</td>
+				<td>reboot</td>
+				<td>Reinicia el equipo.</td>
+			</tr>
+			<tr>
+				<td>126</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_012">
+				renice</a></td>
+				<td>Cambia la prioridad de un proceso o programa en ejecucción.</td>
+			</tr>
+			<tr>
+				<td>127</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_018">
+				repquota</a></td>
+				<td>Reporte de uso de cuotas de disco.</td>
+			</tr>
+			<tr>
+				<td>128</td>
+				<td>rev</td>
+				<td>Invierte las líneas de un archivo.</td>
+			</tr>
+			<tr>
+				<td>129</td>
+				<td>rm</td>
+				<td>Borra o elimina archivos.</td>
+			</tr>
+			<tr>
+				<td>130</td>
+				<td>route</td>
+				<td>Muestra/altera la tabla de ruteo IP.</td>
+			</tr>
+			<tr>
+				<td>131</td>
+				<td>rpm</td>
+				<td>Programa para la instalación/actualización/eliminación de 
+				paquetes, distros basadas en redhat.</td>
+			</tr>
+			<tr>
+				<td>132</td>
+				<td>runlevel</td>
+				<td>Muestra el nivel de ejecución actual y anterior del sistema.</td>
+			</tr>
+			<tr>
+				<td>133</td>
+				<td>scp</td>
+				<td>Copia archivos entre equipos, parte del paquete openssh 
+				(protocolo de comunicación encriptado).</td>
+			</tr>
+			<tr>
+				<td>134</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info__tips_009">
+				screen</a></td>
+				<td>Administrador de terminales virtuales.</td>
+			</tr>
+			<tr>
+				<td>135</td>
+				<td>sed</td>
+				<td>Editor en línea que filtra y transforma archivos.</td>
+			</tr>
+			<tr>
+				<td>136</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_003">
+				service</a></td>
+				<td>Ejecuta/detiene servicios en modo manual.</td>
+			</tr>
+			<tr>
+				<td>137</td>
+				<td>set</td>
+				<td>Muestra o establece el entorno de variables para el usuario 
+				actuual.</td>
+			</tr>
+			<tr>
+				<td>138</td>
+				<td>sha1sum</td>
+				<td>Comprueba (y genera) archivos con firma de certificación 
+				sha1.</td>
+			</tr>
+			<tr>
+				<td>139</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_seyre_008">
+				shred</a></td>
+				<td>Elimina archivos de manera segura e irrecuperable.</td>
+			</tr>
+			<tr>
+				<td>140</td>
+				<td>shutdown</td>
+				<td>Apaga o reinicia el equipo.</td>
+			</tr>
+			<tr>
+				<td>141</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info__tips_012">
+				sort</a></td>
+				<td>Ordena líneas de archivos y listas</td>
+			</tr>
+			<tr>
+				<td>142</td>
+				<td>ss</td>
+				<td>Utileria similar a netstat pero más básica, listados rápidos 
+				de sockets establecidos.</td>
+			</tr>
+			<tr>
+				<td>143</td>
+				<td>ssh</td>
+				<td>Programa de login remoto seguro, programa del paquete 
+				openssh (protocolo de comunicación encriptado).</td>
+			</tr>
+			<tr>
+				<td>144</td>
+				<td>startx</td>
+				<td>Inicia una sesión X.</td>
+			</tr>
+			<tr>
+				<td>145</td>
+				<td>su</td>
+				<td>Cambia del usuario actual al indicado.</td>
+			</tr>
+			<tr>
+				<td>146</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_014">
+				sudo</a></td>
+				<td>Permite indicar que usuario ejecuta que comandos de root.</td>
+			</tr>
+			<tr>
+				<td>147</td>
+				<td>sync</td>
+				<td>Forza bloques en memoria a discos, actualiza el superbloque.</td>
+			</tr>
+			<tr>
+				<td>148</td>
+				<td>tac</td>
+				<td>Igual que cat, muestra y/o concatena archivos pero al revés.</td>
+			</tr>
+			<tr>
+				<td>149</td>
+				<td>tail</td>
+				<td>Muestra la parte final de un archivo.</td>
+			</tr>
+			<tr>
+				<td>150</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_004">
+				tar</a></td>
+				<td>Herramienta empaquetadora/compresora de archivos.</td>
+			</tr>
+			<tr>
+				<td>151</td>
+				<td>time</td>
+				<td>Devuelve el tiempo en que se ejecutó el comando o programa 
+				indicado.</td>
+			</tr>
+			<tr>
+				<td>152</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_012">
+				top</a></td>
+				<td>Muestra los procesos del sistema de manera interactiva y 
+				continua.</td>
+			</tr>
+			<tr>
+				<td>153</td>
+				<td>touch</td>
+				<td>Crea archivos vacios, cambia fechas de acceso y/o 
+				modificación de archivos.</td>
+			</tr>
+			<tr>
+				<td>154</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info__tipos_017">
+				tput</a></td>
+				<td>Cambia valores o capacidades de la terminal, en base a 
+				terminfo.</td>
+			</tr>
+			<tr>
+				<td>155</td>
+				<td>tty</td>
+				<td>Imprime el nombre de la terminal en la que se esta.</td>
+			</tr>
+			<tr>
+				<td>156</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_011">
+				umask</a></td>
+				<td>Establece una máscara de permisos para cuando se crean 
+				directorios y archivos.</td>
+			</tr>
+			<tr>
+				<td>157</td>
+				<td>umount</td>
+				<td>Desmonta sistemas de archivos.</td>
+			</tr>
+			<tr>
+				<td>158</td>
+				<td>unalias</td>
+				<td>Elimina alias de comandos, creados con el comando alias.</td>
+			</tr>
+			<tr>
+				<td>159</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_015">
+				uname</a></td>
+				<td>Despliega información del sistema.</td>
+			</tr>
+			<tr>
+				<td>160</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_shell_003">
+				uniq</a></td>
+				<td>Omite o reporta sobre líneas repetidas en un archivo o 
+				listado.</td>
+			</tr>
+			<tr>
+				<td>161</td>
+				<td>up2date</td>
+				<td>Herramienta de actualización/instalación remota de paquetes, 
+				(usada en redhat, centos).</td>
+			</tr>
+			<tr>
+				<td>162</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_015">
+				uptime</a></td>
+				<td>Muestra que tanto tiempo lleva prendido el equipo.</td>
+			</tr>
+			<tr>
+				<td>163</td>
+				<td>urpmi</td>
+				<td>Herramienta de actualización/instalación remota de paquetes, 
+				distros basadas en rpm (usada en mandriva).</td>
+			</tr>
+			<tr>
+				<td>164</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_008">
+				useradd</a></td>
+				<td>Añade usuarios.</td>
+			</tr>
+			<tr>
+				<td>165</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_008">
+				userdel</a></td>
+				<td>Elimina usuarios.</td>
+			</tr>
+			<tr>
+				<td>166</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_008">
+				usermod</a></td>
+				<td>Modifica información de usuarios.</td>
+			</tr>
+			<tr>
+				<td>167</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_010">
+				vi</a></td>
+				<td>Editor visual de pantalla, editor de textos, que encuentras 
+				en todas las distros Linux.</td>
+			</tr>
+			<tr>
+				<td>168</td>
+				<td>vim</td>
+				<td>Igual que el vi pero mejorado.</td>
+			</tr>
+			<tr>
+				<td>169</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_014">
+				visudo</a></td>
+				<td>Editor para el archivo de configuración /etc/sudoers de 
+				sudo.</td>
+			</tr>
+			<tr>
+				<td>170</td>
+				<td>vmstat</td>
+				<td>Proporciona información sobre la memoria virtual.</td>
+			</tr>
+			<tr>
+				<td>171</td>
+				<td>vmstat</td>
+				<td>Reporta estadísticas sobre la memoria virtual.</td>
+			</tr>
+			<tr>
+				<td>172</td>
+				<td>w</td>
+				<td>Muestra quien esta conectado al sistema y que esta haciendo.</td>
+			</tr>
+			<tr>
+				<td>173</td>
+				<td>wall</td>
+				<td>Manda un mensaje a todas las terminales.</td>
+			</tr>
+			<tr>
+				<td>174</td>
+				<td>
+				<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_018">
+				warnquota</a></td>
+				<td>Configura /etc/warnquota.conf como complemento de mensajes 
+				para cuotas de disco.</td>
+			</tr>
+			<tr>
+				<td>175</td>
+				<td>wc</td>
+				<td>Cuenta palabras, líneas, caracteres de un archivo o listado.</td>
+			</tr>
+			<tr>
+				<td>176</td>
+				<td>wget</td>
+				<td>Descargador de archivos desde Internet, no interactivo.</td>
+			</tr>
+			<tr>
+				<td>177</td>
+				<td>whereis</td>
+				<td>Localiza el binario, fuentes y/o librerias, y documentación 
+				de un comado.</td>
+			</tr>
+			<tr>
+				<td>178</td>
+				<td>which</td>
+				<td>Muestra la ruta completa de un comando.</td>
+			</tr>
+			<tr>
+				<td>179</td>
+				<td>who</td>
+				<td>Muestra quien esta conectado al sistema.</td>
+			</tr>
+			<tr>
+				<td>180</td>
+				<td>xhost</td>
+				<td>Control de acceso para sesiones X.</td>
+			</tr>
+			<tr>
+				<td>181</td>
+				<td>xkill</td>
+				<td>Mata o termina a un cliente X, es decir, a un programa 
+				gráfico.</td>
+			</tr>
+			<tr>
+				<td>182</td>
+				<td>yes</td>
+				<td>Imprime una cadena repetidamente hasta que sea terminado o 
+				matado el comando.</td>
+			</tr>
+			<tr>
+				<td>183</td>
+				<td>yum</td>
+				<td>Herramienta de actualización/instalación remota de paquetes, 
+				distros basadas en rpm (usada en fedora, redhat y derivados).</td>
+			</tr>
+			<tr>
+				<td>184</td>
+				<td>zcat</td>
+				<td>Descomprime / muestra archivos comprimidos con gunzip (es 
+				idéntico a utilizar gunzip -c)</td>
+			</tr>
+			<tr>
+				<td>185</td>
+				<td>zless</td>
+				<td>Permite mostrar el contenido de archivos comprimidos.</td>
+			</tr>
+			<tr>
+				<td>186</td>
+				<td>zmore</td>
+				<td>Permite mostrar el contenido de archivos comprimidos.</td>
+			</tr>
+			</table>
+			<p>&nbsp;</TD>
+      </TR>
+
+      <TR>
+        <TD>&nbsp;</TD>
+
+        <TD>
+          <div id="envoltura">
+			<div id="cuerpo">
+				<div id="cuerpod">
+					En Linux hay diversas herramientas para empaquetar y 
+					comprimir archivos, tomando en cuenta que empaquetar es 
+					juntar dos o más archivos en un solo archivo (paquete) y 
+					comprimir es tomar este archivo-paquete y comprimirlo a 
+					continuación te muestro un resumen de las más comunes, de 
+					acuerdo a la extensión que comunmente se acostumbra 
+					ponerles.<table width="100%" border="1" id="table3">
+						<tr>
+							<th colSpan="2">.tar (tar)</th>
+						</tr>
+						<tr>
+							<td width="35%">Empaquetar</td>
+							<td><font class="t1">tar cvf archivo.tar 
+							/archivo/mayo/*</font></td>
+						</tr>
+						<tr>
+							<td width="35%">Desempaquetar</td>
+							<td><font class="t1">tar xvf archivo.tar</font></td>
+						</tr>
+						<tr>
+							<td width="35%">Ver el contenido (sin extraer)</td>
+							<td><font class="t1">tar tvf archivo.tar</font></td>
+						</tr>
+					</table>
+					<table width="100%" border="1" id="table4">
+						<tr>
+							<th colSpan="2">.tar.gz - .tar.z - .tgz (tar con 
+							gzip)</th>
+						</tr>
+						<tr>
+							<td width="35%">Empaquetar y comprimir</td>
+							<td><font class="t1">tar czvf archivo.tar.gz 
+							/archivo/mayo/*</font></td>
+						</tr>
+						<tr>
+							<td width="35%">Desempaquetar y descomprimir</td>
+							<td><font class="t1">tar xzvf archivo.tar.gz</font></td>
+						</tr>
+						<tr>
+							<td width="35%">Ver el contenido (sin extraer)</td>
+							<td><font class="t1">tar tzvf archivo.tar.gz</font></td>
+						</tr>
+					</table>
+					<table width="100%" border="1" id="table5">
+						<tr>
+							<th colSpan="2">.gz (gzip)</th>
+						</tr>
+						<tr>
+							<td width="35%">Comprimir</td>
+							<td><font class="t1">gzip -q archivo</font><br \>
+							(El archivo lo comprime y lo renombra como &quot;archivo.gz&quot;)</td>
+						</tr>
+						<tr>
+							<td width="35%">Descomprimir</td>
+							<td><font class="t1">gzip -d archivo.gz</font><br \>
+							(El archivo lo descomprime y lo deja como &quot;archivo&quot;</td>
+						</tr>
+						<tr>
+							<td colSpan="2">Nota: gzip solo comprime archivos, 
+							no directorios</td>
+						</tr>
+					</table>
+					<table width="100%" border="1" id="table6">
+						<tr>
+							<th colSpan="2">.bz2 (bzip2)</th>
+						</tr>
+						<tr>
+							<td width="35%">Comprimir</td>
+							<td><font class="t1">bzip2 archivo</font><br \>
+							<font class="t1">bunzip2 archivo</font><br \>
+							(El archivo lo comprime y lo renombra como &quot;archivo.bz2&quot;)</td>
+						</tr>
+						<tr>
+							<td width="35%">Descomprimir</td>
+							<td><font class="t1">bzip2 -d archivo.bz2</font><br \>
+							<font class="t1">bunzip2 archivo.bz2</font><br \>
+							(El archivo lo descomprime y lo deja como &quot;archivo&quot;)</td>
+						</tr>
+						<tr>
+							<td colSpan="2">Nota: bzip2 solo comprime archivos, 
+							no directorios</td>
+						</tr>
+					</table>
+					<table width="100%" border="1" id="table7">
+						<tr>
+							<th colSpan="2">.tar.bz2 (tar con bzip2)</th>
+						</tr>
+						<tr>
+							<td width="35%">Comprimir</td>
+							<td><font class="t1">tar -c archivos | bzip2 &gt; 
+							archivo.tar.bz2</font></td>
+						</tr>
+						<tr>
+							<td width="35%">Descomprimir</td>
+							<td><font class="t1">bzip2 -dc archivo.tar.bz2 | tar 
+							-xv</font><br \>
+							<font class="t1">tar jvxf archivo.tar.bz2</font> 
+							(versiones recientes de tar)</td>
+						</tr>
+						<tr>
+							<td width="35%">Ver contenido</td>
+							<td><font class="t1">bzip2 -dc archivo.tar.bz2 | tar 
+							-tv</font></td>
+						</tr>
+					</table>
+					<table width="100%" border="1" id="table8">
+						<tr>
+							<th colSpan="2">.zip (zip)</th>
+						</tr>
+						<tr>
+							<td width="35%">Comprimir</td>
+							<td><font class="t1">zip archivo.zip /mayo/archivos</font></td>
+						</tr>
+						<tr>
+							<td width="35%">Descomprimir</td>
+							<td><font class="t1">unzip archivo.zip</font></td>
+						</tr>
+						<tr>
+							<td width="35%">Ver contenido</td>
+							<td><font class="t1">unzip -v archivo.zip</font></td>
+						</tr>
+					</table>
+					<table width="100%" border="1" id="table9">
+						<tr>
+							<th colSpan="2">.lha (lha)</th>
+						</tr>
+						<tr>
+							<td width="35%">Comprimir</td>
+							<td><font class="t1">lha archivo.lha /mayo/archivos</font></td>
+						</tr>
+						<tr>
+							<td width="35%">Descomprimir</td>
+							<td><font class="t1">lha -x archivo.lha</font></td>
+						</tr>
+						<tr>
+							<td width="35%">Ver contenido</td>
+							<td><font class="t1">lha -v archivo.lha</font><br \>
+							<font class="t1">lha -l archivo.lha</font></td>
+						</tr>
+					</table>
+					<table width="100%" border="1" id="table10">
+						<tr>
+							<th colSpan="2">.zoo (zoo)</th>
+						</tr>
+						<tr>
+							<td width="35%">Comprimir</td>
+							<td><font class="t1">zoo -a archivo.zoo 
+							/mayo/archivos</font></td>
+						</tr>
+						<tr>
+							<td width="35%">Descomprimir</td>
+							<td><font class="t1">zoo -x archivo.zoo</font></td>
+						</tr>
+						<tr>
+							<td width="35%">Ver contenido</td>
+							<td><font class="t1">zoo -v archivo.zoo</font><br \>
+							<font class="t1">zoo -L archivo.zoo</font></td>
+						</tr>
+					</table>
+					<table width="100%" border="1" id="table11">
+						<tr>
+							<th colSpan="2">.rar (rar)</th>
+						</tr>
+						<tr>
+							<td width="35%">Comprimir</td>
+							<td><font class="t1">rar -a archivo.rar 
+							/mayo/archivos</font></td>
+						</tr>
+						<tr>
+							<td width="35%">Descomprimir</td>
+							<td><font class="t1">rar -x archivo.rar</font></td>
+						</tr>
+						<tr>
+							<td width="35%">Ver contenido</td>
+							<td><font class="t1">rar -v archivo.rar</font><br \>
+							<font class="t1">rar -l archivo.rar</font></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			</div>
+			<p>&nbsp;</TD>
+      </TR>
+
+      <TR>
+        <TD>&nbsp;</TD>
+
+        <TD>
+          &nbsp;</TD>
+      </TR>
+
+      <TR>
+        <TD>&nbsp;</TD>
+
+        <TD>
+          <div id="envoltura0">
+			<div id="cuerpo0">
+				<div id="cuerpod0">
+					<h1>COMANDO DATE, SUS USOS Y RESPALDO DE ARCHIVOS</h1>
+					<h4>Copyright 2005-2008 Sergio González Durán<br \>
+					Se concede permiso para copiar, distribuir y/o modificar 
+					este documento siempre y cuando se cite al autor y la fuente 
+					de linuxtotal.com.mx y según los términos de la
+					<a href="http://www.gnu.org/licenses/translations.html">GNU 
+					Free Documentation License</a>, Versión 1.2 o cualquiera 
+					posterior publicada por la Free Software Foundation.</h4>
+					<h3>autor: sergio.gonzalez.duran@gmail.com</h3>
+					<hr>
+					<p>Si ya has usado la línea de comandos o shell de Linux por 
+					un tiempo, seguramente entonces, el comando <font class="t1">
+					date</font> ya te es familiar, lo ejecutas y te devuelve la 
+					fecha y hora, mmmm, nada especial ni muy útil. Peor atrás de 
+					esa aparente simplicidad se oculta un comando potente y 
+					sofisticado que bien utilizado te proporciona varias 
+					opciones muy útiles no solo de manejo de fechas sino también 
+					para una parte medular del control de respaldos 
+					automatizados, que es precisamente la del empaquetado de los 
+					archivos que se respaldan, bajo archivos que obtienen su 
+					nombre a partir de <font class="t1">date</font>.</p>
+					<h2>'date' básico y cambiar el entorno local</h2>
+					<p>En este pequeño manual, comenzaremos entonces desde lo 
+					básico, <font class="t1">date</font> sin argumentos:</p>
+					<div id="e">
+						<pre>#&gt; date
+Sun Jun 24 18:50:23 CDT 2007</pre>
+					</div>
+					<p>Lo primero que notamos es la que la salida esta en 
+					inglés, ya que el primer campo representa el día de la 
+					semana &quot;Sun&quot; de &quot;Sunday&quot; domingo, y el siguiente campo no es 
+					tan evidente que esté en inglés ya que es Junio pero si 
+					fuera por ejemplo enero se mostraría &quot;Jan&quot; de &quot;january&quot; y 
+					como se trata de trabajar en español (claro, nada contra el 
+					inglés, solo es por si te gusta tener tu sistema operativo 
+					en español), será lo primero que cambiaremos entonces:</p>
+					<div id="e">
+						<pre>#&gt; echo $LC_TIME
+
+#&gt;  <font class="t2">La variable de entorno LC_TIME no tiene ningún valor,
+    por lo tanto toma el default que es el inglés. 
+#&gt;
+#&gt; export LC_TIME=es_MX
+#&gt; date
+dom jun 24 18:55:18 CDT 2007
+</pre>
+					</div>
+					<p>Ahora el resultado es en español al cambiar el &quot;locale&quot; 
+					sobre la manera de mostrar la fecha. Por cierto el código 
+					que utilizé corresponde a español México (es_MX) para 
+					establecerlo en tu país específico y no sabes cual es su 
+					código, puedes usar el comando <font class="t1">locale -a</font> 
+					para ver un listado completo de códigos de países.
+					<font class="t1">locale</font> sin argumentos te devuelve el 
+					valor de las variables de entorno establecidas en tu 
+					sistema.</p>
+					<p>Esta variable &quot;LC_TIME&quot; se perderá en el siguiente inicio 
+					de sesión, si deseas conservarla edita &quot;.bashrc&quot; dentro de 
+					tu directorio de inicio y agrégalo al final, de este modo 
+					cada vez que entres a tu sesión de usario quedará 
+					establecida la variable de entorno.</p>
+					<p>Por cierto, después de la hora viene un campo &quot;CDT&quot; 
+					(Central Daylight Time) que representa la zona horaria o 
+					huso horario de referencia. En este caso en Mèxico es lo que 
+					conocemos como &quot;Horario de Verano del Centro&quot;.</p>
+					<h2>Estableciendo la fecha hora y del sistema</h2>
+					<p>Para establecer la fecha y hora del sistema se usa 'date' 
+					seguido del siguiente patrón de entrada de datos:</p>
+					<br>
+&nbsp;<p>[MMDDhhmm[[CC]YY][.ss]]<br>
+					MM = mes, DD = día, hh = hora, mm = minuto, CC = siglo 
+					(Century), YY = año, ss = segundos</p>
+					<br>
+&nbsp;<p>Para establecer entonces la fecha al 20 de Julio del 2007 a las 8:05 de 
+					la noche:</p>
+					<div id="e">
+						<pre>#&gt; date 0720200507
+vie jul 20 20:05:00 CDT 2007</pre>
+					</div>
+					<p>Obsérvese que siempre se usará el formato de 24 horas y 
+					dos dígitos en los campos. Si quisieramos fijar la fecha al 
+					1 de enero de 1998 a las 12 del día con 45 segundos:</p>
+					<div id="e">
+						<pre>#&gt; date 010112001998.45
+jue ene  1 12:00:45 CST 1998</pre>
+					</div>
+					<p>Como se puede observar en el patrón los campos 
+					obligatarios son el mes, el día, la hora y minutos, los 
+					demás son opcionales.</p>
+					<p>NOTA IMPORTANTE: <font class="t1">date</font>, como se ha 
+					mencionado, establece la fecha del sistema, que es diferente 
+					a la fecha de hardware o de bios. Esta fecha del reloj 
+					físico del sistema lo puedes consultar con el comando
+					<font class="t1">hwclock</font>. Si deseas que la fecha del 
+					sistema sea igual a la de hardware, o la de hardware igual a 
+					la fecha del sistema, usa las siguientes opciones:</p>
+					<div id="e">
+						<pre>#&gt; hwclock --hctosys reloj hardware a reloj sistema
+#&gt; hwclock --systohc reloj sistema a reloj hardware</pre>
+					</div>
+					<h2>Opción &quot;-d&quot; (trabajando con elementos relativos)</h2>
+					<p>Pero regresemos a <font class="t1">date</font>, y ahora 
+					veamos como podemos obtener resultados de fechas en el 
+					pasado o presente, los más simples primero y todo con la 
+					opción &quot;-d&quot;:</p>
+					<div id="e">
+						<pre>#&gt; date -d &quot;tomorrow&quot;
+lun jun 25 19:55:28 CDT 2007
+#&gt; date -d &quot;yesterday&quot;
+sáb jun 23 19:55:36 CDT 2007
+</pre>
+					</div>
+					<p>Pues interesante, dirás, pero sigue sin ser muy útil, 
+					pero espera, dentro de las comillas &quot; &quot;, es posible utilizar 
+					una combinación de las siguientes palabras: (todas en 
+					inglés)</p>
+					<p><i>días de la semana (palabra completa o abreviación de 
+					tres letras), meses, next, ago, last, year, month, week, 
+					day, hour, minute, second, indicadores de zonas horarias, 
+					números, el símbolo +, el símbolo -</i></p>
+					<p>Asi que si por ejemplo quisieras saber que día será 
+					dentro de 6 semanas:</p>
+					<div id="e">
+						<pre>#&gt; date -d &quot;6 weeks&quot;
+dom ago  5 20:25:08 CDT 2007</pre>
+					</div>
+					<p>O lo contrario en el pasado con &quot;ago&quot;, que día fue hace 6 
+					semanas:</p>
+					<div id="e">
+						<pre>#&gt; date -d &quot;6 weeks ago&quot;
+dom may 13 20:26:46 CDT 2007</pre>
+					</div>
+					<p>Con algunos ejemplos quedará más que claro como usar 
+					elementos relativos con la opción &quot;-d&quot; y asi conocer fechas 
+					pasadas o futuras, todas calculadas a partir de la hora y 
+					fecha en que se ejecute el comando: (en este caso el 24 jun 
+					2007 20:40 aproximadamente:</p>
+					<p>&nbsp;</p>
+					<div id="e">
+						<pre>#&gt; date -d &quot;next friday&quot;
+vie jun 29 00:00:00 CDT 2007
+#&gt; date -d &quot;last friday&quot;
+vie jun 22 00:00:00 CDT 2007
+#&gt; date -d &quot;2 months 1 week ago&quot;
+vie ago 17 20:33:19 CDT 2007
+#&gt; date -d &quot;1 year 3 months 2 weeks 3 days 10 hours 25 minutes 5 seconds&quot;
+dom oct 12 06:59:09 CDT 2008
+#&gt; date -d &quot;January 4&quot;
+jue ene  4 00:00:00 CST 2007
+#&gt; date -d &quot;July 20 2020&quot;
+lun jul 20 00:00:00 CDT 2020
+#&gt; date -d &quot;72 hours ago&quot;
+jue jun 21 20:47:01 CDT 2007
+#&gt; date -d &quot;50 days ago&quot;
+sáb may  5 20:47:41 CDT 2007
+#&gt;date -d &quot;+5 hours&quot;
+lun jun 25 01:58:07 CDT 2007
+#&gt; date -d &quot;-5 days&quot;
+mar jun 19 20:58:56 CDT 2007
+</pre>
+					</div>
+					<p>Los ejemplos son autoexplicativos, hay que tener en 
+					cuenta que si utilizas 'ago' o el símbolo &quot;-&quot; el resultado 
+					puede no ser el esperado, veamos:</p>
+					<div id="e">
+						<pre>#&gt; date
+dom jun 24 20:50:39 CDT 2007
+#&gt; date -d &quot;3 years 1 month 10 days ago&quot;
+mié jul 14 20:51:06 CDT 2010</pre>
+					</div>
+					<p>Como se puede observar, el resultado es una fecha en el 
+					2010, y no 3 años atrás a partir del 2007, cuando se usa 
+					'ago' es necesario indicarlo en cada elemento relativo de la 
+					instrucción:</p>
+					<div id="e">
+						<pre> #&gt; date -d &quot;3 years ago 1 month ago 10 days ago&quot;
+vie may 14 20:53:50 CDT 2004</pre>
+					</div>
+					<p>Ahora si el resultado es el correcto.</p>
+					<h2>Formateo de la salida</h2>
+					<p>Una de las opciones más interesante y útiles de
+					<font class="t1">date</font> es la opción de formato de la 
+					salida, que se indica con el signo &quot;+&quot; seguido de una o màs 
+					literales de formato, que se indican con &quot;%&quot;. Por ejemplo: 
+					%a indica el día de la semana abreviado, %B el nombre 
+					completo del mes, etc. Con unos cuantos ejemplos se 
+					entenderá la idea:</p>
+					<div id="e">
+						<pre>#&gt; date
+dom jun 24 22:01:28 CDT 2007
+#&gt; date +%a
+dom
+#&gt; date +%A
+domingo
+#&gt; date +%B%A
+juniodomingo
+#&gt; date +%B-%A
+junio-domingo
+#&gt; date +%B-%A-%d
+junio-domingo-24
+#&gt; date +%B-%A-%d-%Y
+junio-domingo-24-2007
+#&gt; date +%B/%A/%d/%y
+junio/domingo/24/07
+#&gt; date +%d%m%y
+240607
+#&gt; date +%d %m %y
+date: extra operand `%m'
+Try `date --help' for more information.
+#&gt; date +%d\ %m\ %y
+24 06 07</pre>
+					</div>
+					<p>Cada literal, como se aprecia en los ejemplos, representa 
+					una parte de la fecha original y la salida es el formato que 
+					se indique con la combinación de literales que se haya 
+					usado.</p>
+					<p>Entre cada literal puede haber o no, uno de tres símbolos 
+					de separaciòn que son: &quot;-&quot;,&quot;_&quot;,&quot;/&quot; solo esos, y si se 
+					observa el penúltimo ejemplo, si queremos separar las 
+					literales con un espacio, el resultado será un error, 
+					entonces es posible usar el caracter de escape &quot;\&quot; que nos 
+					permite indicar cualquier caracter de separación entre 
+					literales.</p>
+					<p>Si se desea una salida mas elaborada como: &quot;La fecha es: 
+					domingo 24 de junio del 2007&quot; se indica entonces todo el 
+					formato entre comillas simples '':</p>
+					<div id="e">
+						<pre>#&gt; date +'La fecha es: %A %d de %B del %Y'
+La fecha es: domingo 24 de junio del 2007</pre>
+					</div>
+					<p>De hecho la salida por defecto del comando es un formato, 
+					veamos:</p>
+					<div id="e">
+						<pre>#&gt; date
+dom jun 24 22:33:49 CDT 2007
+#&gt; date +'%a %b %e %H:%M:%S %Z %Y'
+dom jun 24 22:33:46 CDT 2007</pre>
+					</div>
+					<p>La siguiente tabla detalla los principales literales que 
+					se pueden usar para formatos de salida con <font class="t1">
+					date</font>:</p>
+					<table width="100%" border="1" id="table12">
+						<tr align="middle" bgColor="#9acd32">
+							<td width="15%"><b>Literal</b></td>
+							<td><b>Descripción</b></td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%a</td>
+							<td>Nombre abreviado del día de la semana </td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%A</td>
+							<td>Nombre completo del día de la semana</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%b</td>
+							<td>Nombre abreviado del mes </td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%B</td>
+							<td>Nombre completo del mes</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%c</td>
+							<td>fecha y hora</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%C</td>
+							<td>Dos primeros dígitos del año, ejemplo 20 de 2007</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%d</td>
+							<td>Día del mes con dos dígitos, ejemplo 01</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%D</td>
+							<td>Igual que indicar %m/%d/%y</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%e</td>
+							<td>Día del mes con uno o dos dígitos, ejemplo 1, 10</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%F</td>
+							<td>Fecha completa, igual que %Y-%m-%d</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%h</td>
+							<td>igual que %b</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%H</td>
+							<td>Hora en formato 24 horas con dos dígitos 
+							(00..23)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%I</td>
+							<td>Hora en formato 12 horas con dos dígitos(01..12)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%j</td>
+							<td>El día del año (001..366)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%k</td>
+							<td>Hora en formato 24 horas con uno o dos 
+							dígitos(0..23)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%l</td>
+							<td>Hora en formato 12 horas con uno o dos 
+							dígitos(1..12)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%m</td>
+							<td>Mes con dos dígitos(01..12)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%M</td>
+							<td>Minutos con dos dígitos (00..59)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%r</td>
+							<td>Hora completa en formato de 12 horas (ejemplo 
+							01:23:45)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%R</td>
+							<td>Horas y minutos en formato de 24 horas, igual 
+							que %H:%M</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%s</td>
+							<td>Segundos transcurridos desde 01/Ene/1970 
+							00:00:00 (fecha epoch)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%S</td>
+							<td>Segundos con dos dígitos, (00..60)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%T</td>
+							<td>Hora completa en formato de 24 horas (ejemplo 
+							13:23:45)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%u</td>
+							<td>Dia de la semana en número (1..7, 1 es lunes)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%U</td>
+							<td>Número de la semana en el año, domingo primer 
+							día de la semana (00..53)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%V</td>
+							<td>Número de la semana en el año, lunes primer día 
+							de la semana (01..53) Formato ISO</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%w</td>
+							<td>Día de la semana en número (0..6, 0 es domingo)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%W</td>
+							<td>Número de la semana en el año, lunes primer día 
+							de la semana (00..53)</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%y</td>
+							<td>Últimos dos dígitos del año</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%Y</td>
+							<td>Año con cutro dígitos</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%z</td>
+							<td>Huso o zona horaria numérica</td>
+						</tr>
+						<tr>
+							<td align="middle" width="10%">%Z</td>
+							<td>Huso o zona horaria abreviación alfabética</td>
+						</tr>
+					</table>
+					<h2>Date y respaldo de archivos</h2>
+					<p>Respaldar el sistema, archivos de trabajo, configuración, 
+					etc. Es parte esencial de cualquier labor de administración 
+					de sistemas informáticos. <font class="t1">date</font> 
+					resulta muy conveniente para llevar un control automatizado 
+					de respaldos.</p>
+					<p>Supongamos que dos veces por día (a las 14:00 y 21:00), 
+					todos los días, se debe de respaldar el directorio /usr/archivos, 
+					y por simplicidad se respalda a un directorio montado en el 
+					mismo equipo por NFS que realmente esta ubicado en otro 
+					equipo, dicho directorio es /respaldos. Manualmente podría 
+					ser de la siguiente manera:</p>
+					<div id="e">
+						<pre>#&gt; tar xvzf /usr/archivos/* /respaldos/respaldo20070624_1400.tar.gz</pre>
+					</div>
+					<p>El administrador directamente está escribiendo el nombre 
+					del archivo donde se empaquetan y comprimen los archivos 
+					respaldados que es &quot;respaldo20070624_1400&quot;, y su sintaxis 
+					para distinguir un respaldo del otro es la fecha y la hora 
+					AÑOMESDIA_HHMM. Pero ¿que pasa si un día no puede estar 
+					presente para realizar el respaldo correpsondiente?. 
+					Ciertamente con cron (ver
+					<a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_006">
+					Manual básico de Cron</a>) es posible programar la tarea, 
+					pero el problema no es ese, sino como indicar autmáticamente 
+					otra fecha para el nombre del archivo, el siguiente script 
+					de shell resuelve el problema:</p>
+					<div id="e">
+						<pre># respaldo de /usr/archivos
+# se forma el nombre del archivo
+DIA=`date +%d`
+MES=`date +%m`
+AÑO=`date +%Y`
+HORA=`date +%H`
+ARCHIVO=respaldo$AÑO$MES$DIA_$HORA00.tar.gz
+# copia del archivo
+tar xvzf /usr/archivos/* /respaldos/$ARCHIVO
+</pre>
+					</div>
+					<p>Si este script lo nombramos como &quot;respaldo.sh&quot; ubicado 
+					dentro de /root con sus permisos adecuados de ejecucción, 
+					entonces la línea <font class="t1">cron</font> 
+					correspondiente sería la siguiente:</p>
+					<div id="e">
+						<pre>* 14,21 * * * root /root/respaldo.sh</pre>
+					</div>
+					<p>Con lo anterior deberá bastar para que el respaldo se 
+					ejecute a las horas indicadas y automáticamente se forme el 
+					nombre del archivo con la ayuda de <font class="t1">date</font> 
+					y las literales correspondientes.</p>
+					<p>Esto por supuesto es un ejemplo muy sencillo de lo que 
+					puede lograrse, espero te sea de utilidad para tus 
+					proyectos, y <font class="t1">date</font> ofrece más de lo 
+					que se expuso en esta guía, para más información puedes usar 
+					cualquiera de las ayudas que viene por defecto en casi 
+					cualquier distribucción Linux:</p>
+					<div id="e">
+						<pre>$&gt; date --help
+$&gt; man date
+$&gt; info date</pre>
+					</div>
+					</font></div>
+			</div>
+			</div>
+			<p>&nbsp;</TD>
+      </TR>
+
+      <TR>
+        <TD>awk</TD>
+
+        <TD>
+          La mayor&iacute;a de las veces awk se utiliza para extraer campos de una
+          l&iacute;nea de un texto.
+          El campo separador por defecto es un espacio. Para especificar uno
+          diferente se usa la opci&oacute;n -F.
+<PRE>
+ <SMALL>cat fichero.txt | awk -F, '{print $1 "," $3 }'
+</SMALL>
+</PRE>
+          Aqu&iacute; hemos usado la coma (,) como separador de campos e imprimimos
+          la columna primero y tercera ($1 $3). Si fichero.txt tiene l&iacute;neas como:
+<PRE>
+<SMALL>Adam Bor, 34, India
+Kerry Miller, 22, USA
+</SMALL>
+</PRE>
+          estonces mostrar&iacute;a lo siguiente:
+<PRE>
+<SMALL>Adam Bor, India
+Kerry Miller, USA
+</SMALL>
+</PRE>
+          Se pueden hacer muchas m&aacute;s cosas con awk pero este es
+          su uso m&aacute;s com&uacute;n.
+        </TD>
+      </TR>
+    </TABLE>
+    
+    
+</body>
+
+</html>
+
+<HTML>
+<HEAD>
+  <SCRIPT LANGUAGE="JavaScript">
+    function HolaMundo() {
+      alert("¡Hola, mundo!");
+    }
+  </SCRIPT>
+</HEAD>
+<BODY>
+</BODY>
+</HTML>
+
+/* este es una alerta en javascripts */
+<FORM>
+  <INPUT TYPE="button" NAME="Boton" VALUE="Pulsame"
+       onClick="alert('&iexcl;Hola,Mundo!')">
+</FORM>
+<p>&nbsp;</p>
+<table cellSpacing="0" cellPadding="0" width="100%" border="0" id="table1">
+	<tr>
+		<td>
+		<pre class="codigosimple">vacaciones = [&quot;Navidad&quot;, &quot;Semana Santa&quot;, &quot;Verano&quot;];
+<a href="javascript:alert('Navidad')">alert(vacaciones[3]);</a>
+</pre>
+		</td>
+	</tr>
+</table>
+

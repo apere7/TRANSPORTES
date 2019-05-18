@@ -1,0 +1,140 @@
+Ejemplos de formularios 
+Juego de botones direccionados a páginas LOCALES.
+Esto sólo funciona abriendo la página como file:/// no como servicio http://. 
+      
+
+
+<TABLE>
+<TR>
+   <TD>
+      <FORM METHOD="POST" ACTION="indice.html">
+      <INPUT TYPE="SUBMIT" VALUE="Indice">
+      </FORM>
+   </TD>
+
+   <TD>
+      <FORM METHOD="POST" ACTION="notas.html">
+      <INPUT TYPE="SUBMIT" VALUE="Notas">
+      </FORM>
+   </TD>
+
+   <TD>
+      <FORM METHOD="POST" ACTION="como.html">
+      <INPUT TYPE="SUBMIT" VALUE="Cómo funciona?">
+      </FORM>
+   </TD>
+</TR>
+</TABLE>
+
+
+<!-- -------------------------------------------------------------------------------- -->
+Juego de botones direccionados a páginas REMOTAS.
+Puede funcionar abriendo la página como servicio http:// o como file:///. pero deberá utilizarse METHOD=GET en lugar de METHOD=POST. 
+      
+
+
+<TABLE>
+<TR>
+ <TD>
+  <FORM METHOD="GET" ACTION="http://sestud.uv.es/manual.esp/indice.html">
+  <INPUT TYPE="SUBMIT" VALUE="Indice">
+  </FORM>
+ </TD>
+
+ <TD>
+  <FORM METHOD="GET" ACTION="http://sestud.uv.es/manual.esp/notas.html">
+  <INPUT TYPE="SUBMIT" VALUE="Notas">
+  </FORM>
+ </TD>
+
+ <TD>
+  <FORM METHOD="GET" ACTION="http://sestud.uv.es/manual.esp/como.html">
+  <INPUT TYPE="SUBMIT" VALUE="Cómo funciona?">
+  </FORM>
+ </TD>
+</TR>
+</TABLE>
+
+
+<!-- -------------------------------------------------------------------------------- -->
+1 campo vacío. Longitud no limitada.
+1 campo vacío. Longitud limitada a 10 
+  
+
+ 
+
+<FORM METHOD="POST" ACTION="http://mecaniza.sestud.uv.es/cgi-bin/test2-cgi">
+ <INPUT NAME="campo1">
+ <INPUT NAME="campo2" SIZE=10 MAXLENGTH=10>
+<P>
+ <INPUT TYPE="submit" VALUE="Procesar">
+ <INPUT TYPE="reset" VALUE="Inicializar"></FORM>
+
+
+<!-- -------------------------------------------------------------------------------- -->
+1 campo vacío. Longitud no limitada.
+1 campo con contenido visible.
+1 campo con contenido oculto 
+   
+
+ 
+
+<form method="POST" action="http://mecaniza.sestud.uv.es/cgi-bin/test2-cgi">
+ <input name="campo1">
+ <input name="campo2" VALUE="TEXTO VISIBLE">
+ <input type="password" name="campo3" VALUE="TEXTO OCULTO">
+<P>
+ <input type="submit" value="Procesar">
+ <input type="reset" value="Inicializar"></form>
+
+
+<!-- -------------------------------------------------------------------------------- -->
+1 campo vacío. Longitud sin limitar.
+1 campo vacío. Longitud limitada a 10.
+2 botones de selección. 
+  
+
+Clase A  Clase B  
+
+  
+
+<FORM METHOD="POST" ACTION="http://mecaniza.sestud.uv.es/cgi-bin/test2-cgi">
+ <INPUT NAME="campo1">
+ <INPUT NAME="campo2" SIZE=10 MAXLENGTH=10>
+<P>
+Clase A <INPUT TYPE="RADIO" NAME="clase" VALUE="A">
+Clase B <INPUT TYPE="RADIO" NAME="clase" VALUE="B">
+<P>
+ <INPUT TYPE="SUBMIT" VALUE="Procesar">
+ <INPUT TYPE="RESET" VALUE="Inicializar">
+
+</form>
+
+
+<!-- -------------------------------------------------------------------------------- -->
+1 campo vacío. Longitud sin limitar.
+1 campo vacio. Longitud limitada a 10.
+2 botones selección
+2 casillas selección 
+  
+
+Clase A  Clase B  
+
+Tipo 1  Tipo 2  
+
+  
+
+<FORM METHOD="POST" ACTION="http://mecaniza.sestud.uv.es/cgi-bin/test2-cgi">
+ <INPUT NAME="campo1">
+ <INPUT NAME="campo2" SIZE=10 MAXLENGTH=10>
+<P>
+Clase A <INPUT TYPE="RADIO" NAME="clase" VALUE="A">
+Clase B <INPUT TYPE="RADIO" NAME="clase" VALUE="B">
+<P>
+Tipo 1 <INPUT TYPE="CHECKBOX" NAME="tipo" VALUE="1">
+Tipo 2 <INPUT TYPE="CHECKBOX" NAME="tipo" VALUE="2">
+<P>
+<INPUT TYPE="SUBMIT" VALUE="Procesar">
+<INPUT TYPE="RESET" VALUE="Inicializar">
+
+

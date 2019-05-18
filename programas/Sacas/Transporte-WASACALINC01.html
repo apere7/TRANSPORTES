@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="es">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Transporte-Wasacalinc01</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+
+<body bgcolor="#C0C0C0">
+
+<p align="center"><u><font size="6" color="#0000FF">Transporte Servidor:WASACALINC01</font></u></p>
+ <a href="../../index.html">Regresar</a>
+
+ <!--############################################ -->
+ <br>
+<strong>Extenciones( .war - .properties - .xml )</strong><br>
+<strong>Ip 10.1.192.4</strong>
+
+<pre>
+1)       Conectarse con el usuario SacasAMB  clave: Caracas2011  (putty)
+2)       luego le debes dar el comando <font color="#0000FF"><strong>su – jbst02 clave: Caracas2011</strong></font>                                                          
+3)       Se inactivan los servicios de jboss con el shell<font color="#0000FF"><strong> ./stopJboss.sh</strong></font><strong> Ver Anexo1 y 2</strong> 
+4)       Activas el agente de Harvest En el servidor ejecutando el shell<font color="#0000FF"><strong> ./actagente.sh</strong></font> 
+5)       Conectas el agente del servidor con harvest <font color="#0000FF"><strong>wasacalinc01 - jbst02  - wasacalinc01 -</strong></font>
+6)       En harvest buscas el proyecto SACAS paquete que te indicaron Extenciones( .war - .properties - .xml  )
+7)       Ejecutar en harvest el checkout Nota: deberá estar pendientes de el tipo de archivo ya que va a diferentes rutas anexo
+8)       Se Activa el de jboss con el shell<font color="#0000FF"><strong> ./starJboss.sh</strong></font> <strong>Ver Anexo3</strong>
+
+<PRE> 
+.war			/tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/<font color="#0000FF"><strong>deploy</strong></font>
+.properties		/tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/<font color="#0000FF"><strong>conf</strong></font>
+.xml			/tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/<font color="#0000FF"><strong>conf</strong></font>
+</PRE>
+
+<font color="#0000FF"><strong>Anexo1</strong></font> 
+<strong>Para verificar si el servicio jboss esta activo dar el comando</strong>
+ps -ef | grep /usr/java/jdk1.6.0_18/bin/java
+Si aparece esta linea:<font color="#0000FF"><strong>-classpath /tcantv/appl/jbst02/jboss-5.1.0.GA/bin/run.jar:/usr/java/jdk1.6.0_18/lib/tools.jar org.jboss.Main</strong></font>
+El servicio se encuentra activo
+
+<font color="#0000FF"><strong>Anexo2</strong></font> 
+<strong> Si aparece este mensaje  y no aparece lo resaltado en azul anteriormente es que esta Inactivo </strong>
+[jbst01@wasacalinc01 ~]$  ps -ef | grep /usr/java/jdk1.6.0_18/bin/java
+jbst01   23262 22273  0 09:33 pts/1    00:00:00 grep /usr/java/jdk1.6.0_18/bin/java
+[jbst01@wasacalinc01 ~]$
+
+<font color="#0000FF"><strong>Anexo3</strong></font> 
+5)<strong>Una vez activado el jboss aparece el mensaje resaltado en azul dar enter </strong>
+09:29:06,720 INFO  [ServerImpl] JBoss (Microcontainer) [5.1.0.GA (build: SVNTag=JBoss_5_1_0_GA date=200905221634)] <font color="#0000FF"><strong>Started in 46s:62ms</strong></font> 
+

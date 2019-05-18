@@ -1,0 +1,174 @@
+<html>
+
+1) <font color="#0000FF">Checkout SVN</font> 
+
+
+<head>
+<meta http-equiv="Content-Language" content="es">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>FallasKenan</title>
+
+</head>
+
+<body bgcolor="#C0C0C0">
+<p align="center"><u><font size="6" color="#0000FF">Transporte CORE</font></u></p>
+<hr>
+
+<PRE>
+Pasos Iníciales si no tiene la carpeta 
+(Repositorios Para Transporte) en el escritorio.
+
+<p style="ejemploap"> 1) Checkout SVN</p> 
+	· En el escritorio deberá crear una carpeta de nombre: Repositorios Para Transportes
+	· Dentro de esa carpeta unas sub carpeta de nombre:  SACAS_DES       y      SACAS_QA
+	· Dar click derecho en cualquier parte del escritorio 
+	<IMG SRC="../../Imagenes/sacas/Captura01.JPG" ALT="PRUEBA1" BORDER=2> <br>
+	· Para copiar la de desarrollo seria así:
+	<IMG SRC="../../Imagenes/sacas/Captura02.JPG" ALT="PRUEBA" BORDER=2> <br>
+	
+	
+	
+	· Para realizar el CHECKOUT  que copiar Elemento en  carpeta de QA seria así:
+	<IMG SRC="../../Imagenes/sacas/Captura03.JPG" ALT="PRUEBA" BORDER=2> <br>
+	
+	
+	
+	<font color="#0000FF"><b>Pasos Para realizar Transporte.</b></font>
+	
+2) <font color="#0000FF"><b>En el Escritorio del PC.</b></font>
+	· Dar doble click en carpeta (Repositorio Para Transporte)
+	· En la sub-carpeta ( SACAS_DES )  dar click derecho   SVN UPDATE
+	· En la sub-carpeta ( SACAS_QA )  dar click derecho    SVN UPDATE 
+	· Luego dentro de la sub-carpeta ( SACAS_QA )
+	· Crear una carpeta 2014-N0004455314 
+	· Dentro de la Anterior Crear sub-carpetas  SacasWeb   o   SacasCore
+	· Copiar Manualmente los elementos solicitados
+	· Realizar el ADD y COMMIT
+	· Copiar MANUALMENTE  los elementos a transportar en la ruta /home/UsuariodeRed/TRANSPORTE
+	· Según sea el caso SacasCore ir al Paso 3
+	
+3) <font color="#0000FF"><b>Entrar en PUTTY</b></font>  
+	· Usuario de Red 
+	· su - jbst02 y te pedirá el password(Cantvxxxx)
+	· Luego colocas m y se activara el menú
+	
+	Estas son las rutas hacia el ASACALINC01:
+	Si es *.jar                      /tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/lib
+	Si es *.properties       /tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/conf
+	Si es *.aar                    /tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/deploy/axis2.war/WEB-INF/services
+	                 
+	
+	
+Pasos por Menú SacasCore: (ASACALINC01) (IP=10.1.192.4)
+Tipos: (.jar) - (.properties) - (.aar)
+
+               [a]  apere7  ...................
+               [b]  eriosg01...................
+               [b]  dquiro  ...................
+               [d]  omarin  ...................
+               [e]  ogarc3  ...................
+               [f]  mvega1  ...................
+               [g]  crinco  ...................
+               [h]  cmont3  ...................
+               [i]  lgarci19...................
+
+               
+               [2]  ............................ Muestra Elementos que se encuentran en la carpeta:/home//TRANSPORTE
+               [3]  ............................ Copia archivos a las rutas que corresponda (ASACALINC01)
+               [4]  ............................ Activa el JBOSS  SERVIDOR (ASACALINC01)
+               [5]  ............................ Reporte de Transporte Realizado en (ASACALINC01) y enviado por Mail
+               [6]  ............................ Muestra Los Pasos Para Realizar Transportes
+
+
+               La ultima Opcion realizada fue :
+
+
+               [9]  ............................ Salir
+               =======================
+                -n Entre la opcion [1-9]:
+
+     Nota: El paso 4 genera el archivo para el paso5 (CopiaCore)
+
+
+
+Formulario Para Transporte SVN Aplicación: Sacas-Web Wsacalinc01
+- tipo: Instalación - IR - Nivelación - Otros 
+- Requerimiento O Tiquet: Nro. 4455314 
+- Repositorio Origen:  http://repositorio-des.cantv.com.ve/svn/SACAS/tags/Transporte/SacasWeb/
+- Repositorio Destino: http://repositorio-qa.cantv.com.ve/svn/SACAS/tags/Transporte/SacasWeb/ 
+- Ruta:                /tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/conf       
+- Nombre: Auditoria. properties
+- Revisión:            499
+Observaciones: Si se realiza por paquete o carpeta la revisión será una sola. 
+ 
+ 
+ 
+Formulario Para Transporte SVN Aplicación: Sacas-Core Asacalinc01
+- tipo: Instalación - IR - Nivelación - Otros 
+- Requerimiento O Tiquet: 
+- Repositorio Origen:  http://repositorio-des.cantv.com.ve/svn/SACAS/tags/Transporte/SacasCore/
+- Repositorio Destino: http://repositorio-qa.cantv.com.ve/svn/SACAS/tags/Transporte/SacasCore/ 
+- Ruta:      
+- Nombre: 
+- Revisión:            
+Observaciones: Si se realiza por paquete o carpeta la revisión será una sola. 
+ 
+ 
+
+
+
+<font  SIZE=5 color="#0000FF"><b><em>En  el caso de solicitar el log del portal</em></b></font>
+<font  FACE="italic" SIZE=5 color="#0000FF"><b>En  el caso de solicitar el log del portal</b></font>
+EN LA RUTA:   /tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/log
+Lista las ultimas 100 líneas del Log
+tail -n 100 server.log       
+
+Escribir la última parte del archivo a medida que va creciendo. 
+Esta opción es muy útil para monitorear archivos de registro que van creciendo con el tiempo.
+tail -f server.log
+
+					Para eliminar temporales en sacas
+• Bajar el servicio jbst02
+• Luego en la ruta cd /tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/tmp
+           cd /tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/work 
+• luego dar el comando: rm -r *
+• Activar el servicio jbst02
+
+
+
+<font color="#0000FF"><b>NOTAS DEL MENU SACAS</b></font>						 
+• En el programa menucore.sh y menuweb.sh 
+• se genera un archivo tempcore.txt y tempweb.txt para los programas copiaweb.sh y copiacore.sh 
+• El cual se elimina cada vez que corres el copiaweb.sh y copiacore.sh
+
+Se le deberá colocar a cada usuario de sacas chmod 766 en el directorio /home/nombre_usuario_red/
+ 
+
+
+<font color="#0000FF"><b>Para consulta y Reset de usuarios con el usuario admqa en sacas</b></font> 
+
+Sudo -l
+
+sudo /usr/bin/faillog -a
+
+sudo /usr/bin/faillog -r
+
+
+<font color="#0000FF"><b>En caso de que al dar svn update de este mensaje:</b></font>
+[jbst02@wsacalinc01]:/tcantv/appl/jbst02/svn_sacas_qa/Requerimientos>svn update
+svn: Working copy '.' locked
+svn: run 'svn cleanup' to remove locks (type 'svn help cleanup' for details)
+
+Utilizar este comando: svn cleanup
+
+
+
+
+</PRE>
+
+
+</body>
+
+</html>
