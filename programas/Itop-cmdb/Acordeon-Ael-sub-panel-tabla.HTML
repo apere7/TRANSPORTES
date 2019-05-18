@@ -1,0 +1,922 @@
+<!----------------   Variables  -------------------------------->
+	<?php $var1='color="blue"'; ?>
+	<?php $var2="imagenes/fondosAzul-infinito.jpg"; ?>
+	
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	</head>
+	<!-- Coloca el Fondo AZUL A LA PAGINA INICIAL -->	
+	<body BACKGROUND="<?php echo $var2 ?>" BGPROPERTIES="fixed">
+		
+    <body bgcolor="#3366CC">
+		<!--Esto es Buscado en la carpeta de estructura la parte de arriba-->
+		<?php include '/estructura/arribahead.php'; ?>
+		
+		<!--Esto es Buscado en la carpeta de estructura la parte de la izquierda -->
+		<?php include '/estructura/izquierda1.php'; ?>
+		
+        <div class="container">
+            <h1> <font color="red" > Aplicacion: ITOP-CMDB </h1></font>
+			
+            <!--collapse general-->
+            <div class="panel panel-primary" style="background-color:#a3c2c2;">
+                <div class="panel-heading">
+                    <h4>CASOS DE ITOP-CMDB.
+                        <span class="pull-right">
+                            <button type="button" style="margin-top:-6px;" data-toggle="collapse" data-target="#panel1" class="btn btn-success glyphicon glyphicon-chevron-down" title="Desplegar Información"></button>
+						</span>
+					</h4>
+				</div>
+				
+                <div class="panel-body collapse" id="panel1"> <!-- A partir de aqui es el contenido del collapse general Caja Azul-->
+		 
+		<!-- Inicio del modelo 1 nombre_02-->			
+				<button type="button" class="btn btn-success btn-lg" title="Desplegar Información" data-toggle="modal" data-target="#nombre_02">Terminologia <span class="glyphicon glyphicon-file"></span></button>
+					 <div id="nombre_02" class="modal fade" role="dialog">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<!-- Contenido del modal -->
+								<div class="modal-header" style="background-color:#40bf80;color:white;"> <!-- Cabecera del modal -->
+									<button type="button" class="close" data-dismiss="modal"><span style="color:white;" class="glyphicon glyphicon-remove"></span></button>
+									<h4 class="modal-title">Terminologia</h4>
+								</div>
+								<div class="modal-body" style="background-color:#a3c2c2;border: 2px solid #669999;"> <!-- Contenido o cuerpo del modal-->
+								
+								
+								<h3> Nombre de Servidores</H3> 
+									<table class="table table-bordered"  style="background-color:#40bf80";>
+									  <thead>
+										<tr>
+										  <th scope="col">Servidor</th>
+										  <th scope="col">Ambiente</th>
+										  <th scope="col">IP</th>
+										</tr>
+									  </thead>
+									  <tbody>
+										<tr class="success">
+										  <td>AELWT01</td>
+										  <td>WEB</td>
+										  <td>10 1.195.49</td>
+										</tr>
+										<tr class="info">
+										  <td>AELWT02</td>
+										  <td>WEB </td>
+										  <td></td>
+										</tr>
+										<tr class="success">
+										  <td>AELPT01</td>
+										  <td>Proceso</td>
+										  <td></td>
+										</tr>
+										<tr class="info">
+										  <td>AELPT02</td>
+										  <td>Proceso</td>
+										  <td></td>
+										</tr>
+									  </tbody>
+									</table>
+<hr>										
+<!--Final de la 1ra Tabla -->								
+									<h3> Consulta de Servicios java-Instalio-jboss</H3> 
+									<table class="table table-bordered"  style="background-color:#40bf80";>
+									  <thead>
+										<tr>
+										  <th scope="col">Desde</th>
+										  <th scope="col">Hasta</th>
+										</tr>
+										</thead>
+									  <tbody>
+										<tr class="success">
+										  <td>ps -ef | grep java</td>
+										  <td>Aparecen los dos jboss y Intalio</td>
+										</tr>
+										<tr class="info">
+										  <td>ps -ef | grep Intalio</td>
+										  <td>Aparecen Intalio</td>
+										</tr>
+										<tr class="success">
+										  <td>ps -ef | grep jboss</td>
+										  <td>Aparecen jboss</td>
+										</tr>
+									  </tbody>
+									</table>
+<!--Final de la 2da Tabla -->
+<hr>
+									<h3> Transporte Servidor: wasacalinc01 IP 10.1.192.4 </H3> 
+									<table class="table table-bordered"  style="background-color:#40bf80";>
+									  <thead>
+										  <tr>
+										  <th scope="col">1</th>
+										  <th scope="col">Pasos Para el Transporte de elementos con Extenciones( .war - .properties - .xml )</th>
+										</tr>
+										</thead>
+									  <tbody>
+										<tr class="success">
+										  <td>.</td>
+						  
+				<td>- Conectarse con el usuario SacasAMB  clave: Caracas2011  (putty)<br>
+					https://www.youtube.com/watch?v=QaxgF4v4hms (como user gh´pages)
+				
+					- luego le debes dar el comando <font color="#0000FF"><strong>su – jbst02 clave: Caracas2011</strong></font><br>                                                          
+					- Se inactivan los servicios de jboss con el shell<font color="#0000FF"><strong> ./stopJboss.sh</strong></font><strong> Ver Anexo1 y 2</strong> <br>
+					
+					- Activas el agente de Harvest En el servidor ejecutando el shell<font color="#0000FF"><strong> ./actagente.sh</strong></font> <br>
+					
+					- Conectas el agente del servidor con harvest <font color="#0000FF"><strong>wasacalinc01 - jbst02  - wasacalinc01 -</strong></font><br>
+					
+					- En harvest buscas el proyecto SACAS paquete que te indicaron Extenciones( .war - .properties - .xml  ) <br>
+					
+					- Ejecutar en harvest el checkout Nota: deberá estar pendientes de el tipo de archivo ya que va a diferentes rutas anexo<br>
+					
+					- Se Activa el de jboss con el shell<font color="#0000FF"><strong> ./starJboss.sh</strong></font> <strong>Ver Anexo3</strong><br> 
+				</td>
+										<thead>
+										  <tr>
+										  <th scope="col">Tipo</th>
+										  <th scope="col">Ruta/Ubicacion</th>
+										</tr>
+										</thead>
+									<tbody>
+										<tr class="success">
+										  <td>.war</td>
+										  <td>&nbsp;&nbsp;/tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/<font color="#0000FF"><strong>deploy</strong></font><br></td>
+										  </tr>
+										<tr class="info">
+										  <td>.properties</td>
+										  <td>&nbsp;&nbsp;/tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/<font color="#0000FF"><strong>conf</strong></font><br></td>
+										</tr>
+										<tr class="success">
+										  <td>.xml</td>
+										  <td>&nbsp;&nbsp;/tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/<font color="#0000FF"><strong>conf</strong></font><br></td>
+										</tr>
+									</tbody>
+		<!-- FIN -->
+									
+									
+									
+				<!-- inicio -->
+										<thead>
+										  <tr>
+										  <th scope="col">Anexos</th>
+										  <th scope="col">A</th>
+										</tr>
+										</thead>
+										</tr>
+										<tr class="success">
+										  <td><font color="#0000FF"><strong>Anexo1</strong></font></td>
+										  <td><strong>Para verificar si el servicio jboss esta activo dar el comando</strong><br>
+											ps -ef | grep /usr/java/jdk1.6.0_18/bin/java <br>
+											Si aparece esta linea:<font color="#0000FF"><strong>-classpath /tcantv/appl/jbst02/jboss-5.1.0.GA/bin/run.jar:/usr/java/jdk1.6.0_18/lib/tools.jar org.jboss.Main</strong></font><br>
+											El servicio se encuentra activo<br></td>
+										</tr>
+										
+										<tr class="info">
+										 <td><font color="#0000FF"><strong>Anexo2</strong></font></td>
+										  <td><strong> Si aparece este mensaje  y no aparece lo resaltado en azul anteriormente es que esta Inactivo </strong><br>
+											[jbst01@wasacalinc01 ~]$  ps -ef | grep /usr/java/jdk1.6.0_18/bin/java <br>
+											jbst01   23262 22273  0 09:33 pts/1    00:00:00 grep /usr/java/jdk1.6.0_18/bin/java <br>
+											[jbst01@wasacalinc01 ~]$ <br> </td> 
+										</tr>
+										
+										<tr class="success">
+										  <td><font color="#0000FF"><strong>Anexo3</strong></font></td>
+										  <td><strong>Una vez activado el jboss aparece el mensaje resaltado en azul dar enter </strong><br>
+											09:29:06,720 INFO  [ServerImpl] JBoss (Microcontainer) [5.1.0.GA (build: SVNTag=JBoss_5_1_0_GA date=200905221634)] <font color="#0000FF"><strong>Started in 46s:62ms</strong></font><br>
+											</td>
+										</tr>
+									  </tbody>
+									</table>
+<!--Final de la EN PROCESO3 Tabla -->
+<hr>
+									<h3> Rutas de Servicios WEB</H3> 
+									<table class="table table-bordered"  style="background-color:#40bf80";>
+									  <thead>
+										<tr>
+										  <th scope="col">URL</th>
+										  <th scope="col">Nombre</th>
+										</tr>
+										</thead>
+									  <tbody>
+										<tr class="success">
+										  <td>https://aelwt01.cantv.com.ve/averias/reporte/inicio</td>
+										  <td>Falta NOMBRE</td>
+										</tr>
+										<tr class="info">
+										  <td>https://aelwt02.cantv.com.ve/averias/reporte/inicio</td>
+										  <td>Falta Nombre</td>
+										</tr>
+										<tr class="success">
+										  <td>http://aelpt01.cantv.com.ve:443/vp</td>
+										  <td>Falta Nombre</td>
+										</tr>
+									  </tbody>
+									</table>
+<!--Final de la 2da Tabla -->
+<hr>								
+									 <h3> Tabla de usuario y password</H3> 
+									<table class="table table-bordered"  style="background-color:#40bf80";>
+									  <thead>
+										<tr>
+										  <th scope="col">Servidor</th>
+										  <th scope="col">Usuario</th>
+										  <th scope="col">Password</th>
+										  <th scope="col">SU</th>
+										  <th scope="col">Comando</th>
+										</tr>
+									  </thead>
+									  <tbody>
+										<tr class="success">
+										  <td>aelwt01</td>
+										  <td>apere7</td>
+										  <td>Caracas_2014</td>
+										  <td>su - aelwt01  Cantv2013</td>
+										  <td>sudo /usr/bin/passwd cmont3</td>
+										</tr>
+										<tr class="info">
+										  <td>aelwt02</td>
+										  <td>apere7 </td>
+										  <td>Caracas_2014</td>
+										  <td>su - aelwt02  Cantv2013</td>
+										  <td>sudo /usr/bin/passwd cmont3</td>
+										</tr>
+										<tr class="success">
+										  <td>aelpt01</td>
+										  <td>apere7</td>
+										  <td>Caracas_2014</td>
+										  <td>su - aelpt01  Cantv2013</td>
+										  <td>sudo /usr/bin/passwd cmont3</td>
+										</tr>
+										<tr class="info">
+										  <td>aelpt02</td>
+										  <td>apere7</td>
+										  <td>Caracas_2014</td>
+										  <td>su - aelpt02  Cantv2013</td>
+										  <td>sudo /usr/bin/passwd cmont3</td>
+										</tr>
+									  </tbody>
+									</table>
+<hr>									
+								</div>
+							</div>
+						</div>
+					</div>
+				<br><br>
+		<!-- FIN del modelo 1 nombre_02-->				 
+
+			<!-- Inicio del modelo 2 nombre_03-->			
+					<button type="button" class="btn btn-success btn-lg" title="Desplegar Información" data-toggle="modal" data-target="#nombre_03">Transporte <span class="glyphicon glyphicon-file"></span></button>
+					 <div id="nombre_03" class="modal fade" role="dialog">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<!-- Contenido del modal -->
+								<div class="modal-header" style="background-color:#40bf80;color:white;"> <!-- Cabecera del modal -->
+									<button type="button" class="close" data-dismiss="modal"><span style="color:white;" class="glyphicon glyphicon-remove"></span></button>
+									<h4 class="modal-title">Transporte</h4>
+								</div>
+								<div class="modal-body" style="background-color:#a3c2c2;border: 2px solid #669999;"> <!-- Contenido o cuerpo del modal-->
+	<li>  “GCC Control de ambientes” es el encargado de realizar el transporte de la nueva versión en el ambiente de Calidad.
+ 		
+					<li> <strong> 1) Subir elemento  en SVN </strong>                                                                                 
+					<dd> Repositorio desde: http://repositorio-des.cantv.com.ve/svn/AEL </dd>
+					<dd> Repositorio hasta: http://repositorio-qa.cantv.com.ve/svn/AEL </dd>
+					<br>
+				<dd> Ingresar al servidor aelpt01 y aelpt02 (servidores de proceso) con la cuenta y contraseña correspondiente.</dd>
+					<dd> Cambiarse al usuario administrador de la aplicación </dd>
+					<dd> su – aelpt01      password=Cantv2013 </dd>
+					<dd> su – aelpt02      password=Cantv2013 </dd>
+								 				
+					<dd> - Ingresar a la carpeta <font <?php echo $var1 ?> > /tcantv/appl/svn_ael_qa/ael_procesos</font></dd>
+					<dd> - Ejemplo de variable   <font <?php echo $var1 ?> > /tcantv/appl/svn_ael_qa/ael_procesos</font></dd>
+					<dd> - Ejecutar el comando   <font <?php echo $var1 ?> > svn update</font> </dd>
+					<dd> - Ingresar a la carpeta <font <?php echo $var1 ?> > /tcantv/appl/svn_ael_qa</font> </dd>
+					<dd> - Ejecutar el comando   <font <?php echo $var1 ?> > update.sh</font> <dd>
+					<dd>   Copia desde: <font <?php echo $var1 ?> > /tcantv/appl/svn_ael_qa/ael_procesos</font></dd>
+								 				
+					<dd> -  Hacia:  </dd>
+					<dd> - Reinicia el servicio de la aplicación apache.</dd>
+<hr>
+
+								<li> <strong>TRANSPORTE PROCESO AELPT01 y AELPT02</strong>
+								  
+								  	<OL>
+									<li> Subir elemento en SVN 
+									<li> Repositorio desde: http://repositorio-des.cantv.com.ve/svn/AEL 
+									<li> Repositorio hasta: http://repositorio-qa.cantv.com.ve/svn/AEL 
+									<li> Colocarlo en la carpeta TRANSPORTE de los servidores aelpt01 y aelpt02
+								 	</OL>
+									
+									<li>  <strong>Primer transporte</strong>
+									<OL>
+									<li> Se ingresa en el Servidor aelpt01 
+									<li> su – aelpt01 password=Cantv2013
+									<li> Se tipea M y aparecerá el menú
+									<li> Colocas la letra de tu Usuario
+									<li> Realizas el transporte en el Servidores aelpt01
+									</OL>
+									
+									<li> <strong>Segundo transporte</strong> 
+									<OL>
+									<li> Luego le das la opción 6 y te pedirá password del servidor aelpt02 Con esto ingresas en el Servidores aelpt02
+									<li> su – aelpt02 password=Cantv2013
+									<li> Se tipea M y aparecerá el menú
+									<li> Colocas la letra de tu Usuario
+									<li> Realizas el transporte en el Servidores aelpt02 
+									<li> Para salir dar exit y regresas al Menú del servidor aelpt01 y volver a dar exit.
+									</OL>
+									
+									
+								<DT>COMENTARIOS:</DT> 
+								<OL>
+									<LI>Se deberá realizar el transporte de la carpeta ael a los dos servidores aelpt01 y aelpt02 
+									<LI>Se deberá realizar el transporte de la carpeta ael a los dos servidores aelwt01 y aelwt02
+								</OL>  
+								</div>
+							</div>
+						</div>
+					</div>
+				<br><br>
+		<!-- FIN del modelo 2 nombre_03-->
+		
+		
+		
+		
+		
+
+<!-- INICIO DEL MODELO-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1fila2"><strong>Transporte11</strong></a>
+                                </h4>
+                            </div>
+                            <div id="panel1fila2" class="panel-collapse collapse">
+                                <div class="panel-body"   style="background-color:#40bf80;color:black;"  >
+
+							<u><font size="3" color="#0000FF"><b>Subir los elemento en SVN</b></font></u>
+                                	<li> El grupo “GCC Control de ambientes” es el encargado de realizar el transporte de la nueva versión en el ambiente de Calidad.
+ 		
+                                                                              
+									<li> • Repositorio desde: http://repositorio-qa.cantv.com.ve/svn/AEL 
+									<li> • Repositorio hasta:  
+								  
+									<li> Ingresar a los servidores de calidad y sincronizar (update) con el repositorio:
+										<li> Servidores aelpt01, o aelpt02 (proceso)
+											<li> . Ingresar al servidor aelpt01 y aelpt02 (servidores de proceso) con la cuenta y contraseña correspondiente.
+											<li> . Cambiarse al usuario administrador de la aplicación
+											 <li> su – aelpt01       password=Cantv2013
+											 <li> su – aelpt02      password=Cantv2013
+								 				
+												<li> - Ingresar a la carpeta /tcantv/appl/svn_ael_qa/ael_procesos 
+												<li> - Ejecutar el comando svn update 
+								 				
+												<li> - Ingresar a la carpeta /tcantv/appl/svn_ael_qa
+												<li> - Ejecutar el comando update.sh 
+												<li> - que como su nombre lo indica, copia desde: /tcantv/appl/svn_ael_qa/ael_procesos 
+								 				
+												<li> -  Hacia:  
+												<li> - Reinicia el servicio de la aplicación apache.
+
+							<hr>
+							<u><font size="3" color="#0000FF"><b>TRANSPORTE PROCESO: AELPT01 y AELPT02</b></font></u>
+								  
+								  
+									<li> 1. Subir elemento en SVN 
+									<li> 2. Repositorio desde: http://repositorio-des.cantv.com.ve/svn/AEL 
+									<li> 3. Repositorio hasta: http://repositorio-qa.cantv.com.ve/svn/AEL 
+									<li> 4. Colocarlo en la carpeta TRANSPORTE de los servidores aelpt01 y aelpt02
+								 	
+									<br><font size="3" color="#0000FF"><b>Primer transporte: Hacia el servidor AELPT01</b></font></br>
+									<li> 5. Se ingresa en el Servidor aelpt01 
+									<li> 6. su – aelpt01 password=Cantv2013
+									<li> 7. Se tipea M y aparecerá el menú
+									<li> 8. Colocas la letra de tu Usuario
+									<li> 9. Realizas el transporte en el Servidores aelpt01
+									
+									<br><font size="3" color="#0000FF"><b>Segundo transporte: Hacia el servidor AELPT02</b></font></br>
+									<li> 10. Luego le das la opción 6 y te pedirá password del servidor aelpt02 Con esto ingresas en el Servidores aelpt02
+									<li> 11. su – aelpt02 password=Cantv2013
+									<li> 12. Se tipea M y aparecerá el menú
+									<li> 13. Colocas la letra de tu Usuario
+									<li> 14. Realizas el transporte en el Servidores aelpt02 
+									<li> 15. Para salir dar exit y regresas al Menú del servidor aelpt01 y volver a dar exit.
+
+
+								<li> • Se deberá realizar el transporte de la carpeta ael a los dos servidores aelpt01 y aelpt02
+								<li> • Se deberá realizar el transporte de la carpeta ael a los dos servidores aelwt01 y aelwt02
+
+
+                                	<DT>COMENTARIOS:</DT> 
+									<OL><LI> ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip 
+										<LI>En Harvest es : apere7  Password: Harvest En Harvest es : 
+										<LI>apere7  Password: Harvest En Harvest es : apere7  Password: Harvest								
+									</OL>
+                        		</div>
+							</div>
+						</div>
+<!-- FINAL DEL MODELO-->
+
+<!-- INICIO DEL MODELO-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1fila3"><strong>Admqa-SUDO Y SSH </strong></a>
+                                </h4>
+                            </div>
+                            <div id="panel1fila3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                	<li> Para revisar si el usuario xxxxxxxx  tiene falla
+
+									<li> sudo /usr/bin/faillog -a
+									<li> Login       Failures Maximum Latest   
+									<li> mrivas10        0        0   12/31/69 20:00:00 -0400
+									<li> rhernan         0        0   12/31/69 20:00:00 -0400
+									<li> segsacas        0        0   12/31/69 20:00:00 -0400
+									<li> apere7          8        0   07/14/14 09:51:43 -0430  161.196.26.
+									<li> eriosg01        0        0   12/31/69 20:00:00 -0400
+
+									 
+									<li> Se Resetea las fallas del usuario xxxxxxxx 
+									 
+									<li> sudo /usr/bin/faillog -r
+									<li> Login       Failures Maximum Latest   
+									<li> mrivas10        0        0   12/31/69 20:00:00 -0400
+									<li> rhernan         0        0   12/31/69 20:00:00 -0400
+									<li> segsacas        0        0   12/31/69 20:00:00 -0400
+									<li> apere7          0        0   07/14/14 09:51:43 -0430  161.196.26.
+									<li> eriosg01        0        0   12/31/69 20:00:00 -0400
+									 
+									 
+									<li> Consulta Usuarios
+									<li> sudo -l
+									 
+									<li> Cambiar Password
+									<li> sudo -l
+									<li> sudo /usr/bin/faillog -a
+									<li> sudo /usr/bin/faillog -r
+									<li> sudo /usr/bin/passwd cmont3
+
+                                	<DT>COMENTARIOS:</DT> 
+									<OL><LI> ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip 
+										<LI>En Harvest es : apere7  Password: Harvest En Harvest es : 
+										<LI>apere7  Password: Harvest En Harvest es : apere7  Password: Harvest								
+									</OL>
+                        		</div>
+							</div>
+						</div>
+<!-- FINAL DEL MODELO-->
+
+<!-- INICIO DEL MODELO-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1fila4"><strong>PROCESO-AELPT01 y 02 </strong></a>
+                                </h4>
+                            </div>
+                            <div id="panel1fila4" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                	<li> Se debe realizar el transporte en los dos servidores: aelpt01 y aelpt02
+  
+ 	
+									<li> 1) Subir elemento  en SVN                                                                                 
+									<li> • Repositorio desde: http://repositorio-des.cantv.com.ve/svn/AEL 
+									<li> • Repositorio hasta:  http://repositorio-qa.cantv.com.ve/svn/AEL 
+									<li> • Colocarlo en la carpeta de tu usuario TRANSPORTE de los servidores aelpt01 y aelpt02
+									 
+									<li> 2) En el Escritorio del PC.
+										<li> · Dar doble click en carpeta (Repositorio Para Transporte)
+										<li> · En la sub-carpeta ( AEL_DES )  dar click derecho   SVN UPDATE
+										<li> · En la sub-carpeta ( AEL_QA )  dar click derecho    SVN UPDATE 
+										<li> · Luego dentro de la sub-carpeta ( AEL_QA )
+										<li> · Crear una carpeta 2014-N0004455314 
+										<li> · Dentro de la Anterior Crear sub-carpetas  AELWeb   o   AELproceso
+										<li> · Copiar Manualmente los elementos solicitados
+										<li> · Realizar el ADD y COMMIT
+										<li> · Copiar MANUALMENTE  los elementos a transportar en la ruta /home/UsuariodeRed/TRANSPORTE
+										<li> · Según sea el caso AELWeb ir al Paso 3
+										<li> · Según sea el caso AELproceso ir al Paso 4
+									 	
+										
+										<li> Estas son las rutas hacia el AEL:
+										<li> Si es AELproceso                /tcantv/appl/
+									 				
+													
+									<li> 3) Inicio del  Primer transporte
+									<li> 4) Se ingresa en el Servidores aelpt01 
+									<li> 5) su – aelpt01       password=Cantv2013
+									<li> 6) Se tipea M y aparecerá el menú
+									<li> 7) Colocas la letra de tu Usuario
+									<li> 8) Realizas el transporte en el servidor aelpt01
+									<li> 9) Fin del Primer transporte
+									 
+									<li> 10) Inicio del  Segundo transporte
+									<li> 11) Ingresas en el Servidores aelpt02 
+									<li> 12) Dar la opción 6 y te pedirá password del servidor aelpt02
+									<li> 13) su – aelpt02       password=Cantv2013
+									<li> 14) Se tipea M y aparecerá el menú
+									<li> 15) Colocas la letra de tu Usuario
+									<li> 16) Realizas el transporte en el servidor aelpt01
+									<li> 17) Para salir dar exit, exit y regresas al menú del servidor aelpt01
+									<li> 18) Fin del Segundo transporte
+									 
+
+									<li> 19) En esta ruta URL verificas si esta activo el apache2 web
+									<li> Aelwt01.cantv.com.ve:444
+									<li> Aelwt02.cantv.com.ve:444
+									 
+
+									<li> En la opción 6 se para conectase con el servidor aelpt02 y realizar el 2do transporte 
+									 
+
+
+									<li> le colocas el password del servidor aelpt02 y aparecerá esta pantalla
+
+                                	<DT>COMENTARIOS:</DT> 
+									<OL><LI> ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip 
+										<LI>En Harvest es : apere7  Password: Harvest En Harvest es : 
+										<LI>apere7  Password: Harvest En Harvest es : apere7  Password: Harvest								
+									</OL>
+                        		</div>
+							</div>
+						</div>
+<!-- FINAL DEL MODELO-->
+
+<!-- INICIO DEL MODELO-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1fila5"><strong>WEB-AELPW01 y 02</strong></a>
+                                </h4>
+                            </div>
+                            <div id="panel1fila5" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                	<li> Se debe realizar el transporte en los dos servidores: aelpw01 y aelpw02
+									<li> Por completar esta en proceso de creación
+									 
+									<li> 1) Subir elemento  en SVN                                                                                 
+									<li> • Repositorio desde: http://repositorio-des.cantv.com.ve/svn/AEL 
+									<li> • Repositorio hasta:  http://repositorio-qa.cantv.com.ve/svn/AEL 
+									<li> • Colocarlo en la carpeta de tu usuario TRANSPORTE de los servidores aelpt01 y aelpt02
+
+									<li> 2) En el Escritorio del PC.
+										<li> · Dar doble click en carpeta (Repositorio Para Transporte)
+										<li> · En la sub-carpeta ( AEL_DES )  dar click derecho   SVN UPDATE
+										<li> · En la sub-carpeta ( AEL_QA )  dar click derecho    SVN UPDATE 
+										<li> · Luego dentro de la sub-carpeta ( AEL_QA )
+										<li> · Crear una carpeta 2014-N0004455314 
+										<li> · Dentro de la Anterior Crear sub-carpetas  AELWeb   o   AELproceso
+										<li> · Copiar Manualmente los elementos solicitados
+										<li> · Realizar el ADD y COMMIT
+										<li> · Copiar MANUALMENTE  los elementos a transportar en la ruta /home/UsuariodeRed/TRANSPORTE
+										<li> · Según sea el caso AELWeb ir al Paso 3
+									 	
+										<li> Estas es la ruta hacia el AEL-web:
+										<li> Si es AELWeb                      /tcantv/appl/jbst02/jboss-5.1.0.GA/server/ports-02/lib
+									 				
+									<li> 3) Inicio del  Primer transporte
+									<li> 4) Se ingresa en el Servidores aelwt01 
+									<li> 5) su – aelwt01       password=Cantv2013
+									<li> 6) Se tipea M y aparecerá el menú
+									<li> 7) Colocas la letra de tu Usuario
+									<li> 8) Realizas el transporte en el servidor aelpt01
+									<li> 9) Fin del Primer transporte
+									 
+									<li> 10) Inicio del  Segundo transporte
+									<li> 11) Ingresas en el Servidores aelwt02 
+									<li> 12) Dar la opción 6 y te pedirá password del servidor aelpt02
+									<li> 13) su – aelwt02       password=Cantv2013
+									<li> 14) Se tipea M y aparecerá el menú
+									<li> 15) Colocas la letra de tu Usuario
+									<li> 16) Realizas el transporte en el servidor aelpt01
+									<li> 17) Para salir dar exit, exit y regresas al menú del servidor aelpt01
+									<li> 18) Fin del Segundo transporte
+									 
+									<li> 19) En esta ruta URL verificas si esta activo el apache2 Procesos
+									<li> Aelpt01/vp
+
+									 
+									<li> En la opción 6 se para conectase con el servidor aelpt02 y realizar el 2do transporte 
+									 
+									<li> le colocas el password del usuario en el servidor aelpt02 y aparecerá esta pantalla
+
+                                	<DT>COMENTARIOS:</DT> 
+									<OL><LI> ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip 
+										<LI>En Harvest es : apere7  Password: Harvest En Harvest es : 
+										<LI>apere7  Password: Harvest En Harvest es : apere7  Password: Harvest								
+									</OL>
+                        		</div>
+							</div>
+						</div>
+<!-- FINAL DEL MODELO-->
+
+<!-- INICIO DEL MODELO-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1fila6"><strong>APACHE</strong></a>
+                                </h4>
+                            </div>
+                            <div id="panel1fila6" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                	<li> 1) Comando Para verificar si apache esta activo o desactivarlo
+									<li> ps -ef  | grep apache2 
+									<li> sudo service apache2 stop
+									<li> sudo service apache2 start
+									<li> sudo service apache2 status
+									<li> sudo service apache2 restart
+									 
+									<li> 2) En esta ruta verificas si esta activo el apache2 web
+									<li> Aelwt01.cantv.com.ve:444
+									<li> Aelwt02.cantv.com.ve:444
+									 
+									<li> 3) En esta ruta verificas si esta activo el apache2 proceso
+									<li> Aelpt01/vp
+
+									 
+									<li> Con esto Verificas 
+
+									<li> apere7@aelwt02:~$ ps -ef | grep apache2
+									<li> www-data  7390  7737  0 mar10 ?        00:00:02 /usr/sbin/apache2 -k start
+									<li> root      7737     1  0 feb24 ?        00:02:41 /usr/sbin/apache2 -k start
+									<li> www-data  7752  7737  0 feb24 ?        00:00:02 /usr/sbin/apache2 -k start
+									<li> www-data  8595  7737  0 feb24 ?        00:00:02 /usr/sbin/apache2 -k start
+									<li> www-data  9018  7737  0 feb24 ?        00:00:02 /usr/sbin/apache2 -k start
+									<li> www-data  9021  7737  0 feb24 ?        00:00:03 /usr/sbin/apache2 -k start
+									<li> www-data 20330  7737  0 feb26 ?        00:00:02 /usr/sbin/apache2 -k start
+									<li> www-data 23182  7737  0 08:34 ?        00:00:00 /usr/sbin/apache2 -k start
+									<li> www-data 23185  7737  0 08:34 ?        00:00:00 /usr/sbin/apache2 -k start
+									<li> www-data 23261  7737  0 08:38 ?        00:00:00 /usr/sbin/apache2 -k start
+									<li> www-data 25501  7737  0 feb26 ?        00:00:02 /usr/sbin/apache2 -k start
+									 
+									 
+									<li> apere7@aelwt02:~$  su - aelwt02
+									<li> ContraseÃ±a:
+									 
+									 
+									<li> aelwt02@aelwt02:~$ sudo service apache2 status
+									<li> Apache2 is running (pid 7737).
+									<li> aelwt02@aelwt02:~$
+
+
+									<li> Este es el error que se esta presentando al consultarlo en la web 
+
+                                	<DT>COMENTARIOS:</DT> 
+									<OL><LI> ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip 
+										<LI>En Harvest es : apere7  Password: Harvest En Harvest es : 
+										<LI>apere7  Password: Harvest En Harvest es : apere7  Password: Harvest								
+									</OL>
+                        		</div>
+							</div>
+						</div>
+<!-- FINAL DEL MODELO-->
+
+<!-- INICIO DEL MODELO-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1fila7"><strong>Fallas</strong></a>
+                                </h4>
+                            </div>
+                            <div id="panel1fila7" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                	<li> 05/02/2015
+									<li> Si aparece en 100% alguno de estos deberá mandar a limpiar con adecuación de ambientes
+
+									<li> aelwt02@aelwt02:~/svn_ael_qa$ df -h
+									<li> S.ficheros                             TamaÃ±o Usados Disp Uso% Montado en
+									<li> rootfs                                    2,8G 1,2G 1,5G 45% /
+									<li> udev                                       10M 0 10M 0% /dev
+									<li> tmpfs                                     397M 232K 397M 1% /run
+									<li> /dev/mapper/vgsistema-lvmraiz             2,8G 1,2G 1,5G 45% /
+									<li> tmpfs                                     5,0M 0 5,0M 0% /run/lock
+									<li> tmpfs                                     794M 0 794M 0% /run/shm
+									<li> /dev/sda1                                 184M 25M 150M 15% /boot
+									<li> /dev/mapper/vgsistema-lvmhome             938M 39M 851M 5% /home
+									<li> /dev/mapper/vgsistema-lvmtmp              3,7G 72M 3,5G 3% /tmp
+									<li> /dev/mapper/vgsistema-lvmuser             4,6G 1,4G 3,0G 32% /usr
+									<li> /dev/mapper/vgsistema-lvmvar              5,8G 5,8G 0 100% /var
+									<li> aelwt02@aelwt02:~/svn_ael_qa$
+
+                                	<DT>COMENTARIOS:</DT> 
+									<OL><LI> ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip 
+										<LI>En Harvest es : apere7  Password: Harvest En Harvest es : 
+										<LI>apere7  Password: Harvest En Harvest es : apere7  Password: Harvest								
+									</OL>
+                        		</div>
+							</div>
+						</div>
+<!-- FINAL DEL MODELO-->
+
+<!-- INICIO DEL MODELO-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1fila8"><strong>Servicios Activos QA</strong></a>
+                                </h4>
+                            </div>
+                            <div id="panel1fila8" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                	<li> Los servicios web son estos:
+									<li> http://aelwt01.cantv.com.ve:443/averias/reporte/inicio
+									<li> http://aelwt02.cantv.com.ve:443/averias/reporte/inicio
+									<li> 
+									<li> El servicio proceso es este:
+									<li> http://aelpt01.cantv.com.ve:444/vp
+
+                                	<DT>COMENTARIOS:</DT> 
+									<OL><LI> ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip 
+										<LI>En Harvest es : apere7  Password: Harvest En Harvest es : 
+										<LI>apere7  Password: Harvest En Harvest es : apere7  Password: Harvest								
+									</OL>
+                        		</div>
+							</div>
+						</div>
+<!-- FINAL DEL MODELO-->
+
+
+<!-- INICIO DEL MODELO-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1filax1"><strong>Procedimientos</strong></a>
+                                </h4>
+                            </div>
+                            <div id="panel1filax1" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                	 
+								<li> Formalizar la entrega de Transporte SVN 
+								<li> • Conexiones
+								<li> Host/IP User      SERVIDOR Tipo Ruta del servidor bash
+								<li> 10.1.195.49 apere7 aelpt01 Unix /tcantv/          activo
+								<li> 10.1.195.50 apere7 aelpt02 Unix /tcantv/          activo
+								<li> 161.196.189.38 apere7 aelwt01 Unix  y Web Falta que se active el ( bash ) falta
+								<li> 161.196.189.39 apere7 aelwt02 Unix  y Web http://aelwt02.cantv.com.ve/averias/reporte/inicio activo
+								 
+								<li> •  Usuario y clave Creados que tenga opciones:
+								<li> ○ Asignar permisologías lectura y escritura
+
+								<li> • Nombre del repositorio svn:
+									<li> ○ Calidad      :     http://repositorio-qa.cantv.com.ve/svn/AEL/
+									<li> ○ Desarrollo:     http://repositorio-des.cantv.com.ve/svn/AEL/      
+									
+								<li> • Tipos de elementos a transportar:
+								<li> ○ .php      (Nota: La carpeta Completa)
+								<li> 	
+									<li> Si es  *                                 /tcantv/appl/ael
+									<li> Si es  \.                                /tcantv/appl/ael
+									<li> Si es  index.php                /tcantv/appl/ael
+									<li> Nota: Se deberá transportar lo que va para el aelwt01 inmediatamente al aelwt02 serian dos transporte
+									      <li> Se deberá transportar lo que va para el aelpt01 inmediatamente al aelpt02  serian dos transporte
+									<li> http://travesuras.wordpress.com/2009/04/25/20090425-1/     para la opcion copy
+
+									
+								<li> • Procedimiento de Transporte de Objetos Programáticos (Nombre de la Aplicación)
+								<li> ○ Este documento tiene como objeto presentar las actividades definidas para realizar el transporte de los Objetos Programáticos en los ambientes de Desarrollo, Calidad y 
+								<li> Producción de la plataforma TI.
+								<li> 29/10/2014 Se envía correo aceptando la parte que corresponde a Ambientes qa
+									
+								<li> • Manual Operativo de Transporte de Objetos 
+									○ Este documento tiene como objeto presentar los pasos a seguir para realizar el transporte de objetos de la Aplicación, utilizando Subversión como herramienta de <li> transporte, en los ambientes operativos Desarrollo, Calidad y Producción de la plataforma TI.
+
+								<li> • Pruebas Operativas de Transportes 
+									<li> ○ Esta actividad tiene como objeto probar los pasos a seguir descritos en los documentos  anteriores además de validar la operatividad del Ambiente.
+								 	
+								<li> • Limpieza de usuarios en Unix
+									○ Es responsabilidad de proyecto la limpieza de usuarios que se encuentran en la ruta: /etc  [En los archivos (group  y  passwd ], en caso de quedar algún usuario que no 
+									<li> pertenezca a Calidad, se colocara  en modo (Lectura)
+								 	
+								<li> • Al entregar el ambiente los repositorios deberán estar limpios:
+									<li> ○ Solo las Carpetas branches, tags, trunk
+								 	
+								<li> Actividades de chequeo Ambientes
+									
+								<li> •  Verificar que el personal de ambiente confirme la entrada: 
+								<li> Nombre  servidor usuario Fecha que ingreso
+								<li> Alejandro Pereira   aelpt01 - aelpt01  y  aelwt01 - aelwt02 apere7 15/10/2014
+								<li> Carolina Monterola  aelpt01 - aelpt01  y  aelwt01 - aelwt02 cmont3 Cantv_2014
+								<li> Celio Rincón        aelpt01 - aelpt01  y  aelwt01 - aelwt02 
+								<li> crinco Edgardo Ríos aelpt01 - aelpt01  y  aelwt01 - aelwt02 eriosg01 Cantv2014
+								<li> Manuel Antonio Vega aelpt01 - aelpt01  y  aelwt01 - aelwt02 mvega1 
+								<li> Orangel García      aelpt01 - aelpt01  y  aelwt01 - aelwt02 ogarc3
+								<li> Oscar Marín         aelpt01 - aelpt01  y  aelwt01 - aelwt02 omarin
+								 
+
+								 
+								<li> Alejandro Pereira   Repositorio-svn-qa y des apere7 15/10/2014
+								<li> Carolina Monterola  Repositorio-svn-qa y des cmont3
+								<li> Celio Rincón        Repositorio-svn-qa y des crinco
+								<li> Edgardo Ríos        Repositorio-svn-qa y des eriosg01
+								<li> Manuel Antonio Vega Repositorio-svn-qa y des mvega1
+								<li> Orangel García      Repositorio-svn-qa y des ogarc3
+								<li> Oscar Marín         Repositorio-svn-qa y des omarin
+
+
+								 
+								<li> ○ Entrenamiento de Transportes SVN 
+										
+								<li> ○ Creación de usuarios admqa en los servidores:
+								<li> sudo -l
+								<li> sudo /usr/bin/faillog -a
+								<li> sudo /usr/bin/faillog -r
+								<li> sudo /usr/bin/passwd cmont3
+										
+								<li> ○ Tipificación de Remedy:
+
+
+
+                                	<DT>COMENTARIOS:</DT> 
+									<OL><LI> ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip 
+										<LI>En Harvest es : apere7  Password: Harvest En Harvest es : 
+										<LI>apere7  Password: Harvest En Harvest es : apere7  Password: Harvest								
+									</OL>
+                        		</div>
+							</div>
+						</div>
+<!-- FINAL DEL MODELO-->
+
+<!-- INICIO DEL MODELO-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1filax1"><strong>Alias</strong></a>
+                                </h4>
+                            </div>
+                            <div id="panel1filax1" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                	<li> 1. Este se colocara el el Batch de la ruta: /tcantv/appl
+
+									<li> alias c='clear'
+									<li> alias m='cd /tcantv/appl/svn_ael_qa; ./menuAEL.sh'
+
+									<li> 2. Este se colocara el el Batch de la ruta: /home/apere7
+									<li> alias d='cd /tcantv/appl/svn_ael_qa'
+									<li> alias m='cd /tcantv/appl/svn_ael_qa; ./menuAEL.sh'
+									<li> alias c='clear'
+									<li> alias s='su - aelpt01'
+									<li> alias ap2='ssh apere7@aelpt02'
+									<li> alias l='ls -ltr *AEL*'
+
+                                	<DT>COMENTARIOS:</DT> 
+									<OL><LI> ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip 
+										<LI>En Harvest es : apere7  Password: Harvest En Harvest es : 
+										<LI>apere7  Password: Harvest En Harvest es : apere7  Password: Harvest								
+									</OL>
+                        		</div>
+							</div>
+						</div>
+<!-- FINAL DEL MODELO-->
+
+
+<!-- INICIO DEL MODELO-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1filax1"><strong>Nombre</strong></a>
+                                </h4>
+                            </div>
+                            <div id="panel1filax1" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                	
+
+                                	<DT>COMENTARIOS:</DT> 
+									<OL><LI> ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip 
+										<LI>En Harvest es : apere7  Password: Harvest En Harvest es : 
+										<LI>apere7  Password: Harvest En Harvest es : apere7  Password: Harvest								
+									</OL>
+                        		</div>
+							</div>
+						</div>
+<!-- FINAL DEL MODELO-->
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+				  </div>
+			</div>
+		</body>
+	</html>				
