@@ -1,0 +1,170 @@
+<!----------------   Variables  -------------------------------->
+	<?php $var1='color="blue"'; ?>
+	<?php $var2="<body style="background-color:#FFE4C4;"> "; ?>
+	
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	</head>
+	<!-- Coloca el Fondo BISQUE A LA PAGINA INICIAL -->	
+	<!--  <body BACKGROUND="<?php echo $var2 ?>" BGPROPERTIES="fixed">   -->	
+	 <body style="background-color:#FFE4C4;"> 
+		
+		
+    <body bgcolor="#3366CC">
+		<!--Esto es Buscado en la carpeta de estructura la parte de arriba-->
+		<?php include '/estructura/arribahead.php'; ?>
+		
+		<!--Esto es Buscado en la carpeta de estructura la parte de la izquierda -->
+		<?php include '/estructura/izquierda1.php'; ?>
+		
+        <div class="container">
+            <h1> <font color="red" > Proyecto: GIT </h1></font>
+			
+            <!--collapse general-->
+            <div class="panel panel-primary" style="background-color:#a3c2c2;">
+                <div class="panel-heading">
+                    <h4>CASOS DE GIT.
+					<a href="../../index.html" class="btn btn-success">Regresar</a>
+                        <span class="pull-right">
+                            <button type="button" style="margin-top:-6px;" data-toggle="collapse" data-target="#panel1" class="btn btn-success glyphicon glyphicon-chevron-down" title="Desplegar Información"></button>
+						</span>
+					</h4>
+				</div>
+				
+                <div class="panel-body collapse" id="panel1"> <!-- A partir de aqui es el contenido del collapse general Caja Azul-->
+		 
+ 
+<!-- INICIO DEL MODELO-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1fila2"><strong>Transporte11</strong></a>
+                                </h4>
+                            </div>
+                            <div id="panel1fila2" class="panel-collapse collapse">
+                                <div class="panel-body"   style="background-color:#40bf80;color:black;"  >
+
+							<u><font size="3" color="#0000FF"><b>Subir los elemento en SVN</b></font></u>
+                                	<li> El grupo “GCC Control de ambientes” es el encargado de realizar el transporte de la nueva versión en el ambiente de Calidad.
+ 		
+                                                                              
+									<li> • Repositorio desde: http://repositorio-qa.cantv.com.ve/svn/AEL 
+									<li> • Repositorio hasta:  
+								  
+									<li> Ingresar a los servidores de calidad y sincronizar (update) con el repositorio:
+										<li> Servidores aelpt01, o aelpt02 (proceso)
+											<li> . Ingresar al servidor aelpt01 y aelpt02 (servidores de proceso) con la cuenta y contraseña correspondiente.
+											<li> . Cambiarse al usuario administrador de la aplicación
+											 <li> su – aelpt01       password=Cantv2013
+											 <li> su – aelpt02      password=Cantv2013
+								 				
+												<li> - Ingresar a la carpeta /tcantv/appl/svn_ael_qa/ael_procesos 
+												<li> - Ejecutar el comando svn update 
+								 				
+												<li> - Ingresar a la carpeta /tcantv/appl/svn_ael_qa
+												<li> - Ejecutar el comando update.sh 
+												<li> - que como su nombre lo indica, copia desde: /tcantv/appl/svn_ael_qa/ael_procesos 
+								 				
+												<li> -  Hacia:  
+												<li> - Reinicia el servicio de la aplicación apache.
+
+							<hr>
+							<u><font size="3" color="#0000FF"><b>TRANSPORTE PROCESO: AELPT01 y AELPT02</b></font></u>
+								  
+								  
+									<li> 1. Subir elemento en SVN 
+									<li> 2. Repositorio desde: http://repositorio-des.cantv.com.ve/svn/AEL 
+									<li> 3. Repositorio hasta: http://repositorio-qa.cantv.com.ve/svn/AEL 
+									<li> 4. Colocarlo en la carpeta TRANSPORTE de los servidores aelpt01 y aelpt02
+								 	
+									<br><font size="3" color="#0000FF"><b>Primer transporte: Hacia el servidor AELPT01</b></font></br>
+									<li> 5. Se ingresa en el Servidor aelpt01 
+									<li> 6. su – aelpt01 password=Cantv2013
+									<li> 7. Se tipea M y aparecerá el menú
+									<li> 8. Colocas la letra de tu Usuario
+									<li> 9. Realizas el transporte en el Servidores aelpt01
+									
+									<br><font size="3" color="#0000FF"><b>Segundo transporte: Hacia el servidor AELPT02</b></font></br>
+									<li> 10. Luego le das la opción 6 y te pedirá password del servidor aelpt02 Con esto ingresas en el Servidores aelpt02
+									<li> 11. su – aelpt02 password=Cantv2013
+									<li> 12. Se tipea M y aparecerá el menú
+									<li> 13. Colocas la letra de tu Usuario
+									<li> 14. Realizas el transporte en el Servidores aelpt02 
+									<li> 15. Para salir dar exit y regresas al Menú del servidor aelpt01 y volver a dar exit.
+
+
+								<li> • Se deberá realizar el transporte de la carpeta ael a los dos servidores aelpt01 y aelpt02
+								<li> • Se deberá realizar el transporte de la carpeta ael a los dos servidores aelwt01 y aelwt02
+
+
+                                	<DT>COMENTARIOS:</DT> 
+									<OL><LI> ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip 
+										<LI>En Harvest es : apere7  Password: Harvest En Harvest es : 
+										<LI>apere7  Password: Harvest En Harvest es : apere7  Password: Harvest								
+									</OL>
+                        		</div>
+							</div>
+						</div>
+<!-- FINAL DEL MODELO-->
+
+<!-- INICIO DEL MODELO-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1fila3"><strong>URL de Ayudas </strong></a>
+                                </h4>
+                            </div>
+                            <div id="panel1fila3" class="panel-collapse collapse">
+                                <div class="panel-body" style="background-color:#a3c2c2;color:black;" >
+					
+								<u><font size="3" color="#0000FF"><b>Videos de ayuda youtube</b></font></u> 
+									<table class="table table-bordered"  style="background-color:#40bf80";>
+										<thead>
+										<tr>
+										  <th scope="col">Descripcion</th>
+										  <th scope="col">URL</th>
+										</tr>
+									  </thead>
+									  <tbody>
+										<tr class="danger">
+										  <td>Como agregar hosting en github</td>
+										  <td>https://www.youtube.com/watch?v=QaxgF4v4hms</td>
+										</tr>
+										<tr class="warning">
+										  <td>Libre2</td>
+										  <td>Libre2 </td>
+										</tr>
+										<tr class="danger">
+										  <td>libre3</td>
+										  <td>libre3 </td>
+										</tr>
+										<tr class="warning">
+										  <td>libre4</td>
+										  <td>libre4 </td>
+										</tr>
+									  </tbody>
+									</table>
+					
+					
+                        		</div>
+							</div>
+						</div>
+<!-- FINAL DEL MODELO-->
+
+		 
+					 
+					 
+				  </div>
+			</div>
+		</body>
+	</html>				
