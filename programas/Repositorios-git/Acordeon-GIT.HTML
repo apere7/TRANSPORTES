@@ -47,65 +47,32 @@
                         <div class="panel panel-success">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1fila2"><strong>Transporte11</strong></a>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#panel1fila2"><strong>Subir Proyecto a Github</strong></a>
                                 </h4>
                             </div>
                             <div id="panel1fila2" class="panel-collapse collapse">
                                 <div class="panel-body"   style="background-color:#40bf80;color:black;"  >
 
-							<u><font size="3" color="#0000FF"><b>Subir los elemento en SVN</b></font></u>
-                                	<li> El grupo “GCC Control de ambientes” es el encargado de realizar el transporte de la nueva versión en el ambiente de Calidad.
- 		
-                                                                              
-									<li> • Repositorio desde: http://repositorio-qa.cantv.com.ve/svn/AEL 
-									<li> • Repositorio hasta:  
-								  
-									<li> Ingresar a los servidores de calidad y sincronizar (update) con el repositorio:
-										<li> Servidores aelpt01, o aelpt02 (proceso)
-											<li> . Ingresar al servidor aelpt01 y aelpt02 (servidores de proceso) con la cuenta y contraseña correspondiente.
-											<li> . Cambiarse al usuario administrador de la aplicación
-											 <li> su – aelpt01       password=Cantv2013
-											 <li> su – aelpt02      password=Cantv2013
-								 				
-												<li> - Ingresar a la carpeta /tcantv/appl/svn_ael_qa/ael_procesos 
-												<li> - Ejecutar el comando svn update 
-								 				
-												<li> - Ingresar a la carpeta /tcantv/appl/svn_ael_qa
-												<li> - Ejecutar el comando update.sh 
-												<li> - que como su nombre lo indica, copia desde: /tcantv/appl/svn_ael_qa/ael_procesos 
-								 				
-												<li> -  Hacia:  
-												<li> - Reinicia el servicio de la aplicación apache.
-
-							<hr>
-							<u><font size="3" color="#0000FF"><b>TRANSPORTE PROCESO: AELPT01 y AELPT02</b></font></u>
-								  
-								  
-									<li> 1. Subir elemento en SVN 
-									<li> 2. Repositorio desde: http://repositorio-des.cantv.com.ve/svn/AEL 
-									<li> 3. Repositorio hasta: http://repositorio-qa.cantv.com.ve/svn/AEL 
-									<li> 4. Colocarlo en la carpeta TRANSPORTE de los servidores aelpt01 y aelpt02
-								 	
-									<br><font size="3" color="#0000FF"><b>Primer transporte: Hacia el servidor AELPT01</b></font></br>
-									<li> 5. Se ingresa en el Servidor aelpt01 
-									<li> 6. su – aelpt01 password=Cantv2013
-									<li> 7. Se tipea M y aparecerá el menú
-									<li> 8. Colocas la letra de tu Usuario
-									<li> 9. Realizas el transporte en el Servidores aelpt01
-									
-									<br><font size="3" color="#0000FF"><b>Segundo transporte: Hacia el servidor AELPT02</b></font></br>
-									<li> 10. Luego le das la opción 6 y te pedirá password del servidor aelpt02 Con esto ingresas en el Servidores aelpt02
-									<li> 11. su – aelpt02 password=Cantv2013
-									<li> 12. Se tipea M y aparecerá el menú
-									<li> 13. Colocas la letra de tu Usuario
-									<li> 14. Realizas el transporte en el Servidores aelpt02 
-									<li> 15. Para salir dar exit y regresas al Menú del servidor aelpt01 y volver a dar exit.
-
-
-								<li> • Se deberá realizar el transporte de la carpeta ael a los dos servidores aelpt01 y aelpt02
-								<li> • Se deberá realizar el transporte de la carpeta ael a los dos servidores aelwt01 y aelwt02
-
-
+							<u><font size="3" color="#0000FF"><b>crear y subir repositorio github</b></font></u>
+                                	<li> Crear el repositorio en github pagina web (github.com)
+									<li> • En gitbash  
+									<li> • git add . 
+									<li> • git commit -m "COMENTARIOS"
+									<li>   CON ESTO YA QUEDO EN LOCAL
+									<hr>
+									<li> • git remote add origin https://github.com/apere7/TRANSPORTES.git
+									<li> • git push -u origin master
+								  	<li>   CON ESTO YA subio a la web
+									<hr>
+								 		
+									<li> Subir gh-pages
+									<li> • Una vez el proyecto creado Vas a Settings arriba a mano derecha y das click 
+									<li> • bajas hasta github pages debe decir (master branch)
+									<li> • Ahorra vamos al repositorio y en la pestaña (branch master) das click
+									<li> • colocas gh-pages
+									<li> • vuelves a setting vas a github pages y ahi esta la ruta para ver la pagina web
+								  	<li>   CON ESTO YA tienes el proyecto cargado en gh-pages
+									<hr>
                                 	<DT>COMENTARIOS:</DT> 
 									<OL><LI> ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 										Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip 
